@@ -1,0 +1,26 @@
+.topNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(35, 35, 45);
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 3rem;
+    white-space: nowrap;
+    align-items: center;
+    :hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+  li a {
+    padding: 1rem 0.5rem;
+  }
+  li a.active {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
