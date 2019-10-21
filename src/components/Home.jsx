@@ -1,19 +1,23 @@
 import React from 'react';
 import './Home.scss';
+import { FaBirthdayCake, FaHeart, FaHome } from 'react-icons/fa';
+import { GiFlowerPot } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
 import coverPage from '../images/coverPage.png';
 import winterBouq from '../images/winterBouq.jpg';
 import springBouq from '../images/springBouq.jpg';
 import decorate from '../images/decorate.jpg';
-import { faBirthdayCake, faHeart, faHome, faSeedling } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Footer from './Footer';
 
 function Home() {
   return (
     <div className="Home">
       <div className="wrapperCoverPage">
-        <img className="coverPage" src={coverPage}>
-        </img>
+        <img
+          className="coverPage"
+          src={coverPage}
+          alt="Flowers as a gift"
+        />
       </div>
       <div className="gridProducts">
         <div className="bouqWrapper">
@@ -23,7 +27,8 @@ function Home() {
             alt="Winter Bouquet"
           />
           <div
-            className="caption">
+            className="caption"
+          >
             <h1>Winter collection</h1>
             <h2>Sddadsdasd</h2>
           </div>
@@ -34,30 +39,36 @@ function Home() {
             className="imgGrid"
             alt="spring Bouquet"
           />
-          <div
-            className="caption">
+          <div className="caption">
             <h1>Spring collection</h1>
             <h2>Sddadsdasd</h2>
           </div>
         </div>
-        <div
-          className="services">
-          <a>
-            <FontAwesomeIcon icon={faBirthdayCake} />
+        <div className="services">
+          <Link
+            to="/shop"
+          >
+            <FaBirthdayCake />
             <p>Birthday</p>
-          </a>
-          <a>
-            <FontAwesomeIcon icon={faHeart} />
+          </Link>
+          <Link
+            to="/shop"
+          >
+            <FaHeart />
             <p>Love</p>
-          </a>
-          <a>
-            <FontAwesomeIcon icon={faHome} />
+          </Link>
+          <Link
+            to="/shop"
+          >
+            <FaHome />
             <p>Decoration</p>
-          </a>
-          <a>
-            <FontAwesomeIcon icon={faSeedling} />
+          </Link>
+          <Link
+            to="/shop"
+          >
+            <GiFlowerPot />
             <p>Plants</p>
-          </a>
+          </Link>
         </div>
         <div className="bouqWrapper">
           <img
@@ -65,15 +76,14 @@ function Home() {
             className="imgGrid"
             alt="Three vases with flowers"
           />
-          <div
-            className="caption">
+          <div className="caption">
             <h1>Decorate your home. Decorate your business.</h1>
           </div>
           <Footer />
 
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
