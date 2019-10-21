@@ -14,7 +14,7 @@
     white-space: nowrap;
     align-items: center;
     :hover {
-      color: rgba(255, 255, 255, 0.7);
+      color: #ffffffb3;
     }
   }
   li a {
@@ -23,6 +23,12 @@
   li a.active {
     color: rgba(255, 255, 255, 0.7);
   }
+}
+
+.companyLogo{
+  filter: invert(7%) sepia(100%) saturate(7451%) hue-rotate(244deg) brightness(108%) contrast(132%);
+
+
 }
 
 @media only screen and (min-width: 700px) {

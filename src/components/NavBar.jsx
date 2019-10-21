@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.scss';
 import { FaShoppingBag, FaAlignRight } from 'react-icons/fa';
+import flyFlowersLogo from '../images/flyFlowersLogo.svg';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
               activeClassName="active"
               to="/"
             >
-              Firma Icon
+              <img className="companyLogo" src={flyFlowersLogo} alt="Company logo" style={{height:'3rem'}} />
             </NavLink>
             <NavLink
               activeClassName="active"
