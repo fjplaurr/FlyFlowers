@@ -24,6 +24,12 @@ class NavBar extends React.Component {
           <li>
             <NavLink
               activeClassName="active"
+              to="/"
+            >
+              Firma Icon
+            </NavLink>
+            <NavLink
+              activeClassName="active"
               to="/shop"
             >
               Shop
@@ -45,7 +51,11 @@ class NavBar extends React.Component {
               <FaShoppingBag />
             </NavLink>
           </li>
-          <button type="button" className="navButton" onClick={this.toggle}>
+          <button
+            type="button"
+            className="navButton hideHighResolut"
+            onClick={this.toggle}
+          >
             <FaAlignRight />
           </button>
         </ul>
