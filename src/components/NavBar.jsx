@@ -22,13 +22,15 @@ class NavBar extends React.Component {
     return (
       <nav className="navBar">
         <ul className="topNav">
-          <li>
+          <li className="logoList">
             <NavLink
               activeClassName="active"
               to="/"
             >
-              <img className="companyLogo" src={flyFlowersLogo} alt="Company logo" style={{height:'3rem'}} />
+              <img className="companyLogo" src={flyFlowersLogo} alt="Company logo" />
             </NavLink>
+          </li>
+          <li>
             <NavLink
               activeClassName="active"
               to="/shop"
@@ -39,15 +41,7 @@ class NavBar extends React.Component {
           <li>
             <NavLink
               activeClassName="active"
-              to="/second"
-            >
-              Second
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              activeClassName="active"
-              to="/second"
+              to="/shop"
             >
               <FaShoppingBag />
             </NavLink>
