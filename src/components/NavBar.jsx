@@ -21,31 +21,45 @@ class NavBar extends React.Component {
   render() {
     return (
       <nav className="navBar">
-        <ul className="topNav">
-          <li className="logoList">
-            <NavLink
-              activeClassName="active"
-              to="/"
-            >
-              <img className="companyLogo" src={flyFlowersLogo} alt="Company logo" />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              activeClassName="active"
-              to="/shop"
-            >
-              Shop
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              activeClassName="active"
-              to="/shop"
-            >
-              <FaShoppingBag />
-            </NavLink>
-          </li>
+        <div className="logoNavBar">
+          <NavLink
+            activeClassName="active"
+            to="/"
+          >
+            <img className="companyLogo" src={flyFlowersLogo} alt="Company logo" />
+          </NavLink>
+        </div>
+        <div className="linksNavBar">
+          <NavLink
+            activeClassName="active"
+            to="/shop"
+          >
+            Birthday
+        </NavLink>
+          <NavLink
+            activeClassName="active"
+            to="/shop"
+          >
+            Love
+        </NavLink>
+          <NavLink
+            activeClassName="active"
+            to="/shop"
+          >
+            Fast Delivery
+        </NavLink>
+          <NavLink
+            activeClassName="active"
+            to="/shop"
+          >
+            Plants
+        </NavLink>
+          <NavLink
+            activeClassName="active"
+            to="/shop"
+          >
+            <FaShoppingBag />
+          </NavLink>
           <button
             type="button"
             className="navButton hideHighResolut"
@@ -53,8 +67,8 @@ class NavBar extends React.Component {
           >
             <FaAlignRight />
           </button>
-        </ul>
-      </nav>
+        </div>
+      </nav >
     );
   }
 }

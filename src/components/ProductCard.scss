@@ -1,0 +1,54 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  .infoProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    .modifyBag{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #0070c9;
+    }
+    svg {
+      font-size: 1.2rem;
+      color: #0070c9;
+    }
+    p:hover {
+      text-decoration: underline;
+    }
+  }
+  .textCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    p {
+      color: #515154;
+      font-size: 1rem;
+      text-align: left;
+    }
+    .description {
+      margin-bottom: 1rem;
+    }
+  }
+  .imageWrapper {
+    width: 18rem;
+    height: 18rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1rem;
+  }
+}
+.card:hover {
+  box-shadow: 0 7px 10px rgba(3, 42, 60, 0.25), 0 5px 5px rgba(3, 42, 60, 0.22), 0 -2px 5px rgba(3, 42, 60, 0.15);
+}

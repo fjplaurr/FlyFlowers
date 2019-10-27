@@ -7,9 +7,7 @@ export default function Footer() {
       <div className="block">
         <p>Company</p>
         <ul>
-          <li>
-            About us
-          </li>
+          <li>About us</li>
           <li>
             Shop
           </li>

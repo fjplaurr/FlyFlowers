@@ -1,38 +1,29 @@
-.topNav {
+.navBar {
+  opacity: 95%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: rgb(35, 35, 45);
+  background-color: black;
   position: sticky;
   top: 0;
   z-index: 10000;
-  li {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    white-space: nowrap;
-    align-items: center;
-    :hover {
-      color: #b3b3b3;
+  align-items: center;
+  white-space: nowrap;
+  .logoNavBar {
+    .companyLogo:hover {
+      filter: invert(79%) sepia(10%) saturate(0%) hue-rotate(47deg) brightness(89%) contrast(91%);
     }
   }
-  li.logoList {
-    justify-self: flex-start;
+  a {
+    color: white;
+    padding: 1rem 2rem;
   }
-  li a {
-    padding: 1rem 0.5rem;
+  a.active {
+    color: rgb(179, 179, 179);
   }
-  li a.active {
-    color: rgb(179,179,179);
+  :hover {
+    color: #b3b3b3;
   }
-}
-
-.companyLogo {
-  height: 2rem;
-  filter: invert(100%) sepia(23%) saturate(2%) hue-rotate(166deg) brightness(114%) contrast(101%);
-}
-.companyLogo:hover {
-  filter: invert(79%) sepia(10%) saturate(0%) hue-rotate(47deg) brightness(89%) contrast(91%);
 }
 
 @media only screen and (min-width: 700px) {
