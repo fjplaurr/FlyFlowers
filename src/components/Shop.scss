@@ -6,3 +6,25 @@
   justify-content: center;
   align-items: center;
 }
+
+.subWrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.filtersTitle {
+  margin-top: 2rem;
+  font-weight: bold;
+  color: rgb(20, 60, 65);
+  font-size: 1.7rem;
+}
+
+.priceFilterWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

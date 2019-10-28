@@ -90,8 +90,10 @@ function Home() {
           <div className="gridWrapper">
             <ProductCard url={img51} />
             <ProductCard url={img64} />
-            <ProductCard url={img69} />
-            <ProductCard url={img87} />
+            <div className="subWrapper">
+              <ProductCard url={img69} />
+              <ProductCard url={img87} />
+            </div>
           </div>
         </article>
         <article className="colorfulCollection">
@@ -114,8 +116,10 @@ function Home() {
           <div className="gridWrapper">
             <ProductCard url={img23} />
             <ProductCard url={img32} />
-            <ProductCard url={img54} />
-            <ProductCard url={img2} />
+            <div className="subWrapper">
+              <ProductCard url={img54} />
+              <ProductCard url={img2} />
+            </div>
           </div>
         </article>
       </div>

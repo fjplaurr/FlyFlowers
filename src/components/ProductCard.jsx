@@ -10,7 +10,7 @@ export default function ProductCard({ url }) {
     url,
   };
   return (
-    <Link to={newTo}>
+    <Link to={newTo} className="productCard">
       <li className="card">
         <div
           className="imageWrapper"
