@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductCard.scss';
 
-export default function ProductCard({ url }) {
+export default function ProductCard({ url, title, longDescription, shortDescription, colors, price, trends }) {
   const newTo = {
     pathname: '/singleProduct',
     url,
@@ -17,14 +17,14 @@ export default function ProductCard({ url }) {
           style={{ backgroundImage: `url(${url})` }}
         />
         <div className="infoProduct">
-          <div className="textCard">
-            <p className="description">Lorem ipsum dolor sit amet</p>
-            <p>{Math.floor(Math.random() * (50 - 10)) + 10}€</p>
-          </div>
-          <p className="modifyBag">
-            Add to bag
+          <p className="description">{shortDescription}</p>
+          <div className="priceBag">
+            <p className="price">{price}€</p>
+            <p className="modifyBag">
+              Add to bag
             <GoChevronRight />
-          </p>
+            </p>
+          </div>
         </div>
       </li>
     </Link>

@@ -2,21 +2,16 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import dataArr from '../utils/data';
 
-function importAll(r) {
-  const images = {};
-  r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
-  return images;
-}
+// function importAll(r) {
+//   const images = {};
+//   r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
+//   return images;
+// }
 
 function Shop() {
-  const images = importAll(require.context('../images', false, /\d.(png|jpe?g)$/));
-  console.log(dataArr);
-  const compon = dataArr.map((x) => {
-    console.log("x: ",x);
-    <ProductCard url={x.url} />
-  }
-  )
+  //const images = importAll(require.context('../images', false, /\d.(png|jpe?g)$/));
   //const compon = Object.keys(images).map((key) => <ProductCard url={images[key]} key={key} />);
+  const compon = dataArr.map((x) => <ProductCard url={x.url} title={x.title} longDescription={x.longDescription} shortDescription={x.shortDescription} colors={x.colors} price={x.price} trends={x.trends} key={x.id} />);
   return (
     <>
       <form className="filterForm">
