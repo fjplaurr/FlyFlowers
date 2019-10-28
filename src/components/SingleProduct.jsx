@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import './SingleProduct.scss';
 import { GoChevronRight } from 'react-icons/go';
 import { Link } from 'react-router-dom';
-import Bag from './Bag';
 import Footer from './Footer';
-
 
 export default function SingleProduct(props) {
   const { location } = props;

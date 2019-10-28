@@ -15,16 +15,30 @@
   align-items: center;
 }
 
+.filterForm{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
 .filtersTitle {
+  margin-top: 2rem;
+  font-weight: bold;
+  color: rgb(20, 60, 65);
+  font-size: 2rem;
+}
+
+.priceFilterTitle {
   margin-top: 2rem;
   font-weight: bold;
   color: rgb(20, 60, 65);
   font-size: 1.7rem;
 }
 
-.priceFilterWrapper{
+.filterWrapper{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import dataArr from '../utils/data';
 
 function importAll(r) {
   const images = {};
@@ -9,12 +10,19 @@ function importAll(r) {
 
 function Shop() {
   const images = importAll(require.context('../images', false, /\d.(png|jpe?g)$/));
-  const compon = Object.keys(images).map((key) => <ProductCard url={images[key]} key={key} />);
+  console.log(dataArr);
+  const compon = dataArr.map((x) => {
+    console.log("x: ",x);
+    <ProductCard url={x.url} />
+  }
+  )
+  //const compon = Object.keys(images).map((key) => <ProductCard url={images[key]} key={key} />);
   return (
     <>
-      <form>
+      <form className="filterForm">
         <h1 className="filtersTitle">Filters</h1>
-        <div className="priceFilterWrapper">
+        <div className="filterWrapper">
+          <h2 className="priceFilterTitle">Price</h2>
           <div className="priceRangeWrapper">
             <input
               type="checkbox"
@@ -38,6 +46,41 @@ function Shop() {
               id="priceRange3"
             />
             <label htmlFor="priceRange3">Over 40€</label>
+          </div>
+        </div>
+        <div className="filterWrapper">
+          <h2 className="ocassionFilterTitle">Trend</h2>
+          <div className="ocassionRangeWrapper">
+            <input
+              type="checkbox"
+              name="ocassion1"
+              id="ocassion1"
+            />
+            <label htmlFor="ocassion1">Birthday</label>
+          </div>
+          <div className="ocassionRangeWrapper">
+            <input
+              type="checkbox"
+              name="ocassion2"
+              id="ocassion2"
+            />
+            <label htmlFor="ocassion2">Love</label>
+          </div>
+          <div className="ocassionRangeWrapper">
+            <input
+              type="checkbox"
+              name="ocassion3"
+              id="ocassion3"
+            />
+            <label htmlFor="ocassion3">Decoration</label>
+          </div>
+          <div className="ocassionRangeWrapper">
+            <input
+              type="checkbox"
+              name="ocassion4"
+              id="ocassion4"
+            />
+            <label htmlFor="ocassion1">Fast Delivery</label>
           </div>
         </div>
       </form>
