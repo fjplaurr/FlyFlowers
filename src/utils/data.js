@@ -17,7 +17,8 @@ var dataArr = [
         colors: ["red", "blue", "orange"],
         price: 24,
         trends: ["birthday", "decoration", "love"],
-        url: images['2.jpg']
+        url: images['2.jpg'],
+        trendingCollection: 'none'
     },
     {
         id: "3",
@@ -27,7 +28,8 @@ var dataArr = [
         colors: ["red", "blue", "orange"],
         price: 11,
         trends: ["birthday", "decoration", "love"],
-        url: images['3.jpg']
+        url: images['3.jpg'],
+        trendingCollection: 'colorful' 
     },
     {
         id: "5",
@@ -37,7 +39,8 @@ var dataArr = [
         colors: ["red", "blue", "orange"],
         price: 13,
         trends: ["birthday", "decoration", "love"],
-        url: images['5.jpg']
+        url: images['5.jpg'],
+        trendingCollection: 'light'
     },
 ];
 

@@ -24,11 +24,21 @@
   }
 
   .wrapperCoverPage {
+    .leftDiv {
+      width: 50%;
+      background-color: #143c41;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     position: relative; /*Needed for caption below*/
+    flex-direction: row;
     display: flex;
+    justify-content: center;
     width: 100%;
     .coverPage {
-      width: 100%;
+      width: 50%;
       height: auto;
     }
     h1 {
@@ -37,7 +47,7 @@
       font-weight: bold;
       margin-bottom: 2rem;
     }
-    img{
+    img {
       height: 2.5rem;
     }
   }
@@ -90,7 +100,7 @@
   }
 }
 
-.trends{
+.trends {
   margin: 5rem 0;
 }
 
@@ -118,4 +128,8 @@
     font-size: 1rem;
     text-align: center;
   }
+}
+
+.colorfulCollection{
+  margin: 5rem 0;
 }

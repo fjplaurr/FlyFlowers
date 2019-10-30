@@ -20,24 +20,58 @@ import img32 from '../images/32.jpg';
 import img54 from '../images/54.jpg';
 import img2 from '../images/2.jpg';
 import flyFlowersLogo from '../images/flyFlowersLogo.svg';
+import dataArr from '../utils/data';
 
 function Home() {
+  let lightCollection;
+  let colorfulCollection;
+
+  dataArr.map((x) => {
+    if (x.trendingCollection === 'light') {
+      lightCollection =
+        <ProductCard
+          url={x.url}
+          title={x.title}
+          longDescription={x.longDescription}
+          shortDescription={x.shortDescription}
+          colors={x.colors} price={x.price}
+          trends={x.trends}
+          key={x.id}
+        />;
+    }
+    else if (x.trendingCollection === 'colorful') {
+      colorfulCollection =
+        <ProductCard
+          url={x.url}
+          title={x.title}
+          longDescription={x.longDescription}
+          shortDescription={x.shortDescription}
+          colors={x.colors} price={x.price}
+          trends={x.trends}
+          key={x.id}
+        />;
+    }
+  });
   return (
     <div className="Home">
       <div className="wrapperCoverPage">
-        <img
-          className="coverPage"
-          src={coverPage}
-          alt="Flowers as a gift"
-        />
-        <div className="caption">
+        <div className="leftDiv">
           <h1>
             Give something real.
             <br />
             Give it with love.
           </h1>
-          <img className="companyLogo" src={flyFlowersLogo} alt="Company logo" />
+          <img
+            className="companyLogo"
+            src={flyFlowersLogo}
+            alt="Company logo"
+          />
         </div>
+        <img
+          className="coverPage"
+          src={coverPage}
+          alt="Flowers as a gift"
+        />
       </div>
       <section className="trends">
         <h2 className="collectionHeader">Discover our trends</h2>
@@ -88,11 +122,8 @@ function Home() {
           </div>
           <h2 className="collectionHeader">Trending Light Bouquets</h2>
           <div className="gridWrapper">
-            <ProductCard url={img51} />
-            <ProductCard url={img64} />
+            {lightCollection}
             <div className="subWrapper">
-              <ProductCard url={img69} />
-              <ProductCard url={img87} />
             </div>
           </div>
         </article>
@@ -114,11 +145,8 @@ function Home() {
           </div>
           <h2 className="collectionHeader">Trending Colorful Bouquets</h2>
           <div className="gridWrapper">
-            <ProductCard url={img23} />
-            <ProductCard url={img32} />
+            {colorfulCollection}
             <div className="subWrapper">
-              <ProductCard url={img54} />
-              <ProductCard url={img2} />
             </div>
           </div>
         </article>
