@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.subWrapper{
+.subWrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -15,30 +15,119 @@
   align-items: center;
 }
 
-.filterForm{
+.filterForm {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
 }
 
 .filtersTitle {
-  margin-top: 2rem;
+  margin: 2rem 0;
   font-weight: bold;
   color: rgb(20, 60, 65);
   font-size: 2rem;
 }
 
-.priceFilterTitle {
-  margin-top: 2rem;
+.FilterTitle {
+  align-self: center;
   font-weight: bold;
   color: rgb(20, 60, 65);
   font-size: 1.7rem;
 }
 
-.filterWrapper{
+.filterWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+input[type="checkbox"] + label {
+  display: block;
+  margin: 0.2rem;
+  margin-left: 0px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label:before {
+  content: "\2714";
+  border: 0.1rem solid #000;
+  border-radius: 0.2rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  padding-left: 0.2rem;
+  padding-bottom: 0.3rem;
+  margin-right: 0.2rem;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+}
+
+input[type="checkbox"] + label:active:before {
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #143c41;
+  border-color: #143c41;
+  color: white;
+}
+
+input[name="color1"] + label:before {
+  border: none;
+  background-color: rgb(200, 50, 50);
+  border: 0.1rem solid transparent;
+}
+
+input[name="color1"]:checked + label:before {
+  border: 0.1rem solid rgb(200, 50, 50);
+  background-color: rgb(200, 50, 50);
+}
+
+input[name="color2"] + label:before {
+  border: none;
+  background-color: rgb(50, 50, 200);
+  border: 0.1rem solid transparent;
+}
+
+input[name="color2"]:checked + label:before {
+  border: 0.1rem solid rgb(50, 50, 200);
+  background-color: rgb(50, 50, 200);
+}
+
+input[name="color3"] + label:before {
+  border: none;
+  background-color: rgb(50, 200, 50);
+  border: 0.1rem solid transparent;
+}
+
+input[name="color3"]:checked + label:before {
+  border: 0.1rem solid rgb(50, 200, 50);
+  background-color: rgb(50, 200, 50);
+}
+
+input[name="color4"] + label:before {
+  border: none;
+  background-color: rgb(200, 200, 50);
+  border: 0.1rem solid transparent;
+}
+
+input[name="color4"]:checked + label:before {
+  border: 0.1rem solid rgb(200, 200, 50);
+  background-color: rgb(200, 200, 50);
 }
