@@ -110,6 +110,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
   a {
     width: 10rem;
     margin: 0 3rem;
@@ -130,6 +131,34 @@
   }
 }
 
-.colorfulCollection{
+.colorfulCollection {
   margin: 5rem 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .Home {
+    .wrapperCoverPage {
+      h1 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+      img {
+        height: 1.2rem;
+      }
+    }
+
+    .gridProducts {
+      .productCollection {
+        h1 {
+          font-size: 1.4rem;
+        }
+        h2 {
+          font-size: 1.1rem;
+        }
+        a {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
 }

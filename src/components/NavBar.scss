@@ -9,7 +9,13 @@
   z-index: 10000;
   align-items: center;
   white-space: nowrap;
-  height: 4rem;
+  height: auto;
+  .linksNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   .logoNavBar {
     .companyLogo:hover {
       filter: invert(79%) sepia(10%) saturate(0%) hue-rotate(47deg) brightness(89%) contrast(91%);
@@ -19,16 +25,50 @@
     color: white;
     padding: 1rem 2rem;
   }
-  a.active {
-    color: rgb(179, 179, 179);
-  }
   :hover {
     color: #b3b3b3;
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 767px) {
   .hideHighResolut {
-    visibility: hidden;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .logoNavBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .navButton {
+      position: absolute;
+      right: 5%;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+  .navBar {
+    .linksNavBar {
+      position: absolute;
+      flex-direction: column;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: height 0.3s linear;
+    }
+    .linksNavBar.open {
+      position: relative;
+      display: flex;
+      opacity: 1;
+      height: 10rem;
+    }
+    a {
+      padding: 0.4rem;
+    }
+  }
+  .navBar.open {
+    flex-direction: column;
   }
 }

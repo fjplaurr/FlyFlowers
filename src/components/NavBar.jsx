@@ -8,57 +8,25 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      opened: false,
+      open: false,
     };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle = () => {
-    const { opened } = this.state;
-    this.setState({ opened: !opened });
+    const { open } = this.state;
+    this.setState({ open: !open });
   }
 
   render() {
+    const { open } = this.state;
     return (
-      <nav className="navBar">
+      <nav className={open ? "navBar open" : "navBar"}>
         <div className="logoNavBar">
-          <NavLink
-            activeClassName="active"
-            to="/"
-          >
-            <img className="companyLogo" src={flyFlowersLogo} alt="Company logo" />
-          </NavLink>
-        </div>
-        <div className="linksNavBar">
-          <NavLink
-            activeClassName="active"
-            to="/shop"
-          >
-            Birthday
-        </NavLink>
-          <NavLink
-            activeClassName="active"
-            to="/shop"
-          >
-            Love
-        </NavLink>
-          <NavLink
-            activeClassName="active"
-            to="/shop"
-          >
-            Fast Delivery
-        </NavLink>
-          <NavLink
-            activeClassName="active"
-            to="/shop"
-          >
-            Plants
-        </NavLink>
-          <NavLink
-            activeClassName="active"
-            to="/shop"
-          >
-            <FaShoppingBag />
+          <NavLink to="/">
+            <img className="companyLogo"
+              src={flyFlowersLogo}
+              alt="Company logo" />
           </NavLink>
           <button
             type="button"
@@ -68,6 +36,41 @@ class NavBar extends React.Component {
             <FaAlignRight />
           </button>
         </div>
+        <div className={open ? "linksNavBar open" : "linksNavBar"}>
+          <NavLink
+            to={{
+              pathname: '/shop',
+              filter: 'birthday',
+            }}>
+            Birthday
+        </NavLink>
+          <NavLink
+            to={{
+              pathname: '/shop',
+              filter: 'love',
+            }}
+          >
+            Love
+          </NavLink>
+          <NavLink
+            to={{
+              pathname: '/shop',
+              filter: 'fast delivery',
+            }}>
+            Fast Delivery
+          </NavLink>
+          <NavLink
+            to={{
+              pathname: '/shop',
+              filter: 'decoration',
+            }}>
+            Decoration
+          </NavLink>
+          <NavLink to="/shop">
+            <FaShoppingBag />
+          </NavLink>
+        </div>
+
       </nav >
     );
   }

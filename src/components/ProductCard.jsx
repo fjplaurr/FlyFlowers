@@ -3,34 +3,54 @@ import { GoChevronRight } from 'react-icons/go';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductCard.scss';
+import { connect } from 'react-redux';
+import changeProductPrice from '../redux/actions/changeProductPrice';
+import changeProductPicture from '../redux/actions/changeProductPicture';
 
-export default function ProductCard({ url, title, longDescription, shortDescription, colors, price, trends }) {
-  const newTo = {
-    pathname: '/singleProduct',
-    url,
+class ProductCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick = (event) => {
+    const { price, url, shortDescription, changeProductPrice, changeProductPicture } = this.props;
+    changeProductPrice(price);
+    changeProductPicture(url);
   };
-  return (
-    <Link to={newTo} className="productCard">
-      <li className="card">
+  render() {
+    const { price, url, shortDescription } = this.props;
+    return (
+      <Link
+        to='/singleProduct'
+        className="productCard"
+        onClick={this.handleClick}
+      >
         <div
-          className="imageWrapper"
-          style={{ backgroundImage: `url(${url})` }}
-        />
-        <div className="infoProduct">
-          <p className="description">{shortDescription}</p>
-          <div className="priceBag">
-            <p className="price">{price}€</p>
-            <p className="modifyBag">
-              Add to bag
+          className="card"
+        >
+          <div
+            className="imageWrapper"
+            style={{ backgroundImage: `url(${url})` }}
+          />
+          <div className="infoProduct">
+            <p className="description">{shortDescription}</p>
+            <div className="priceBag">
+              <p className="price">{price}€</p>
+              <p className="modifyBag">
+                Add to bag
             <GoChevronRight />
-            </p>
+              </p>
+            </div>
           </div>
         </div>
-      </li>
-    </Link>
-  );
+      </Link>
+    );
+  }
 }
 
-ProductCard.propTypes = {
-  url: PropTypes.string.isRequired,
+const mapDispatchToProps = {
+  changeProductPrice,
+  changeProductPicture,
 };
+
+export default connect(null, mapDispatchToProps)(ProductCard);

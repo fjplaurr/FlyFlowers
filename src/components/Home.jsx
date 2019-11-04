@@ -11,24 +11,13 @@ import ProductCard from './ProductCard';
 import coverPage from '../images/coverPage.jpg';
 import winterBouq from '../images/winterBouq.jpg';
 import springBouq from '../images/springBouq.jpg';
-import img51 from '../images/51.jpg';
-import img64 from '../images/64.jpg';
-import img69 from '../images/69.jpg';
-import img87 from '../images/87.jpg';
-import img23 from '../images/23.jpg';
-import img32 from '../images/32.jpg';
-import img54 from '../images/54.jpg';
-import img2 from '../images/2.jpg';
 import flyFlowersLogo from '../images/flyFlowersLogo.svg';
 import dataArr from '../utils/data';
 
 function Home() {
-  let lightCollection;
-  let colorfulCollection;
-
-  dataArr.map((x) => {
-    if (x.trendingCollection === 'light') {
-      lightCollection =
+  let lightCollection = dataArr.map((x) => {
+    if (x.collection === 'light' && x.trending === true) {
+      return (
         <ProductCard
           url={x.url}
           title={x.title}
@@ -37,21 +26,26 @@ function Home() {
           colors={x.colors} price={x.price}
           trends={x.trends}
           key={x.id}
-        />;
-    }
-    else if (x.trendingCollection === 'colorful') {
-      colorfulCollection =
-        <ProductCard
-          url={x.url}
-          title={x.title}
-          longDescription={x.longDescription}
-          shortDescription={x.shortDescription}
-          colors={x.colors} price={x.price}
-          trends={x.trends}
-          key={x.id}
-        />;
+        />
+      )
     }
   });
+  let colorfulCollection = dataArr.map((x) => {
+    if (x.collection === 'colorful' && x.trending === true) {
+      return (
+        <ProductCard
+          url={x.url}
+          title={x.title}
+          longDescription={x.longDescription}
+          shortDescription={x.shortDescription}
+          colors={x.colors} price={x.price}
+          trends={x.trends}
+          key={x.id}
+        />
+      )
+    }
+  });
+
   return (
     <div className="Home">
       <div className="wrapperCoverPage">

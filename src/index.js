@@ -9,21 +9,37 @@ import Shop from './components/Shop';
 import NotFound from './components/NotFound';
 import SingleProduct from './components/SingleProduct';
 import ScrollToTop from './components/ScrollToTop';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const routing = (
-  <Router>
-    <>
-      <NavBar />
-      <ScrollToTop />
-      <Switch>  
-        <Route exact path="/" component={Home} />
-        <Route path="/shop" component={Shop} />
-        <Route path="/singleProduct" component={SingleProduct} />
-        <Route path="/bag" component={Bag} />
-        <Route component={NotFound} />
-      </Switch>
-    </>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <>
+        <NavBar />
+        <ScrollToTop />
+        <Switch>
+          <Route
+            exact path="/"
+            component={Home}
+          />
+          <Route
+            path="/shop"
+            component={Shop}
+          />
+          <Route
+            path="/singleProduct"
+            component={SingleProduct}
+          />
+          <Route
+            path="/bag"
+            component={Bag}
+          />
+          <Route component={NotFound} />
+        </Switch>
+      </>
+    </Router>
+  </Provider>
 );
 
 ReactDOM.render(routing, document.getElementById('root'));
