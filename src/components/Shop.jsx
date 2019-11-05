@@ -7,51 +7,53 @@ class Shop extends React.Component {
     super(props);
     this.state = {
       filteredArr: [...dataArr],
-    }
+    };
     this.handleFilter = this.handleFilter.bind(this);
   }
 
   componentWillMount() {
     let filtered = [...dataArr];
-    if (this.props.location.filter) {
-      filtered = filtered.filter((x) => x.ocassions.includes(this.props.location.filter));
+    const { location } = this.props;
+    if (location.filter) {
+      filtered = filtered.filter((x) => x.ocassions.includes(location.filter));
     }
     this.setState({ filteredArr: filtered });
   }
 
   handleFilter = () => {
     let filtered = [...dataArr];
-    if (document.getElementById("priceRange1").checked) {
-      filtered = filtered.filter((x) => x.price < 15)
-    };
-    if (document.getElementById("priceRange2").checked) {
-      filtered = filtered.filter((x) => x.price > 15 && x.price < 40)
-    };
-    if (document.getElementById("priceRange3").checked) {
-      filtered = filtered.filter((x) => x.price > 40)
-    };
-    if (document.getElementById("ocassion1").checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById("ocassion1").name));
+    if (document.getElementById('priceRange1').checked) {
+      filtered = filtered.filter((x) => x.price < 15);
     }
-    if (document.getElementById("ocassion2").checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById("ocassion2").name));
+    if (document.getElementById('priceRange2').checked) {
+      filtered = filtered.filter((x) => x.price > 15 && x.price < 40);
     }
-    if (document.getElementById("ocassion3").checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById("ocassion3").name));
+    if (document.getElementById('priceRange3').checked) {
+      filtered = filtered.filter((x) => x.price > 40);
     }
-    if (document.getElementById("ocassion4").checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById("ocassion4").name));
+    if (document.getElementById('ocassion1').checked) {
+      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion1').name));
     }
-    if (document.getElementById("color1").checked) {
-      filtered = filtered.filter((x) => x.colors.includes(document.getElementById("color1").name));
+    if (document.getElementById('ocassion2').checked) {
+      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion2').name));
     }
-    if (document.getElementById("color3").checked) {
-      filtered = filtered.filter((x) => x.colors.includes(document.getElementById("color3").name));
+    if (document.getElementById('ocassion3').checked) {
+      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion3').name));
+    }
+    if (document.getElementById('ocassion4').checked) {
+      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion4').name));
+    }
+    if (document.getElementById('color1').checked) {
+      filtered = filtered.filter((x) => x.colors.includes(document.getElementById('color1').name));
+    }
+    if (document.getElementById('color3').checked) {
+      filtered = filtered.filter((x) => x.colors.includes(document.getElementById('color3').name));
     }
     this.setState({ filteredArr: filtered });
   }
 
   render() {
+    const { filteredArr } = this.state;
     return (
       <div>
         <form className="filterForm">
@@ -178,7 +180,7 @@ class Shop extends React.Component {
           </div>
         </form>
         <div className="gridWrapper">
-          {this.state.filteredArr.map((x) =>
+          {filteredArr.map((x) => (
             <ProductCard
               url={x.url}
               title={x.title}
@@ -188,12 +190,13 @@ class Shop extends React.Component {
               price={x.price}
               trends={x.trends}
               key={x.id}
+              id={x.id}
             />
-          )
+          ))
           }
         </div>
       </div>
-    )
+    );
   }
 }
 

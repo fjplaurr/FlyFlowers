@@ -12,16 +12,18 @@ class ProductCard extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick = (event) => {
-    const { price, url, shortDescription, changeProductPrice, changeProductPicture } = this.props;
-    changeProductPrice(price);
-    changeProductPicture(url);
+
+  handleClick = () => {
+    const { price, url } = this.props;
+    this.props.changeProductPrice(price);
+    this.props.changeProductPicture(url);
   };
+
   render() {
-    const { price, url, shortDescription } = this.props;
+    const { price, url, shortDescription, id } = this.props;
     return (
       <Link
-        to='/singleProduct'
+        to={`/singleProduct/${id}`}
         className="productCard"
         onClick={this.handleClick}
       >
@@ -35,10 +37,12 @@ class ProductCard extends React.Component {
           <div className="infoProduct">
             <p className="description">{shortDescription}</p>
             <div className="priceBag">
-              <p className="price">{price}€</p>
+              <p className="price">
+                {`${price}€`}
+              </p>
               <p className="modifyBag">
                 Add to bag
-            <GoChevronRight />
+                <GoChevronRight />
               </p>
             </div>
           </div>
@@ -51,6 +55,13 @@ class ProductCard extends React.Component {
 const mapDispatchToProps = {
   changeProductPrice,
   changeProductPicture,
+};
+
+ProductCard.propTypes = {
+  price: PropTypes.number.isRequired,
+  url: PropTypes.string.isRequired,
+  shortDescription: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(ProductCard);

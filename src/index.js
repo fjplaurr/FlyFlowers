@@ -28,7 +28,7 @@ const routing = (
             component={Shop}
           />
           <Route
-            path="/singleProduct"
+            path="/singleProduct/:id"
             component={SingleProduct}
           />
           <Route

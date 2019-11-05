@@ -21,12 +21,14 @@ class NavBar extends React.Component {
   render() {
     const { open } = this.state;
     return (
-      <nav className={open ? "navBar open" : "navBar"}>
+      <nav className={open ? 'navBar open' : 'navBar'}>
         <div className="logoNavBar">
           <NavLink to="/">
-            <img className="companyLogo"
+            <img
+              className="companyLogo"
               src={flyFlowersLogo}
-              alt="Company logo" />
+              alt="Company logo"
+            />
           </NavLink>
           <button
             type="button"
@@ -36,14 +38,15 @@ class NavBar extends React.Component {
             <FaAlignRight />
           </button>
         </div>
-        <div className={open ? "linksNavBar open" : "linksNavBar"}>
+        <div className={open ? 'linksNavBar open' : 'linksNavBar'}>
           <NavLink
             to={{
               pathname: '/shop',
               filter: 'birthday',
-            }}>
+            }}
+          >
             Birthday
-        </NavLink>
+          </NavLink>
           <NavLink
             to={{
               pathname: '/shop',
@@ -56,14 +59,16 @@ class NavBar extends React.Component {
             to={{
               pathname: '/shop',
               filter: 'fast delivery',
-            }}>
+            }}
+          >
             Fast Delivery
           </NavLink>
           <NavLink
             to={{
               pathname: '/shop',
               filter: 'decoration',
-            }}>
+            }}
+          >
             Decoration
           </NavLink>
           <NavLink to="/shop">
@@ -71,7 +76,7 @@ class NavBar extends React.Component {
           </NavLink>
         </div>
 
-      </nav >
+      </nav>
     );
   }
 }
