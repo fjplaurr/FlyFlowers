@@ -73,7 +73,7 @@ function Home() {
           <Link to="/shop">
             <FaBirthdayCake />
             <p>Birthday</p>
-            <p>An ocassion to celebrate with colorful flowers.</p>
+            <p>An occasion to celebrate with colorful flowers.</p>
           </Link>
           <Link to="/shop">
             <FaHeart />

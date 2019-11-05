@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import { FaShoppingBag, FaAlignRight } from 'react-icons/fa';
 import flyFlowersLogo from '../images/flyFlowersLogo.svg';
@@ -23,13 +23,13 @@ class NavBar extends React.Component {
     return (
       <nav className={open ? 'navBar open' : 'navBar'}>
         <div className="logoNavBar">
-          <NavLink to="/">
+          <Link to="/">
             <img
               className="companyLogo"
               src={flyFlowersLogo}
               alt="Company logo"
             />
-          </NavLink>
+          </Link>
           <button
             type="button"
             className="navButton hideHighResolut"
@@ -39,44 +39,32 @@ class NavBar extends React.Component {
           </button>
         </div>
         <div className={open ? 'linksNavBar open' : 'linksNavBar'}>
-          <NavLink
-            to={{
-              pathname: '/shop',
-              filter: 'birthday',
-            }}
+          <Link
+            to={"/shop?occasion=birthday"}
           >
             Birthday
-          </NavLink>
-          <NavLink
-            to={{
-              pathname: '/shop',
-              filter: 'love',
-            }}
+          </Link>
+          <Link
+            to={"/shop?occasion=love"}
           >
             Love
-          </NavLink>
-          <NavLink
-            to={{
-              pathname: '/shop',
-              filter: 'fast delivery',
-            }}
+          </Link>
+          <Link
+            to={"/shop?occasion=fast+delivery"}
           >
             Fast Delivery
-          </NavLink>
-          <NavLink
-            to={{
-              pathname: '/shop',
-              filter: 'decoration',
-            }}
+          </Link>
+          <Link
+            to={"/shop?occasion=decoration"}
           >
             Decoration
-          </NavLink>
-          <NavLink to="/shop">
+          </Link>
+          <Link to="/bag">
             <FaShoppingBag />
-          </NavLink>
+          </Link>
         </div>
 
-      </nav>
+      </nav >
     );
   }
 }

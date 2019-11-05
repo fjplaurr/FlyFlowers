@@ -11,10 +11,13 @@ import SingleProduct from './components/SingleProduct';
 import ScrollToTop from './components/ScrollToTop';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory();
 
 const routing = (
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <>
         <NavBar />
         <ScrollToTop />
@@ -34,6 +37,11 @@ const routing = (
           <Route
             path="/bag"
             component={Bag}
+          />
+          <Route
+            path="/empty"
+            component={null}
+            key="empty"
           />
           <Route component={NotFound} />
         </Switch>

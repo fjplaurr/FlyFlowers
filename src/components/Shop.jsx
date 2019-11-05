@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 import dataArr from '../utils/data';
+import { conditionalExpression } from '@babel/types';
 
 class Shop extends React.Component {
   constructor(props) {
@@ -12,13 +13,25 @@ class Shop extends React.Component {
   }
 
   componentWillMount() {
+    console.log('WILLL M OUNT ');
     let filtered = [...dataArr];
     const { location } = this.props;
-    if (location.filter) {
-      filtered = filtered.filter((x) => x.ocassions.includes(location.filter));
+    const query = new URLSearchParams(location.search);
+    if (query) {
+      const occasion = query.get('occasion');
+      filtered = filtered.filter((x) => x.occasions.includes(occasion));
     }
     this.setState({ filteredArr: filtered });
   }
+
+  /*
+  shouldComponentUpdate = (nextProps) => {
+    this.props.history.push({ pathname: "/empty" });
+    setTimeout(() => {
+      this.props.history.replace({ pathname: nextProps.location.pathname, query: nextProps.location.search });
+    });
+  }
+  */
 
   handleFilter = () => {
     let filtered = [...dataArr];
@@ -31,17 +44,17 @@ class Shop extends React.Component {
     if (document.getElementById('priceRange3').checked) {
       filtered = filtered.filter((x) => x.price > 40);
     }
-    if (document.getElementById('ocassion1').checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion1').name));
+    if (document.getElementById('occasion1').checked) {
+      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion1').name));
     }
-    if (document.getElementById('ocassion2').checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion2').name));
+    if (document.getElementById('occasion2').checked) {
+      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion2').name));
     }
-    if (document.getElementById('ocassion3').checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion3').name));
+    if (document.getElementById('occasion3').checked) {
+      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion3').name));
     }
-    if (document.getElementById('ocassion4').checked) {
-      filtered = filtered.filter((x) => x.ocassions.includes(document.getElementById('ocassion4').name));
+    if (document.getElementById('occasion4').checked) {
+      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion4').name));
     }
     if (document.getElementById('color1').checked) {
       filtered = filtered.filter((x) => x.colors.includes(document.getElementById('color1').name));
@@ -54,6 +67,12 @@ class Shop extends React.Component {
 
   render() {
     const { filteredArr } = this.state;
+    const { location } = this.props;
+    const query = new URLSearchParams(location.search);
+    let occasion;
+    if (query) {
+      occasion = query.get('occasion');
+    }
     return (
       <div>
         <form className="filterForm">
@@ -93,50 +112,50 @@ class Shop extends React.Component {
             </div>
             <div className="filterWrapper">
               <h2 className="FilterTitle">Trend</h2>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
                   name="birthday"
-                  id="ocassion1"
+                  id="occasion1"
                   onChange={this.handleFilter}
-                  defaultChecked={this.props.location.filter === 'birthday' ? true : false}
+                  defaultChecked={occasion === 'birthday' ? true : false}
                 />
-                <label htmlFor="ocassion1">Birthday</label>
+                <label htmlFor="occasion1">Birthday</label>
               </div>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
                   name="love"
-                  id="ocassion2"
+                  id="occasion2"
                   onChange={this.handleFilter}
-                  defaultChecked={this.props.location.filter === 'love' ? true : false}
+                  defaultChecked={occasion === 'love' ? true : false}
                 />
-                <label htmlFor="ocassion2">Love</label>
+                <label htmlFor="occasion2">Love</label>
               </div>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
                   name="decoration"
-                  id="ocassion3"
+                  id="occasion3"
                   onChange={this.handleFilter}
-                  defaultChecked={this.props.location.filter === 'decoration' ? true : false}
+                  defaultChecked={occasion === 'decoration' ? true : false}
                 />
-                <label htmlFor="ocassion3">Decoration</label>
+                <label htmlFor="occasion3">Decoration</label>
               </div>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
                   name="fast delivery"
-                  id="ocassion4"
+                  id="occasion4"
                   onChange={this.handleFilter}
-                  defaultChecked={this.props.location.filter === 'fast delivery' ? true : false}
+                  defaultChecked={occasion === 'fast delivery' ? true : false}
                 />
-                <label htmlFor="ocassion4">Fast Delivery</label>
+                <label htmlFor="occasion4">Fast Delivery</label>
               </div>
             </div>
             <div className="filterWrapper">
               <h2 className="FilterTitle">Color</h2>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   className="colorInput"
                   type="checkbox"
@@ -146,7 +165,7 @@ class Shop extends React.Component {
                 />
                 <label htmlFor="color1"></label>
               </div>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   className="colorInput"
                   type="checkbox"
@@ -156,7 +175,7 @@ class Shop extends React.Component {
                 />
                 <label htmlFor="color3"></label>
               </div>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   className="colorInput"
                   type="checkbox"
@@ -166,7 +185,7 @@ class Shop extends React.Component {
                 />
                 <label htmlFor="color4"></label>
               </div>
-              <div className="ocassionRangeWrapper">
+              <div className="occasionRangeWrapper">
                 <input
                   className="colorInput"
                   type="checkbox"
