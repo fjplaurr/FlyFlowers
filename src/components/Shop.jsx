@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 import dataArr from '../utils/data';
-import { conditionalExpression } from '@babel/types';
 
 class Shop extends React.Component {
   constructor(props) {
@@ -12,8 +11,18 @@ class Shop extends React.Component {
     this.handleFilter = this.handleFilter.bind(this);
   }
 
+
+  shouldComponentUpdate() {
+    //Next code makes the page refresh even if we click in navbar a different Link that shares a same Route than the current one.
+    const { search, pathname } = this.props.history.location;
+    this.props.history.push({ pathname: '/empty' });
+    setTimeout(() => {
+      this.props.history.replace({ pathname: pathname, search: search });
+    });
+    return true;
+  }
+
   componentWillMount() {
-    console.log('WILLL M OUNT ');
     let filtered = [...dataArr];
     const { location } = this.props;
     const query = new URLSearchParams(location.search);
@@ -23,15 +32,6 @@ class Shop extends React.Component {
     }
     this.setState({ filteredArr: filtered });
   }
-
-  /*
-  shouldComponentUpdate = (nextProps) => {
-    this.props.history.push({ pathname: "/empty" });
-    setTimeout(() => {
-      this.props.history.replace({ pathname: nextProps.location.pathname, query: nextProps.location.search });
-    });
-  }
-  */
 
   handleFilter = () => {
     let filtered = [...dataArr];

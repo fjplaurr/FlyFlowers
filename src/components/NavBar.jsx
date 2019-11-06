@@ -40,7 +40,7 @@ class NavBar extends React.Component {
         </div>
         <div className={open ? 'linksNavBar open' : 'linksNavBar'}>
           <Link
-            to={"/shop?occasion=birthday"}
+            to={{ pathname: "/shop", search: "?occasion=birthday", state: { prevLocation: this.props } }}
           >
             Birthday
           </Link>
