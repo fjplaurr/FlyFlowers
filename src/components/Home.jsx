@@ -15,7 +15,7 @@ import flyFlowersLogo from '../images/flyFlowersLogo.svg';
 import dataArr from '../utils/data';
 
 function Home() {
-  let lightCollection = dataArr.map((x) => {
+  const lightCollection = dataArr.map((x) => {
     if (x.collection === 'light' && x.trending === true) {
       return (
         <ProductCard
@@ -23,14 +23,15 @@ function Home() {
           title={x.title}
           longDescription={x.longDescription}
           shortDescription={x.shortDescription}
-          colors={x.colors} price={x.price}
+          colors={x.colors}
+          price={x.price}
           trends={x.trends}
           key={x.id}
         />
       )
     }
   });
-  let colorfulCollection = dataArr.map((x) => {
+  const colorfulCollection = dataArr.map((x) => {
     if (x.collection === 'colorful' && x.trending === true) {
       return (
         <ProductCard
@@ -38,11 +39,12 @@ function Home() {
           title={x.title}
           longDescription={x.longDescription}
           shortDescription={x.shortDescription}
-          colors={x.colors} price={x.price}
+          colors={x.colors}
+          price={x.price}
           trends={x.trends}
           key={x.id}
         />
-      )
+      );
     }
   });
 
@@ -117,8 +119,7 @@ function Home() {
           <h2 className="collectionHeader">Trending Light Bouquets</h2>
           <div className="gridWrapper">
             {lightCollection}
-            <div className="subWrapper">
-            </div>
+            <div className="subWrapper" />
           </div>
         </article>
         <article className="colorfulCollection">
@@ -133,15 +134,14 @@ function Home() {
               <h2>Vivid colors that inspire.</h2>
               <Link to="/shop">
                 Discover it
-              <GoChevronRight />
+                <GoChevronRight />
               </Link>
             </div>
           </div>
           <h2 className="collectionHeader">Trending Colorful Bouquets</h2>
           <div className="gridWrapper">
             {colorfulCollection}
-            <div className="subWrapper">
-            </div>
+            <div className="subWrapper" />
           </div>
         </article>
       </div>

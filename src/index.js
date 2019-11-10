@@ -6,6 +6,7 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Bag from './components/Bag';
 import Shop from './components/Shop';
+import Empty from './components/Empty';
 import NotFound from './components/NotFound';
 import SingleProduct from './components/SingleProduct';
 import ScrollToTop from './components/ScrollToTop';
@@ -40,7 +41,7 @@ const routing = (
           />
           <Route
             path="/empty"
-            component={null}
+            component={Empty}
             key="empty"
           />
           <Route component={NotFound} />

@@ -1,38 +1,93 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 import dataArr from '../utils/data';
+import {
+  birthday, love, decoration, fastdelivery, yellow, red, orange, pink,
+} from '../utils/consts';
 
 class Shop extends React.Component {
   constructor(props) {
     super(props);
+    const { location } = this.props;
+    const query = new URLSearchParams(location.search);
+    const searchIterator = query.values();
+    const searchArr = Array.from(searchIterator);
+    const filteredArr = this.filter();
     this.state = {
-      filteredArr: [...dataArr],
+      filteredArr: [...filteredArr],
+      birthdayIsActive: searchArr.includes(birthday),
+      loveIsActive: searchArr.includes(love),
+      decorationIsActive: searchArr.includes(decoration),
+      fastDeliveryIsActive: searchArr.includes(fastdelivery),
+      pinkIsActive: searchArr.includes(pink),
+      redIsActive: searchArr.includes(red),
+      orangeIsActive: searchArr.includes(orange),
+      yellowIsActive: searchArr.includes(yellow),
     };
     this.handleFilter = this.handleFilter.bind(this);
   }
 
-
-  shouldComponentUpdate() {
-    //Next code makes the page refresh even if we click in navbar a different Link that shares a same Route than the current one.
-    const { search, pathname } = this.props.history.location;
-    this.props.history.push({ pathname: '/empty' });
-    setTimeout(() => {
-      this.props.history.replace({ pathname: pathname, search: search });
-    });
-    return true;
-  }
-
-  componentWillMount() {
-    let filtered = [...dataArr];
+  filter = () => {
     const { location } = this.props;
+    let filtered = [...dataArr];
     const query = new URLSearchParams(location.search);
-    if (query) {
-      const occasion = query.get('occasion');
-      filtered = filtered.filter((x) => x.occasions.includes(occasion));
+    const searchIterator = query.values();
+    const searchArr = Array.from(searchIterator);
+    if (searchArr.includes(birthday)) {
+      filtered = filtered.filter((x) => x.occasions.includes(birthday));
     }
-    this.setState({ filteredArr: filtered });
+    if (searchArr.includes(love)) {
+      filtered = filtered.filter((x) => x.occasions.includes(love));
+    }
+    if (searchArr.includes(decoration)) {
+      filtered = filtered.filter((x) => x.occasions.includes(decoration));
+    }
+    if (searchArr.includes(fastdelivery)) {
+      filtered = filtered.filter((x) => x.occasions.includes(fastdelivery));
+    }
+    if (searchArr.includes(red)) {
+      filtered = filtered.filter((x) => x.colors.includes(red));
+    }
+    if (searchArr.includes(pink)) {
+      filtered = filtered.filter((x) => x.colors.includes(pink));
+    }
+    if (searchArr.includes(yellow)) {
+      filtered = filtered.filter((x) => x.colors.includes(yellow));
+    }
+    if (searchArr.includes(orange)) {
+      filtered = filtered.filter((x) => x.colors.includes(orange));
+    }
+    return filtered;
   }
 
+  handleFilter = (event) => {
+    const { location, history } = this.props;
+    const { search } = location;
+    let params = new URLSearchParams(search);
+    if (event.target.checked) {
+      params.append(event.target.getAttribute('data-search-param'), event.target.name);
+    } else {
+      const paramsToKeep = [];
+      const keyValueArr = [...params.entries()];
+      for (let i = 0; i < keyValueArr.length; i += 1) {
+        if (keyValueArr[i][0] === event.target.getAttribute('data-search-param') && keyValueArr[i][1] !== event.target.name) {
+          paramsToKeep.push(keyValueArr[i][1]);
+        }
+      }
+      params.delete(event.target.getAttribute('data-search-param'));
+      for (let i = 0; i < paramsToKeep.length; i += 1) {
+        params.append(event.target.getAttribute('data-search-param'), paramsToKeep[i]);
+      }
+    }
+    const newLocation = {
+      pathname: '/empty',
+      state: { params: params.toString() },
+    };
+    history.push(newLocation);
+  }
+
+  /*
   handleFilter = () => {
     let filtered = [...dataArr];
     if (document.getElementById('priceRange1').checked) {
@@ -64,15 +119,12 @@ class Shop extends React.Component {
     }
     this.setState({ filteredArr: filtered });
   }
+  */
 
   render() {
-    const { filteredArr } = this.state;
-    const { location } = this.props;
-    const query = new URLSearchParams(location.search);
-    let occasion;
-    if (query) {
-      occasion = query.get('occasion');
-    }
+    const {
+      filteredArr, birthdayIsActive, loveIsActive, decorationIsActive, fastDeliveryIsActive, redIsActive, pinkIsActive, yellowIsActive, orangeIsActive,
+    } = this.state;
     return (
       <div>
         <form className="filterForm">
@@ -116,41 +168,45 @@ class Shop extends React.Component {
                 <input
                   type="checkbox"
                   name="birthday"
-                  id="occasion1"
+                  data-search-param="occasion"
+                  id="birthdayOccasion"
                   onChange={this.handleFilter}
-                  defaultChecked={occasion === 'birthday' ? true : false}
+                  checked={birthdayIsActive}
                 />
-                <label htmlFor="occasion1">Birthday</label>
+                <label htmlFor="birthdayOccasion">Birthday</label>
               </div>
               <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
                   name="love"
-                  id="occasion2"
+                  data-search-param="occasion"
+                  id="loveOccasion"
                   onChange={this.handleFilter}
-                  defaultChecked={occasion === 'love' ? true : false}
+                  checked={loveIsActive}
                 />
-                <label htmlFor="occasion2">Love</label>
+                <label htmlFor="loveOccasion">Love</label>
               </div>
               <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
                   name="decoration"
-                  id="occasion3"
+                  data-search-param="occasion"
+                  id="decorationOccasion"
                   onChange={this.handleFilter}
-                  defaultChecked={occasion === 'decoration' ? true : false}
+                  checked={decorationIsActive}
                 />
-                <label htmlFor="occasion3">Decoration</label>
+                <label htmlFor="decorationOccasion">Decoration</label>
               </div>
               <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
-                  name="fast delivery"
-                  id="occasion4"
+                  name="fastdelivery"
+                  data-search-param="occasion"
+                  id="fastdeliveryOccasion"
                   onChange={this.handleFilter}
-                  defaultChecked={occasion === 'fast delivery' ? true : false}
+                  checked={fastDeliveryIsActive}
                 />
-                <label htmlFor="occasion4">Fast Delivery</label>
+                <label htmlFor="fastdeliveryOccasion">Fast Delivery</label>
               </div>
             </div>
             <div className="filterWrapper">
@@ -161,9 +217,11 @@ class Shop extends React.Component {
                   type="checkbox"
                   name="red"
                   id="color1"
+                  data-search-param="color"
                   onChange={this.handleFilter}
+                  checked={redIsActive}
                 />
-                <label htmlFor="color1"></label>
+                <label htmlFor="color1" />
               </div>
               <div className="occasionRangeWrapper">
                 <input
@@ -171,9 +229,11 @@ class Shop extends React.Component {
                   type="checkbox"
                   name="pink"
                   id="color3"
+                  data-search-param="color"
                   onChange={this.handleFilter}
+                  checked={pinkIsActive}
                 />
-                <label htmlFor="color3"></label>
+                <label htmlFor="color3" />
               </div>
               <div className="occasionRangeWrapper">
                 <input
@@ -181,9 +241,11 @@ class Shop extends React.Component {
                   type="checkbox"
                   name="yellow"
                   id="color4"
+                  data-search-param="color"
                   onChange={this.handleFilter}
+                  checked={yellowIsActive}
                 />
-                <label htmlFor="color4"></label>
+                <label htmlFor="color4" />
               </div>
               <div className="occasionRangeWrapper">
                 <input
@@ -191,9 +253,11 @@ class Shop extends React.Component {
                   type="checkbox"
                   name="orange"
                   id="color5"
+                  data-search-param="color"
                   onChange={this.handleFilter}
+                  checked={orangeIsActive}
                 />
-                <label htmlFor="color5"></label>
+                <label htmlFor="color5" />
               </div>
             </div>
           </div>
@@ -211,13 +275,19 @@ class Shop extends React.Component {
               key={x.id}
               id={x.id}
             />
-          ))
-          }
+          ))}
         </div>
       </div>
     );
   }
 }
 
-export default Shop;
+Shop.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    state: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+    search: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+  }).isRequired,
+};
 
+export default Shop;

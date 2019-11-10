@@ -40,31 +40,46 @@ class NavBar extends React.Component {
         </div>
         <div className={open ? 'linksNavBar open' : 'linksNavBar'}>
           <Link
-            to={{ pathname: "/shop", search: "?occasion=birthday", state: { prevLocation: this.props } }}
+            to={{
+              pathname: '/empty',
+              search: '?occasion=birthday',
+              state: { params: 'occasion=birthday' },
+            }}
           >
             Birthday
           </Link>
           <Link
-            to={"/shop?occasion=love"}
+            to={{
+              pathname: '/empty',
+              search: '?occasion=love',
+              state: { params: 'occasion=love' },
+            }}
           >
             Love
           </Link>
           <Link
-            to={"/shop?occasion=fast+delivery"}
-          >
-            Fast Delivery
-          </Link>
-          <Link
-            to={"/shop?occasion=decoration"}
+            to={{
+              pathname: '/empty',
+              search: '?occasion=decoration',
+              state: { params: 'occasion=decoration' },
+            }}
           >
             Decoration
+          </Link>
+          <Link
+            to={{
+              pathname: '/empty',
+              search: '?occasion=fastdelivery',
+              state: { params: 'occasion=fastdelivery' },
+            }}
+          >
+            Fast Delivery
           </Link>
           <Link to="/bag">
             <FaShoppingBag />
           </Link>
         </div>
-
-      </nav >
+      </nav>
     );
   }
 }

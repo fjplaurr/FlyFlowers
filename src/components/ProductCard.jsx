@@ -14,13 +14,17 @@ class ProductCard extends React.Component {
   }
 
   handleClick = () => {
-    const { price, url } = this.props;
-    this.props.changeProductPrice(price);
-    this.props.changeProductPicture(url);
+    const {
+      price, url, changeProductPrice, changeProductPicture
+    } = this.props;
+    changeProductPrice(price);
+    changeProductPicture(url);
   };
 
   render() {
-    const { price, url, shortDescription, id } = this.props;
+    const {
+      price, url, shortDescription, id,
+    } = this.props;
     return (
       <Link
         to={`/singleProduct/${id}`}
