@@ -1,9 +1,8 @@
 import React from 'react';
 import './Home.scss';
 import { FaBirthdayCake, FaHeart } from 'react-icons/fa';
-import { GiFlowerPot } from 'react-icons/gi';
-import { GoChevronRight, GoHome } from "react-icons/go";
-import { FiTruck } from "react-icons/fi";
+import { GoChevronRight, GoHome } from 'react-icons/go';
+import { FiTruck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import './Shop.scss';
 import Footer from './Footer';
@@ -11,7 +10,6 @@ import ProductCard from './ProductCard';
 import coverPage from '../images/coverPage.jpg';
 import winterBouq from '../images/winterBouq.jpg';
 import springBouq from '../images/springBouq.jpg';
-import flyFlowersLogo from '../images/flyFlowersLogo.svg';
 import dataArr from '../utils/data';
 
 function Home() {
@@ -27,8 +25,9 @@ function Home() {
           price={x.price}
           trends={x.trends}
           key={x.id}
+          id={x.id}
         />
-      )
+      );
     }
   });
   const colorfulCollection = dataArr.map((x) => {
@@ -43,6 +42,7 @@ function Home() {
           price={x.price}
           trends={x.trends}
           key={x.id}
+          id={x.id}
         />
       );
     }
@@ -50,83 +50,31 @@ function Home() {
 
   return (
     <div className="Home">
-      <div className="wrapperCoverPage">
-        <div className="leftDiv">
-          <h1>
-            Give something real.
-            <br />
-            Give it with love.
-          </h1>
-          <img
-            className="companyLogo"
-            src={flyFlowersLogo}
-            alt="Company logo"
-          />
-        </div>
+      <div className="header">
         <img
           className="coverPage"
           src={coverPage}
           alt="Flowers as a gift"
         />
-      </div>
-      <section className="trends">
-        <h2 className="collectionHeader">Discover our trends</h2>
-        <div className="services">
+        <div className="captionHeader">
+          <h1>
+            Something special.
+            <br />
+            Someone unique.
+          </h1>
           <Link to="/shop">
-            <FaBirthdayCake />
-            <p>Birthday</p>
-            <p>An occasion to celebrate with colorful flowers.</p>
-          </Link>
-          <Link to="/shop">
-            <FaHeart />
-            <p>Love</p>
-            <p>Give something special to someone unique.</p>
-          </Link>
-          <Link to="/shop">
-            <GoHome />
-            <p>Decoration</p>
-            <p>Decorate your home, decorate your business.</p>
-          </Link>
-          <Link to="/shop">
-            <GiFlowerPot />
-            <p>Plants</p>
-            <p>Water them and see them grow.</p>
-          </Link>
-          <Link to="/shop">
-            <FiTruck />
-            <p>Fast delivery</p>
-            <p>Products to be delivered the next day.</p>
+            Explore
+            <GoChevronRight />
           </Link>
         </div>
-      </section>
+      </div>
+
       <div className="gridProducts">
-        <article className="lightCollection">
-          <div className="productCollection">
-            <img
-              src={winterBouq}
-              className="imgGrid"
-              alt="Winter Bouquet"
-            />
-            <div className="caption">
-              <h1>Light Collection.</h1>
-              <h2>Full of elegance.</h2>
-              <Link to="/shop">
-                Discover it
-                <GoChevronRight />
-              </Link>
-            </div>
-          </div>
-          <h2 className="collectionHeader">Trending Light Bouquets</h2>
-          <div className="gridWrapper">
-            {lightCollection}
-            <div className="subWrapper" />
-          </div>
-        </article>
         <article className="colorfulCollection">
           <div className="productCollection">
             <img
               src={springBouq}
-              className="imgGrid"
+              className="springBouquet"
               alt="spring Bouquet"
             />
             <div className="caption">
@@ -144,7 +92,55 @@ function Home() {
             <div className="subWrapper" />
           </div>
         </article>
+        <article className="lightCollection">
+          <div className="productCollection">
+            <img
+              src={winterBouq}
+              className="winterBouquet"
+              alt="Winter Bouquet"
+            />
+            <div className="caption">
+              <h1>Light Collection.</h1>
+              <h2>Full of elegance.</h2>
+              <Link to="/shop">
+                Discover it
+                <GoChevronRight />
+              </Link>
+            </div>
+          </div>
+          <h2 className="collectionHeader">Trending Light Bouquets</h2>
+          <div className="gridWrapper">
+            {lightCollection}
+            <div className="subWrapper" />
+          </div>
+        </article>
+
       </div>
+      <section className="trends">
+        <h2 className="collectionHeader">Discover our trends</h2>
+        <div className="services">
+          <Link to="/shop?occasion=birthday">
+            <FaBirthdayCake />
+            <p>Birthday</p>
+            <p>An occasion to celebrate with colorful flowers.</p>
+          </Link>
+          <Link to="/shop?occasion=love">
+            <FaHeart />
+            <p>Love</p>
+            <p>Give something special to someone unique.</p>
+          </Link>
+          <Link to="/shop?occasion=decoration">
+            <GoHome />
+            <p>Decoration</p>
+            <p>Decorate your home, decorate your business.</p>
+          </Link>
+          <Link to="/shop?occasion=fastdelivery">
+            <FiTruck />
+            <p>Fast delivery</p>
+            <p>Products to be delivered the next day.</p>
+          </Link>
+        </div>
+      </section>
       <Footer />
     </div>
   );

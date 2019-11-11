@@ -4,104 +4,130 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  .caption {
-    display: flex;
+}
+.caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  bottom: 60%;
+  right: 0;
+  left: 0;
+}
+.collectionHeader {
+  margin: 2rem 0px 0.5rem 0px;
+  font-weight: bold;
+  color: #143c41;
+  font-size: 1.7rem;
+}
+.header {
+  position: relative; /*Needed for caption below*/
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .captionHeader {
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50%;
     position: absolute;
-    text-align: center;
     top: 0;
     bottom: 0;
-    left: 3%;
-  }
-
-  .collectionHeader {
-    margin-top: 2rem;
-    font-weight: bold;
-    color: rgb(20, 60, 65);
-    font-size: 1.7rem;
-  }
-
-  .wrapperCoverPage {
-    .leftDiv {
-      width: 50%;
-      background-color: #143c41;
+    right: 0;
+    left: 0;
+    a {
+      color: rgb(0, 112, 201);
+      font-size: 1.5rem;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
       align-items: center;
     }
-    position: relative; /*Needed for caption below*/
-    flex-direction: row;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    .coverPage {
-      width: 50%;
-      height: auto;
-    }
-    h1 {
-      color: white;
-      font-size: 4rem;
-      font-weight: bold;
-      margin-bottom: 2rem;
-    }
-    img {
-      height: 2.5rem;
+    a:hover {
+      text-decoration: underline;
     }
   }
-
-  .gridProducts {
+  .coverPage {
+    height: 720px;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    .productCollection {
-      margin-top: 2rem;
-      min-width: 100%;
-      position: relative; /*Needed for caption below*/
-      .imgGrid {
-        width: 100%;
-      }
-      h1 {
-        color: rgb(17, 17, 17);
-        font-size: 3rem;
-        font-weight: bold;
-      }
-      h2 {
-        color: rgb(17, 17, 17);
-        font-size: 1.7rem;
-      }
-      a {
-        color: rgb(0, 112, 201);
-        font-size: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
+    object-fit: cover;
+    object-position: 0% 0%;
+  }
+  h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: normal;
+    letter-spacing: 5px;
+    line-height: 5rem;
+    text-align: left;
+  }
+}
+
+.gridProducts {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  .productCollection {
+    margin-top: 5rem;
+    min-width: 100%;
+    position: relative; /*Needed for caption below*/
+    .springBouquet {
+      object-fit: cover;
+      object-position: 0% 60%;
+      width: 100%;
+      height: 500px;
     }
-    .decorationCollection {
-      top: 5%;
-      bottom: auto;
-      left: 0;
-      right: 0;
-      a,
-      h1,
-      h2 {
-        color: white;
-      }
+    .winterBouquet {
+      object-fit: cover;
+      object-position: 0% 0%;
+      width: 100%;
+      height: 500px;
+    }
+    h1 {
+      color: rgb(17, 17, 17);
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 3rem;
+      letter-spacing: 5px;
+    }
+    h2 {
+      color: rgb(17, 17, 17);
+      font-size: 1.7rem;
+      letter-spacing: 2px;
+    }
+    a {
+      color: rgb(0, 112, 201);
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  .decorationCollection {
+    top: 5%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    a,
+    h1,
+    h2 {
+      color: white;
     }
   }
 }
 
 .trends {
-  margin: 5rem 0;
+  margin: 3rem 0;
 }
 
 .services {

@@ -31,9 +31,7 @@ class ProductCard extends React.Component {
         className="productCard"
         onClick={this.handleClick}
       >
-        <div
-          className="card"
-        >
+        <div className="card">
           <div
             className="imageWrapper"
             style={{ backgroundImage: `url(${url})` }}

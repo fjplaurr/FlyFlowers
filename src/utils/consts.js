@@ -6,3 +6,6 @@ export const pink = 'pink';
 export const yellow = 'yellow';
 export const red = 'red';
 export const orange = 'orange';
+export const under15 = 'under15';
+export const between15and40 = 'between15and40';
+export const over40 = 'over40';

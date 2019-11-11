@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
+import Footer from './Footer';
 import dataArr from '../utils/data';
 import {
-  birthday, love, decoration, fastdelivery, yellow, red, orange, pink,
+  birthday, love, decoration, fastdelivery, yellow, red, orange, pink, under15, between15and40, over40,
 } from '../utils/consts';
 
 class Shop extends React.Component {
@@ -13,7 +14,7 @@ class Shop extends React.Component {
     const query = new URLSearchParams(location.search);
     const searchIterator = query.values();
     const searchArr = Array.from(searchIterator);
-    const filteredArr = this.filter();
+    const filteredArr = this.filterInitialData();
     this.state = {
       filteredArr: [...filteredArr],
       birthdayIsActive: searchArr.includes(birthday),
@@ -24,11 +25,14 @@ class Shop extends React.Component {
       redIsActive: searchArr.includes(red),
       orangeIsActive: searchArr.includes(orange),
       yellowIsActive: searchArr.includes(yellow),
+      under15isActive: searchArr.includes(under15),
+      between15and40isActive: searchArr.includes(between15and40),
+      over40isActive: searchArr.includes(over40),
     };
     this.handleFilter = this.handleFilter.bind(this);
   }
 
-  filter = () => {
+  filterInitialData = () => {
     const { location } = this.props;
     let filtered = [...dataArr];
     const query = new URLSearchParams(location.search);
@@ -58,6 +62,15 @@ class Shop extends React.Component {
     if (searchArr.includes(orange)) {
       filtered = filtered.filter((x) => x.colors.includes(orange));
     }
+    if (searchArr.includes(under15)) {
+      filtered = filtered.filter((x) => x.price <= 15);
+    }
+    if (searchArr.includes(between15and40)) {
+      filtered = filtered.filter((x) => x.price >= 15 && x.price <= 40);
+    }
+    if (searchArr.includes(over40)) {
+      filtered = filtered.filter((x) => x.price >= 40);
+    }
     return filtered;
   }
 
@@ -66,18 +79,18 @@ class Shop extends React.Component {
     const { search } = location;
     let params = new URLSearchParams(search);
     if (event.target.checked) {
-      params.append(event.target.getAttribute('data-search-param'), event.target.name);
+      params.append(event.target.getAttribute('data-search-key'), event.target.getAttribute('data-search-value'));
     } else {
       const paramsToKeep = [];
       const keyValueArr = [...params.entries()];
       for (let i = 0; i < keyValueArr.length; i += 1) {
-        if (keyValueArr[i][0] === event.target.getAttribute('data-search-param') && keyValueArr[i][1] !== event.target.name) {
+        if (keyValueArr[i][0] === event.target.getAttribute('data-search-key') && keyValueArr[i][1] !== event.target.getAttribute('data-search-value')) {
           paramsToKeep.push(keyValueArr[i][1]);
         }
       }
-      params.delete(event.target.getAttribute('data-search-param'));
+      params.delete(event.target.getAttribute('data-search-key'));
       for (let i = 0; i < paramsToKeep.length; i += 1) {
-        params.append(event.target.getAttribute('data-search-param'), paramsToKeep[i]);
+        params.append(event.target.getAttribute('data-search-key'), paramsToKeep[i]);
       }
     }
     const newLocation = {
@@ -87,43 +100,10 @@ class Shop extends React.Component {
     history.push(newLocation);
   }
 
-  /*
-  handleFilter = () => {
-    let filtered = [...dataArr];
-    if (document.getElementById('priceRange1').checked) {
-      filtered = filtered.filter((x) => x.price < 15);
-    }
-    if (document.getElementById('priceRange2').checked) {
-      filtered = filtered.filter((x) => x.price > 15 && x.price < 40);
-    }
-    if (document.getElementById('priceRange3').checked) {
-      filtered = filtered.filter((x) => x.price > 40);
-    }
-    if (document.getElementById('occasion1').checked) {
-      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion1').name));
-    }
-    if (document.getElementById('occasion2').checked) {
-      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion2').name));
-    }
-    if (document.getElementById('occasion3').checked) {
-      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion3').name));
-    }
-    if (document.getElementById('occasion4').checked) {
-      filtered = filtered.filter((x) => x.occasions.includes(document.getElementById('occasion4').name));
-    }
-    if (document.getElementById('color1').checked) {
-      filtered = filtered.filter((x) => x.colors.includes(document.getElementById('color1').name));
-    }
-    if (document.getElementById('color3').checked) {
-      filtered = filtered.filter((x) => x.colors.includes(document.getElementById('color3').name));
-    }
-    this.setState({ filteredArr: filtered });
-  }
-  */
-
   render() {
     const {
-      filteredArr, birthdayIsActive, loveIsActive, decorationIsActive, fastDeliveryIsActive, redIsActive, pinkIsActive, yellowIsActive, orangeIsActive,
+      filteredArr, birthdayIsActive, loveIsActive, decorationIsActive, fastDeliveryIsActive, redIsActive,
+      pinkIsActive, yellowIsActive, orangeIsActive, under15isActive, between15and40isActive, over40isActive,
     } = this.state;
     return (
       <div>
@@ -133,32 +113,30 @@ class Shop extends React.Component {
             <div className="filterWrapper">
               <h2 className="FilterTitle">Price</h2>
               <input
-                type="radio"
-                name="priceRange"
-                id="priceRange0"
-                onChange={this.handleFilter}
-                defaultChecked
-              />
-              <label htmlFor="priceRange0">All Prices</label>
-              <input
-                type="radio"
-                name="priceRange"
+                type="checkbox"
                 id="priceRange1"
                 onChange={this.handleFilter}
+                checked={under15isActive}
+                data-search-key="price"
+                data-search-value="under15"
               />
               <label htmlFor="priceRange1">Under 15€</label>
               <input
-                type="radio"
-                name="priceRange"
+                type="checkbox"
                 id="priceRange2"
+                data-search-key="price"
+                data-search-value="between15and40"
                 onChange={this.handleFilter}
+                checked={between15and40isActive}
               />
               <label htmlFor="priceRange2">15€-40€</label>
               <input
-                type="radio"
-                name="priceRange"
+                type="checkbox"
                 id="priceRange3"
+                data-search-key="price"
+                data-search-value="over40"
                 onChange={this.handleFilter}
+                checked={over40isActive}
               />
               <label htmlFor="priceRange3">Over 40€</label>
             </div>
@@ -167,9 +145,11 @@ class Shop extends React.Component {
               <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
-                  name="birthday"
-                  data-search-param="occasion"
+                  data-search-value="birthday"
+                  data-search-key="occasion"
                   id="birthdayOccasion"
+                  data-search-key="occasion"
+                  data-search-value="birthday"
                   onChange={this.handleFilter}
                   checked={birthdayIsActive}
                 />
@@ -178,8 +158,8 @@ class Shop extends React.Component {
               <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
-                  name="love"
-                  data-search-param="occasion"
+                  data-search-value="love"
+                  data-search-key="occasion"
                   id="loveOccasion"
                   onChange={this.handleFilter}
                   checked={loveIsActive}
@@ -189,8 +169,8 @@ class Shop extends React.Component {
               <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
-                  name="decoration"
-                  data-search-param="occasion"
+                  data-search-value="decoration"
+                  data-search-key="occasion"
                   id="decorationOccasion"
                   onChange={this.handleFilter}
                   checked={decorationIsActive}
@@ -200,8 +180,8 @@ class Shop extends React.Component {
               <div className="occasionRangeWrapper">
                 <input
                   type="checkbox"
-                  name="fastdelivery"
-                  data-search-param="occasion"
+                  data-search-value="fastdelivery"
+                  data-search-key="occasion"
                   id="fastdeliveryOccasion"
                   onChange={this.handleFilter}
                   checked={fastDeliveryIsActive}
@@ -215,49 +195,49 @@ class Shop extends React.Component {
                 <input
                   className="colorInput"
                   type="checkbox"
-                  name="red"
+                  data-search-value="red"
                   id="color1"
-                  data-search-param="color"
+                  data-search-key="color"
                   onChange={this.handleFilter}
                   checked={redIsActive}
                 />
-                <label htmlFor="color1" />
+                <label htmlFor="color1" aria-label="Filter by red color" />
               </div>
               <div className="occasionRangeWrapper">
                 <input
                   className="colorInput"
                   type="checkbox"
-                  name="pink"
+                  data-search-value="pink"
                   id="color3"
-                  data-search-param="color"
+                  data-search-key="color"
                   onChange={this.handleFilter}
                   checked={pinkIsActive}
                 />
-                <label htmlFor="color3" />
+                <label htmlFor="color3" aria-label="Filter by pink color" />
               </div>
               <div className="occasionRangeWrapper">
                 <input
                   className="colorInput"
                   type="checkbox"
-                  name="yellow"
+                  data-search-value="yellow"
                   id="color4"
-                  data-search-param="color"
+                  data-search-key="color"
                   onChange={this.handleFilter}
                   checked={yellowIsActive}
                 />
-                <label htmlFor="color4" />
+                <label htmlFor="color4" aria-label="Filter by yellow color" />
               </div>
               <div className="occasionRangeWrapper">
                 <input
                   className="colorInput"
                   type="checkbox"
-                  name="orange"
+                  data-search-value="orange"
                   id="color5"
-                  data-search-param="color"
+                  data-search-key="color"
                   onChange={this.handleFilter}
                   checked={orangeIsActive}
                 />
-                <label htmlFor="color5" />
+                <label htmlFor="color5" aria-label="Filter by orange color" />
               </div>
             </div>
           </div>
@@ -277,7 +257,10 @@ class Shop extends React.Component {
             />
           ))}
         </div>
+        <Footer />
+
       </div>
+
     );
   }
 }

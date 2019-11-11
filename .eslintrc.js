@@ -22,6 +22,16 @@ module.exports = {
     'react',
   ],
   rules: {
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
   },
 };
