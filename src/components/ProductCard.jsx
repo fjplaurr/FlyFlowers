@@ -15,10 +15,10 @@ class ProductCard extends React.Component {
 
   handleClick = () => {
     const {
-      price, url, changeProductPrice, changeProductPicture
+      price, url, productPrice, productPicture,
     } = this.props;
-    changeProductPrice(price);
-    changeProductPicture(url);
+    productPrice(price);
+    productPicture(url);
   };
 
   render() {
@@ -54,9 +54,10 @@ class ProductCard extends React.Component {
   }
 }
 
+/* Below a renaming of the actions to avoid no-shadow rule from Eslint */
 const mapDispatchToProps = {
-  changeProductPrice,
-  changeProductPicture,
+  productPrice: changeProductPrice,
+  productPicture: changeProductPicture,
 };
 
 ProductCard.propTypes = {
@@ -64,6 +65,8 @@ ProductCard.propTypes = {
   url: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  productPrice: PropTypes.func.isRequired,
+  productPicture: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(ProductCard);

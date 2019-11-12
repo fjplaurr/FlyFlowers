@@ -1,0 +1,32 @@
+.productBag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  .quantityWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .bouquetImg {
+    height: 15rem;
+    width: 15rem;
+  }
+  .imageWrapper {
+    width: 10rem;
+    height: 10rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-right: 2rem;
+  }
+  .infoWrapper{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+  }
+ 
+}

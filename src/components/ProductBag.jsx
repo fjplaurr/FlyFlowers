@@ -1,40 +1,62 @@
 import React from 'react';
 import { GoChevronRight } from 'react-icons/go';
+import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
+import './ProductBag.scss';
+
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import changeProductPrice from '../redux/actions/changeProductPrice';
-import changeProductPicture from '../redux/actions/changeProductPicture';
 
-function ProductBag(props) {
-  const {
-    price, url, shortDescription, id,
-  } = props;
-  return (
-    <div className="card">
-      <div
-        className="imageWrapper"
-        style={{ backgroundImage: `url(${url})` }}
-      />
-      <div className="infoProduct">
-        <p className="description">{shortDescription}</p>
-        <div className="priceBag">
-          <p className="price">
-            {`${price}€`}
-          </p>
-          <p className="modifyBag">
-            Add to bag
-            <GoChevronRight />
-          </p>
+class ProductBag extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalPrice: 0,
+    }
+    this.reduceQuantity = this.reduceQuantity.bind(this);
+    this.increaseQuantity = this.increaseQuantity.bind(this);
+  }
+
+  reduceQuantity() {
+    console.log('click')
+  }
+
+  increaseQuantity() {
+
+  }
+
+  render() {
+    const {
+      price, url, shortDescription, id, title
+    } = this.props;
+    return (
+      <div className="productBag" >
+        <div
+          className="imageWrapper"
+          style={{ backgroundImage: `url(${url})` }}
+        />
+        <div className="infoWrapper">
+          <div>{shortDescription}</div>
+          <div className="quantityWrapper">
+            <p>Quantity:</p>
+            <button
+              type="button"
+              onClick={this.reduceQuantity}
+            >
+              <FiMinusCircle />
+            </button>
+            <span className="quantity">4</span>
+            <button
+              type="button"
+              onClick={this.increaseQuantity}
+            >
+              <FiPlusCircle />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-const mapDispatchToProps = {
-  changeProductPrice,
-  changeProductPicture,
-};
 
 ProductBag.propTypes = {
   price: PropTypes.number.isRequired,
@@ -43,4 +65,4 @@ ProductBag.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(ProductBag);
+export default connect(null, null)(ProductBag);

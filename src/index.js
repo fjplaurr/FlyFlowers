@@ -15,7 +15,6 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import { createBrowserHistory } from "history";
 
-
 const history = createBrowserHistory();
 
 const routing = (

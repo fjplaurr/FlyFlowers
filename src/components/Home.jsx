@@ -28,6 +28,7 @@ function Home() {
         />
       );
     }
+    return false;
   });
   const colorfulCollection = dataArr.map((x) => {
     if (x.collection === 'colorful' && x.trending === true) {
@@ -45,6 +46,7 @@ function Home() {
         />
       );
     }
+    return false;
   });
 
   return (

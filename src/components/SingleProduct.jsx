@@ -3,15 +3,16 @@ import './SingleProduct.scss';
 import { GoChevronRight } from 'react-icons/go';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import dataArr from '../utils/data';
-import addIdToBag from '../redux/reducers/productId';
+import addIdToBag from '../redux/actions/addIdToBag';
 
 function SingleProduct(props) {
   const { id } = useParams();
   const uniqueProduct = dataArr.find((product) => product.id === id);
-  const { history, addIdToBag } = props;
+  const { history, idToBag } = props;
   const handleClick = () => {
-    addIdToBag('9');
+    idToBag(id);
     history.push('/bag');
   };
   return (
@@ -29,12 +30,14 @@ function SingleProduct(props) {
             <p className="price">
               {`Price: ${uniqueProduct.price}€`}
             </p>
-            <input
-              type="button"
-              onClick={() => handleClick()}
-              value="Add to bag"
-            />
-            <GoChevronRight />
+            <div className="addBag">
+              <input
+                type="button"
+                onClick={() => handleClick()}
+                value="Add to bag"
+              />
+              <GoChevronRight />
+            </div>
           </div>
         </div>
       </div>
@@ -42,8 +45,15 @@ function SingleProduct(props) {
   );
 }
 
+SingleProduct.propTypes = {
+  idToBag: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
 const mapDispatchToProps = {
-  addIdToBag,
+  idToBag: addIdToBag,
 };
 
 export default connect(null, mapDispatchToProps)(SingleProduct);

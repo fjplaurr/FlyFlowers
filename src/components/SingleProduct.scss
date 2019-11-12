@@ -3,69 +3,89 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
-}
-
-.singleProduct {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 2rem;
-  margin-bottom: 5rem;
-  .flowersImg {
-    height: 50rem;
-    width: auto;
-  }
-  .productDescription {
-    max-width: 30%;
-    margin-left: 4rem;
+  input[type="button"] {
+    color: rgb(0, 112, 201);
+    font-size: 1.5rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+  }
+  input[type="button"]:hover {
+    text-decoration: underline;
+  }
+  .addBag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: #0070c9;
+  }
+  .singleProduct {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    h1 {
-      color: rgb(20, 60, 65);
-      font-size: 2rem;
-      font-weight: bold;
-      margin-top: 2rem;
-    }
-    .description {
-      margin-top: 1rem;
-      color: #515154;
-      font-size: 1rem;
-      text-align: justify;
-    }
-    .price {
-      color: rgb(20, 60, 65);
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-  }
-  .modifyBag {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  svg {
-    font-size: 1.2rem;
-    color: #0070c9;
-  }
-
-  .priceWrapper {
-    width: 100%;
     margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  a {
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #0070c9;
-  }
-  a:hover {
-    text-decoration: underline;
+    margin-bottom: 5rem;
+    .flowersImg {
+      height: 50rem;
+      width: auto;
+    }
+    .productDescription {
+      max-width: 30%;
+      margin-left: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      h1 {
+        color: rgb(20, 60, 65);
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 2rem;
+      }
+      .description {
+        margin-top: 1rem;
+        color: #515154;
+        font-size: 1rem;
+        text-align: justify;
+      }
+      .price {
+        color: rgb(20, 60, 65);
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+    .modifyBag {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      font-size: 1.2rem;
+      color: #0070c9;
+    }
+
+    .priceWrapper {
+      width: 100%;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    a {
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #0070c9;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 }
