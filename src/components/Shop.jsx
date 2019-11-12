@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
-import Footer from './Footer';
 import dataArr from '../utils/data';
 import {
   birthday, love, decoration, fastdelivery, yellow, red, orange, pink, under15, between15and40, over40,
@@ -257,8 +256,6 @@ class Shop extends React.Component {
             />
           ))}
         </div>
-        <Footer />
-
       </div>
 
     );

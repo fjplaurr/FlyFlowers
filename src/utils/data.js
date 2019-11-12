@@ -1,4 +1,6 @@
-import { birthday, love, decoration, fastdelivery } from './consts';
+import {
+  birthday, love, decoration, fastdelivery,
+} from './consts';
 
 function importAll(r) {
   const images = [];

@@ -10,7 +10,6 @@ body,
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  max-width: 1366px;
 }
 
 h1,

@@ -5,7 +5,6 @@ import { GoChevronRight, GoHome } from 'react-icons/go';
 import { FiTruck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import './Shop.scss';
-import Footer from './Footer';
 import ProductCard from './ProductCard';
 import coverPage from '../images/coverPage.jpg';
 import winterBouq from '../images/winterBouq.jpg';
@@ -141,7 +140,6 @@ function Home() {
           </Link>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

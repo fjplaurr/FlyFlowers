@@ -9,10 +9,12 @@ import Shop from './components/Shop';
 import Empty from './components/Empty';
 import NotFound from './components/NotFound';
 import SingleProduct from './components/SingleProduct';
+import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { createBrowserHistory } from "history";
+
 
 const history = createBrowserHistory();
 
@@ -46,6 +48,7 @@ const routing = (
           />
           <Route component={NotFound} />
         </Switch>
+        <Footer />
       </>
     </Router>
   </Provider>
