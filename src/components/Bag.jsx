@@ -6,9 +6,9 @@ import ProductBag from './ProductBag';
 import './Bag.scss';
 
 function Bag(props) {
-  const { productId } = props;
+  const { bag } = props;
   const productsBagArr = dataArr.map((x) => {
-    if (productId.includes(x.id)) {
+    if (bag.length > 0 && bag.findIndex((product) => product.id === x.id) !== -1) {
       return (
         <ProductBag
           url={x.url}
@@ -36,12 +36,12 @@ function Bag(props) {
 
 function mapStateToProps(state) {
   return {
-    productId: state.productId,
+    bag: state.bag,
   };
 }
 
 Bag.propTypes = {
-  productId: PropTypes.string.isRequired,
+  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired }).isRequired).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);

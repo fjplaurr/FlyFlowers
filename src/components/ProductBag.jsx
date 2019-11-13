@@ -1,10 +1,9 @@
 import React from 'react';
-import { GoChevronRight } from 'react-icons/go';
 import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 import './ProductBag.scss';
-
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import addToBag from '../redux/actions/addToBag';
 
 class ProductBag extends React.Component {
   constructor(props) {
@@ -17,16 +16,17 @@ class ProductBag extends React.Component {
   }
 
   reduceQuantity() {
-    console.log('click')
+
   }
 
   increaseQuantity() {
-
+    const { id, addProductToBag } = this.props;
+    addProductToBag(id);
   }
 
   render() {
     const {
-      price, url, shortDescription, id, title
+      url, shortDescription, id, bag,
     } = this.props;
     return (
       <div className="productBag" >
@@ -44,7 +44,7 @@ class ProductBag extends React.Component {
             >
               <FiMinusCircle />
             </button>
-            <span className="quantity">4</span>
+            <span className="quantity">{bag.find((product) => product.id === id).quantity}</span>
             <button
               type="button"
               onClick={this.increaseQuantity}
@@ -58,11 +58,22 @@ class ProductBag extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    bag: state.bag,
+  };
+}
+
+const mapDispatchToProps = {
+  addProductToBag: addToBag,
+};
+
 ProductBag.propTypes = {
   price: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired }).isRequired).isRequired,
 };
 
-export default connect(null, null)(ProductBag);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductBag);

@@ -1,12 +1,8 @@
 import { createStore, combineReducers } from 'redux';
-import price from './reducers/price';
-import picture from './reducers/picture';
-import productId from './reducers/productId';
+import bag from './reducers/bag';
 
 const reducer = combineReducers({
-  price,
-  picture,
-  productId,
+  bag,
 });
 
 // eslint-disable-next-line max-len

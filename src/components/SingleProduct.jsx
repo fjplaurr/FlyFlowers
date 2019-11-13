@@ -5,14 +5,14 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import dataArr from '../utils/data';
-import addIdToBag from '../redux/actions/addIdToBag';
+import addToBag from '../redux/actions/addToBag';
 
 function SingleProduct(props) {
   const { id } = useParams();
   const uniqueProduct = dataArr.find((product) => product.id === id);
-  const { history, idToBag } = props;
+  const { history, addProductToBag } = props;
   const handleClick = () => {
-    idToBag(id);
+    addProductToBag(id);
     history.push('/bag');
   };
   return (
@@ -46,14 +46,14 @@ function SingleProduct(props) {
 }
 
 SingleProduct.propTypes = {
-  idToBag: PropTypes.func.isRequired,
+  addProductToBag: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
 const mapDispatchToProps = {
-  idToBag: addIdToBag,
+  addProductToBag: addToBag,
 };
 
 export default connect(null, mapDispatchToProps)(SingleProduct);

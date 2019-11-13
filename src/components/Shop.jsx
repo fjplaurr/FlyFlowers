@@ -147,8 +147,6 @@ class Shop extends React.Component {
                   data-search-value="birthday"
                   data-search-key="occasion"
                   id="birthdayOccasion"
-                  data-search-key="occasion"
-                  data-search-value="birthday"
                   onChange={this.handleFilter}
                   checked={birthdayIsActive}
                 />
