@@ -4,19 +4,18 @@ import './ProductBag.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import addToBag from '../redux/actions/addToBag';
+import decreaseFromBag from '../redux/actions/decreaseFromBag';
 
 class ProductBag extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      totalPrice: 0,
-    }
-    this.reduceQuantity = this.reduceQuantity.bind(this);
+    this.decreaseQuantity = this.decreaseQuantity.bind(this);
     this.increaseQuantity = this.increaseQuantity.bind(this);
   }
 
-  reduceQuantity() {
-
+  decreaseQuantity() {
+    const { id, decreaseProductFromBag } = this.props;
+    decreaseProductFromBag(id);
   }
 
   increaseQuantity() {
@@ -26,10 +25,10 @@ class ProductBag extends React.Component {
 
   render() {
     const {
-      url, shortDescription, id, bag,
+      url, shortDescription, id, bag, price
     } = this.props;
     return (
-      <div className="productBag" >
+      <div className="productBag">
         <div
           className="imageWrapper"
           style={{ backgroundImage: `url(${url})` }}
@@ -40,7 +39,7 @@ class ProductBag extends React.Component {
             <p>Quantity:</p>
             <button
               type="button"
-              onClick={this.reduceQuantity}
+              onClick={this.decreaseQuantity}
             >
               <FiMinusCircle />
             </button>
@@ -53,6 +52,7 @@ class ProductBag extends React.Component {
             </button>
           </div>
         </div>
+        <div className="priceWrapper">{price}</div>
       </div>
     );
   }
@@ -66,6 +66,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   addProductToBag: addToBag,
+  decreaseProductFromBag: decreaseFromBag,
 };
 
 ProductBag.propTypes = {

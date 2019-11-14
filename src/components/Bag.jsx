@@ -29,7 +29,7 @@ function Bag(props) {
   return (
     <div className="bag">
       <h1>Your bag</h1>
-      <div>{productsBagArr}</div>
+      {productsBagArr}
     </div>
   );
 }
