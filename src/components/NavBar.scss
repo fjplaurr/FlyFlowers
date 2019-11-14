@@ -18,6 +18,11 @@
     align-items: center;
   }
   .logoNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
     .companyLogo:hover {
       filter: invert(79%) sepia(10%) saturate(0%) hue-rotate(47deg) brightness(89%) contrast(91%);
     }
@@ -52,6 +57,7 @@
   }
   .navBar {
     .linksNavBar {
+      margin-right: auto;
       position: absolute;
       flex-direction: column;
       height: 0;

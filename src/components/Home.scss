@@ -7,161 +7,176 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.caption {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  bottom: 60%;
-  right: 0;
-  left: 0;
-}
-.collectionHeader {
-  margin: 2rem 0px 0.5rem 0px;
-  font-weight: bold;
-  color: #143c41;
-  font-size: 1.7rem;
-}
-.header {
-  position: relative; /*Needed for caption below*/
-  flex-direction: row;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  .captionHeader {
-    display: flex; 
-    flex-direction: column;
+  .gridWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    a {
-      color: rgb(0, 112, 201);
-      font-size: 1.5rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
   }
-  .coverPage {
-    height: 720px;
-    width: 100%;
-    object-fit: cover;
-    object-position: 0% 0%;
+  .subWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
-  h1 {
-    color: white;
-    font-size: 3.5rem;
-    font-weight: normal;
-    letter-spacing: 5px;
-    line-height: 5rem;
-    text-align: left;
-  }
-}
 
-.gridProducts {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-  .productCollection {
-    margin-top: 5rem;
-    min-width: 100%;
-    position: relative; /*Needed for caption below*/
-    .springBouquet {
-      object-fit: cover;
-      object-position: 0% 60%;
-      width: 100%;
-      height: 500px;
-    }
-    .winterBouquet {
-      object-fit: cover;
-      object-position: 0% 0%;
-      width: 100%;
-      height: 500px;
-    }
-    h1 {
-      color: rgb(17, 17, 17);
-      font-size: 3rem;
-      font-weight: bold;
-      line-height: 3rem;
-      letter-spacing: 5px;
-    }
-    h2 {
-      color: rgb(17, 17, 17);
-      font-size: 1.7rem;
-      letter-spacing: 2px;
-    }
-    a {
-      color: rgb(0, 112, 201);
-      font-size: 1.5rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  }
-  .decorationCollection {
-    top: 5%;
-    bottom: auto;
-    left: 0;
-    right: 0;
-    a,
-    h1,
-    h2 {
-      color: white;
-    }
-  }
-}
-
-.trends {
-  margin: 5rem 0;
-}
-
-.services {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-  a {
-    width: 10rem;
-    margin: 0 3rem;
+  .caption {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  svg {
-    color: #333333;
-    font-size: 3.5rem;
-  }
-  p {
-    color: #515154;
-    margin-top: 1rem;
-    font-size: 1rem;
+    position: absolute;
     text-align: center;
+    top: 0;
+    bottom: 60%;
+    right: 0;
+    left: 0;
   }
-}
+  .collectionHeader {
+    margin: 2rem 0px 0.5rem 0px;
+    font-weight: bold;
+    color: #143c41;
+    font-size: 1.7rem;
+  }
+  .header {
+    position: relative; /*Needed for caption below*/
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .captionHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      a {
+        color: rgb(0, 112, 201);
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+    .coverPage {
+      height: 720px;
+      width: 100%;
+      object-fit: cover;
+      object-position: 0% 0%;
+    }
+    h1 {
+      color: white;
+      font-size: 3.5rem;
+      font-weight: normal;
+      letter-spacing: 5px;
+      line-height: 5rem;
+      text-align: left;
+    }
+  }
 
-.colorfulCollection {
-  margin: 5rem 0;
+  .gridProducts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    .productCollection {
+      margin-top: 5rem;
+      min-width: 100%;
+      position: relative; /*Needed for caption below*/
+      .springBouquet {
+        object-fit: cover;
+        object-position: 0% 60%;
+        width: 100%;
+        height: 500px;
+      }
+      .winterBouquet {
+        object-fit: cover;
+        object-position: 0% 0%;
+        width: 100%;
+        height: 500px;
+      }
+      h1 {
+        color: rgb(17, 17, 17);
+        font-size: 3rem;
+        font-weight: bold;
+        line-height: 3rem;
+        letter-spacing: 5px;
+      }
+      h2 {
+        color: rgb(17, 17, 17);
+        font-size: 1.7rem;
+        letter-spacing: 2px;
+      }
+      a {
+        color: rgb(0, 112, 201);
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+    .decorationCollection {
+      top: 5%;
+      bottom: auto;
+      left: 0;
+      right: 0;
+      a,
+      h1,
+      h2 {
+        color: white;
+      }
+    }
+  }
+
+  .trends {
+    margin: 5rem 0;
+  }
+
+  .services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    a {
+      width: 10rem;
+      margin: 0 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      color: #333333;
+      font-size: 3.5rem;
+    }
+    p {
+      color: #515154;
+      margin-top: 1rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  .colorfulCollection {
+    margin: 5rem 0;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -175,7 +190,27 @@
         height: 1.2rem;
       }
     }
-
+    .header {
+      .coverPage {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        object-position: 0% 0%;
+      }
+      .captionHeader {
+        h1 {
+          color: white;
+          font-size: 1.4rem;
+          font-weight: normal;
+          letter-spacing: 5px;
+          line-height: 1.8rem;
+          text-align: left;
+        }
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
     .gridProducts {
       .productCollection {
         h1 {
@@ -188,6 +223,9 @@
           font-size: 0.9rem;
         }
       }
+    }
+    .colorfulCollection {
+      margin: 0rem;
     }
   }
 }

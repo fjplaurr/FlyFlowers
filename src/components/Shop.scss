@@ -1,137 +1,114 @@
-.gridWrapper {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.subWrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.filterForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.filtersTitle {
-  margin: 2rem 0;
-  font-weight: bold;
-  color: rgb(20, 60, 65);
-  font-size: 2rem;
-}
-
-.FilterTitle {
-  align-self: center;
-  font-weight: bold;
-  color: rgb(20, 60, 65);
-  font-size: 1.7rem;
-}
-
-.filterWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 0 2rem;
-}
-
-.filters {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-}
-
-input[type="checkbox"] + label,
-input[type="radio"] + label {
-  display: block;
-  margin: 0.2rem;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  display: none;
-}
-
-input[type="checkbox"] + label:before,
-input[type="radio"] + label:before {
-  content: "\2714";
-  border: 0.1rem solid #000;
-  border-radius: 0.2rem;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  padding-left: 0.2rem;
-  padding-bottom: 0.3rem;
-  vertical-align: bottom;
-  color: transparent;
-  transition: 0.2s;
-}
-
-input[type="checkbox"] + label:active:before,
-input[type="radio"] + label:active:before {
-  transform: scale(0);
-}
-
-input[type="checkbox"]:checked + label:before,
-input[type="radio"]:checked + label:before {
-  background-color: #143c41;
-  border-color: #143c41;
-  color: white;
-}
-
-input[data-search-value="red"] + label:before {
-  border: none;
-  background-color: rgb(200, 50, 50);
-  border: 0.1rem solid transparent;
-}
-
-input[data-search-value="red"]:checked + label:before {
-  border: 0.1rem solid rgb(200, 50, 50);
-  background-color: rgb(200, 50, 50);
-}
-
-input[data-search-value="pink"] + label:before {
-  border: none;
-  background-color: rgb(180, 40, 195);
-  border: 0.1rem solid transparent;
-}
-
-input[data-search-value="pink"]:checked + label:before {
-  border: 0.1rem solid rgb(180, 40, 195);
-  background-color: rgb(180, 40, 195);
-}
-
-input[data-search-value="orange"] + label:before {
-  border: none;
-  background-color: rgb(240, 160, 40);
-  border: 0.1rem solid transparent;
-}
-
-input[data-search-value="orange"]:checked + label:before {
-  border: 0.1rem solid rgb(240, 160, 40);
-  background-color: rgb(240, 160, 40);
-}
-
-input[data-search-value="yellow"] + label:before {
-  border: none;
-  background-color: rgb(200, 200, 50);
-  border: 0.1rem solid transparent;
-}
-
-input[data-search-value="yellow"]:checked + label:before {
-  border: 0.1rem solid rgb(200, 200, 50);
-  background-color: rgb(200, 200, 50);
+.shop {
+  margin-bottom: auto;
+  .gridWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .filterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .filtersTitle {
+    margin: 2rem 0;
+    font-weight: bold;
+    color: rgb(20, 60, 65);
+    font-size: 2rem;
+  }
+  .FilterTitle {
+    align-self: center;
+    font-weight: bold;
+    color: rgb(20, 60, 65);
+    font-size: 1.7rem;
+  }
+  .filterWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 2rem;
+  }
+  .filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    display: block;
+    margin: 0.2rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="checkbox"] + label:before,
+  input[type="radio"] + label:before {
+    content: "\2714";
+    border: 0.1rem solid #000;
+    border-radius: 0.2rem;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    padding-left: 0.2rem;
+    padding-bottom: 0.3rem;
+    vertical-align: bottom;
+    color: transparent;
+    transition: 0.2s;
+  }
+  input[type="checkbox"] + label:active:before,
+  input[type="radio"] + label:active:before {
+    transform: scale(0);
+  }
+  input[type="checkbox"]:checked + label:before,
+  input[type="radio"]:checked + label:before {
+    background-color: #143c41;
+    border-color: #143c41;
+    color: white;
+  }
+  input[data-search-value="red"] + label:before {
+    border: none;
+    background-color: rgb(200, 50, 50);
+    border: 0.1rem solid transparent;
+  }
+  input[data-search-value="red"]:checked + label:before {
+    border: 0.1rem solid rgb(200, 50, 50);
+    background-color: rgb(200, 50, 50);
+  }
+  input[data-search-value="pink"] + label:before {
+    border: none;
+    background-color: rgb(180, 40, 195);
+    border: 0.1rem solid transparent;
+  }
+  input[data-search-value="pink"]:checked + label:before {
+    border: 0.1rem solid rgb(180, 40, 195);
+    background-color: rgb(180, 40, 195);
+  }
+  input[data-search-value="orange"] + label:before {
+    border: none;
+    background-color: rgb(240, 160, 40);
+    border: 0.1rem solid transparent;
+  }
+  input[data-search-value="orange"]:checked + label:before {
+    border: 0.1rem solid rgb(240, 160, 40);
+    background-color: rgb(240, 160, 40);
+  }
+  input[data-search-value="yellow"] + label:before {
+    border: none;
+    background-color: rgb(200, 200, 50);
+    border: 0.1rem solid transparent;
+  }
+  input[data-search-value="yellow"]:checked + label:before {
+    border: 0.1rem solid rgb(200, 200, 50);
+    background-color: rgb(200, 200, 50);
+  }
 }

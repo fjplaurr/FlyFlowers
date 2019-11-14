@@ -105,7 +105,7 @@ class Shop extends React.Component {
       pinkIsActive, yellowIsActive, orangeIsActive, under15isActive, between15and40isActive, over40isActive,
     } = this.state;
     return (
-      <div>
+      <div className="shop">
         <form className="filterForm">
           <h1 className="filtersTitle">Search your flowers</h1>
           <div className="filters">

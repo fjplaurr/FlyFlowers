@@ -29,7 +29,9 @@ function Bag(props) {
   return (
     <div className="bag">
       <h1>Your bag</h1>
+      <span className="price">Price</span>
       {productsBagArr}
+      <span className="total">Total: </span>
     </div>
   );
 }

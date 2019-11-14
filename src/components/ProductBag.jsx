@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import addToBag from '../redux/actions/addToBag';
 import decreaseFromBag from '../redux/actions/decreaseFromBag';
+import increaseBilling from '../redux/actions/increaseBilling';
+import decreaseBilling from '../redux/actions/decreaseBilling';
 
 class ProductBag extends React.Component {
   constructor(props) {
@@ -14,18 +16,20 @@ class ProductBag extends React.Component {
   }
 
   decreaseQuantity() {
-    const { id, decreaseProductFromBag } = this.props;
+    const { id, decreaseProductFromBag, reduceBilling, price } = this.props;
     decreaseProductFromBag(id);
+    reduceBilling(price);
   }
 
   increaseQuantity() {
-    const { id, addProductToBag } = this.props;
+    const { id, addProductToBag, price, incrBilling } = this.props;
     addProductToBag(id);
+    incrBilling(price);
   }
 
   render() {
     const {
-      url, shortDescription, id, bag, price
+      url, shortDescription, id, bag, price,
     } = this.props;
     return (
       <div className="productBag">
@@ -52,7 +56,7 @@ class ProductBag extends React.Component {
             </button>
           </div>
         </div>
-        <div className="priceWrapper">{price}</div>
+        <div className="priceWrapper">{`EUR ${price.toFixed(2)}`}</div>
       </div>
     );
   }
@@ -67,6 +71,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   addProductToBag: addToBag,
   decreaseProductFromBag: decreaseFromBag,
+  reduceBilling: decreaseBilling,
+  incrBilling: increaseBilling,
 };
 
 ProductBag.propTypes = {

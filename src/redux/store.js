@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import bag from './reducers/bag';
+import billing from './reducers/billing';
 
 const reducer = combineReducers({
   bag,
+  billing,
 });
 
 // eslint-disable-next-line max-len

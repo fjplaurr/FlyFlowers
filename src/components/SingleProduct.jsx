@@ -6,13 +6,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import dataArr from '../utils/data';
 import addToBag from '../redux/actions/addToBag';
+import increaseBilling from '../redux/actions/increaseBilling';
 
 function SingleProduct(props) {
   const { id } = useParams();
   const uniqueProduct = dataArr.find((product) => product.id === id);
-  const { history, addProductToBag } = props;
+  const { history, addProductToBag, incrBilling } = props;
   const handleClick = () => {
     addProductToBag(id);
+    incrBilling(uniqueProduct.price);
     history.push('/bag');
   };
   return (
@@ -54,6 +56,7 @@ SingleProduct.propTypes = {
 
 const mapDispatchToProps = {
   addProductToBag: addToBag,
+  incrBilling: increaseBilling,
 };
 
 export default connect(null, mapDispatchToProps)(SingleProduct);

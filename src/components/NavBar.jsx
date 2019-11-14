@@ -77,6 +77,7 @@ class NavBar extends React.Component {
           </Link>
           <Link to="/bag">
             <FaShoppingBag />
+            {' Bag'}
           </Link>
         </div>
       </nav>

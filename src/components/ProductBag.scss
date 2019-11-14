@@ -5,14 +5,14 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
   width: 100%;
 
   .quantityWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;    
+    flex-direction: row;
   }
   .bouquetImg {
     height: 15rem;
@@ -26,19 +26,25 @@
     background-position: center;
     margin-right: 2rem;
   }
-  .infoWrapper{
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: flex-start;
-      height: 100%;
-  } 
-  button{
+  .infoWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+  button {
     background-color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
     cursor: pointer;
   }
-  .priceWrapper{
+  button:hover{
+    color:#b3b3b3;
+  }
+  .priceWrapper {
     margin-left: auto;
   }
 }
