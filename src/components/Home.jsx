@@ -8,7 +8,7 @@ import './Shop.scss';
 import ProductCard from './ProductCard';
 import coverPage from '../images/coverPage.jpg';
 import winterBouq from '../images/winterBouq.jpg';
-import springBouq from '../images/springBouq.jpg';
+import colorfulImg from '../images/colorfulImg.jpg';
 import dataArr from '../utils/data';
 
 function Home() {
@@ -59,14 +59,11 @@ function Home() {
         />
         <div className="captionHeader">
           <h1>
-            Something special.
+            Something special for
             <br />
-            Someone unique.
+            Someone unique
           </h1>
-          <Link to="/shop">
-            Explore
-            <GoChevronRight />
-          </Link>
+          <h2>Flowers that inspire</h2>
         </div>
       </div>
 
@@ -74,8 +71,8 @@ function Home() {
         <article className="colorfulCollection">
           <div className="productCollection">
             <img
-              src={springBouq}
-              className="springBouquet"
+              src={colorfulImg}
+              className="colorfulCollImg"
               alt="spring Bouquet"
             />
             <div className="caption">

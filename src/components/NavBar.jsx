@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
-import { FaShoppingBag, FaAlignRight } from 'react-icons/fa';
-import flyFlowersLogo from '../images/flyFlowersLogo.svg';
+import { FaAlignRight } from 'react-icons/fa';
+import { AiOutlineShopping } from 'react-icons/ai';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -24,11 +24,9 @@ class NavBar extends React.Component {
       <nav className={open ? 'navBar open' : 'navBar'}>
         <div className="logoNavBar">
           <Link to="/">
-            <img
-              className="companyLogo"
-              src={flyFlowersLogo}
-              alt="Company logo"
-            />
+            Fly Flowers
+            <div className="logoPink" />
+            <div className="logoGreen" />
           </Link>
           <button
             type="button"
@@ -75,9 +73,8 @@ class NavBar extends React.Component {
           >
             Fast Delivery
           </Link>
-          <Link to="/bag">
-            <FaShoppingBag />
-            {' Bag'}
+          <Link to="/bag" className="bagWrapper">
+            <AiOutlineShopping />
           </Link>
         </div>
       </nav>

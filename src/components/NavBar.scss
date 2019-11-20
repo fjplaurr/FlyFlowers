@@ -1,9 +1,13 @@
 .navBar {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   opacity: 95%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: black;
+  background-color: #323232;
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -11,12 +15,13 @@
   white-space: nowrap;
   height: auto;
   .linksNavBar {
-    margin-right: auto;
+    font-weight: 500;
     font-size: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-right: 162px;
   }
   .logoNavBar {
     display: flex;
@@ -24,8 +29,28 @@
     justify-content: center;
     align-items: center;
     margin-right: auto;
-    .companyLogo:hover {
-      filter: invert(79%) sepia(10%) saturate(0%) hue-rotate(47deg) brightness(89%) contrast(91%);
+    margin-left: 162px;
+    font-weight: 700;
+    a {
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+    }
+    .logoGreen {
+      margin-left: 2px;
+      background: #5bcb49;
+      border-radius: 21px;
+      transform: rotate(24.91deg);
+      height: 12px;
+      width: 6px;
+    }
+    .logoPink {
+      margin-left: 5px;
+      background: #ff4fe3;
+      border-radius: 21px;
+      transform: rotate(24.91deg);
+      height: 12px;
+      width: 6px;
     }
   }
   a {
@@ -34,6 +59,12 @@
   }
   :hover {
     color: #b3b3b3;
+  }
+  .bagWrapper {
+    font-size: 22px;
+    svg {
+      stroke-width: 20px;
+    }
   }
 }
 

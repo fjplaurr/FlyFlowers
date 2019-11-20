@@ -70,18 +70,25 @@
       }
     }
     .coverPage {
-      height: 720px;
+      height: 900px;
       width: 100%;
       object-fit: cover;
       object-position: 0% 0%;
     }
     h1 {
       color: white;
-      font-size: 3.5rem;
+      font-size: 4.5rem;
       font-weight: normal;
-      letter-spacing: 5px;
       line-height: 5rem;
-      text-align: left;
+      text-align: center;
+    }
+    h2 {
+      font-family: "Playfair Display";
+      color: white;
+      font-size: 2.25rem;
+      font-weight: normal;
+      line-height: 5rem;
+      text-align: center;
     }
   }
 
@@ -96,7 +103,7 @@
       margin-top: 5rem;
       min-width: 100%;
       position: relative; /*Needed for caption below*/
-      .springBouquet {
+      .colorfulCollImg {
         object-fit: cover;
         object-position: 0% 60%;
         width: 100%;
@@ -113,12 +120,10 @@
         font-size: 3rem;
         font-weight: bold;
         line-height: 3rem;
-        letter-spacing: 5px;
       }
       h2 {
         color: rgb(17, 17, 17);
         font-size: 1.7rem;
-        letter-spacing: 2px;
       }
       a {
         color: rgb(0, 112, 201);
@@ -175,7 +180,7 @@
     }
   }
   .colorfulCollection {
-    margin: 5rem 0;
+    width: 100%;
   }
 }
 
@@ -202,7 +207,6 @@
           color: white;
           font-size: 1.4rem;
           font-weight: normal;
-          letter-spacing: 5px;
           line-height: 1.8rem;
           text-align: left;
         }
