@@ -107,8 +107,60 @@ class Shop extends React.Component {
     return (
       <div className="shop">
         <form className="filterForm">
-          <h1 className="filtersTitle">Search your flowers</h1>
           <div className="filters">
+            <div className="filterWrapper">
+              <h2 className="FilterTitle">Color</h2>
+              <div className="colors">
+                <div className="occasionRangeWrapper">
+                  <input
+                    className="colorInput"
+                    type="checkbox"
+                    data-search-value="red"
+                    id="color1"
+                    data-search-key="color"
+                    onChange={this.handleFilter}
+                    checked={redIsActive}
+                  />
+                  <label htmlFor="color1" aria-label="Filter by red color" />
+                </div>
+                <div className="occasionRangeWrapper">
+                  <input
+                    className="colorInput"
+                    type="checkbox"
+                    data-search-value="yellow"
+                    id="color4"
+                    data-search-key="color"
+                    onChange={this.handleFilter}
+                    checked={yellowIsActive}
+                  />
+                  <label htmlFor="color4" aria-label="Filter by yellow color" />
+                </div>
+                <div className="occasionRangeWrapper">
+                  <input
+                    className="colorInput"
+                    type="checkbox"
+                    data-search-value="pink"
+                    id="color3"
+                    data-search-key="color"
+                    onChange={this.handleFilter}
+                    checked={pinkIsActive}
+                  />
+                  <label htmlFor="color3" aria-label="Filter by pink color" />
+                </div>
+                <div className="occasionRangeWrapper">
+                  <input
+                    className="colorInput"
+                    type="checkbox"
+                    data-search-value="orange"
+                    id="color5"
+                    data-search-key="color"
+                    onChange={this.handleFilter}
+                    checked={orangeIsActive}
+                  />
+                </div>
+                <label htmlFor="color5" aria-label="Filter by orange color" />
+              </div>
+            </div>
             <div className="filterWrapper">
               <h2 className="FilterTitle">Price</h2>
               <input
@@ -175,57 +227,7 @@ class Shop extends React.Component {
                 <label htmlFor="decorationOccasion">Decoration</label>
               </div>
             </div>
-            <div className="filterWrapper">
-              <h2 className="FilterTitle">Color</h2>
-              <div className="occasionRangeWrapper">
-                <input
-                  className="colorInput"
-                  type="checkbox"
-                  data-search-value="red"
-                  id="color1"
-                  data-search-key="color"
-                  onChange={this.handleFilter}
-                  checked={redIsActive}
-                />
-                <label htmlFor="color1" aria-label="Filter by red color" />
-              </div>
-              <div className="occasionRangeWrapper">
-                <input
-                  className="colorInput"
-                  type="checkbox"
-                  data-search-value="pink"
-                  id="color3"
-                  data-search-key="color"
-                  onChange={this.handleFilter}
-                  checked={pinkIsActive}
-                />
-                <label htmlFor="color3" aria-label="Filter by pink color" />
-              </div>
-              <div className="occasionRangeWrapper">
-                <input
-                  className="colorInput"
-                  type="checkbox"
-                  data-search-value="yellow"
-                  id="color4"
-                  data-search-key="color"
-                  onChange={this.handleFilter}
-                  checked={yellowIsActive}
-                />
-                <label htmlFor="color4" aria-label="Filter by yellow color" />
-              </div>
-              <div className="occasionRangeWrapper">
-                <input
-                  className="colorInput"
-                  type="checkbox"
-                  data-search-value="orange"
-                  id="color5"
-                  data-search-key="color"
-                  onChange={this.handleFilter}
-                  checked={orangeIsActive}
-                />
-                <label htmlFor="color5" aria-label="Filter by orange color" />
-              </div>
-            </div>
+
           </div>
         </form>
         <div className="gridWrapper">

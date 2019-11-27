@@ -1,5 +1,13 @@
 .shop {
+  width: 100vw;
+  max-width: 1920px;
   margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   .gridWrapper {
     display: flex;
     flex-direction: row;
@@ -13,18 +21,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .filtersTitle {
-    margin: 2rem 0;
-    font-weight: bold;
-    color: rgb(20, 60, 65);
-    font-size: 2rem;
+    position: sticky;
+    top: 5%;
   }
   .FilterTitle {
-    align-self: center;
-    font-weight: bold;
-    color: rgb(20, 60, 65);
-    font-size: 1.7rem;
+    font-weight: 600;
+    color: #222222;
+    font-size: 1rem;
+  }
+  .colors{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
   }
   .filterWrapper {
     display: flex;
@@ -35,10 +44,9 @@
   }
   .filters {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
-    width: 100%;
   }
   input[type="checkbox"] + label,
   input[type="radio"] + label {
