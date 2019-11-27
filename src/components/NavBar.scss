@@ -1,5 +1,4 @@
 .navBar {
-  max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -14,6 +13,14 @@
   align-items: center;
   white-space: nowrap;
   height: auto;
+  .navWrapper {
+    width: 100%;
+    display: flex;
+    max-width: 1920px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .linksNavBar {
     font-weight: 500;
     font-size: 1rem;
@@ -21,7 +28,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-right: 162px;
+    margin-right: 10rem;
   }
   .logoNavBar {
     display: flex;
@@ -29,7 +36,7 @@
     justify-content: center;
     align-items: center;
     margin-right: auto;
-    margin-left: 162px;
+    margin-left: 10rem;
     font-weight: 700;
     a {
       display: flex;
@@ -55,7 +62,7 @@
   }
   a {
     color: white;
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
   }
   :hover {
     color: #b3b3b3;

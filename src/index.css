@@ -8,9 +8,7 @@ body,
 #root {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin: auto;
-  min-height: 100vh;
 }
 
 h1 {

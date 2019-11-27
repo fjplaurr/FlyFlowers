@@ -1,60 +1,62 @@
+.productCard {
+  margin: 1rem 2rem;
+
+  height: 500px;
+  width: 400px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
-  padding: 0.8rem;
-  height: 26rem;
+  height: 100%;
+  width: 100%;
+
   cursor: pointer;
   .infoProduct {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
     .modifyBag {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       white-space: nowrap;
-      font-size: 1.2rem;
-      color: #0070c9;
+      font-size: 1.1rem;
+      color: #2e7322;
     }
     .modifyBag:hover {
       text-decoration: underline;
     }
     svg {
-      font-size: 1.2rem;
-      color: #0070c9;
+      font-size: 1.1rem;
+      color: #2e7322;
     }
   }
   .price {
-    color: #515154;
-    font-size: 1rem;
+    margin: 1rem 0;
+    color: #4d4d4d;
+    font-size: 1.5rem;
     text-align: left;
+    font-weight: 700;
   }
   .description {
-    margin-bottom: 1rem;
-    color: #515154;
-    text-align: left;
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 1.1rem;
   }
   .imageWrapper {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     margin-bottom: 1rem;
   }
 }
 
 .card:hover {
-  box-shadow: 0 7px 10px rgba(3, 42, 60, 0.25), 0 5px 5px rgba(3, 42, 60, 0.22), 0 -2px 5px rgba(3, 42, 60, 0.15);
-}
-
-.priceBag {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  box-shadow: 0 1px 5px rgba(3, 42, 60, 0.25), 0 5px 5px rgba(3, 42, 60, 0.22), 0 -2px 5px rgba(3, 42, 60, 0.15);
 }

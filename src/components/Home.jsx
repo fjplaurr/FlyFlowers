@@ -1,15 +1,15 @@
 import React from 'react';
 import './Home.scss';
-import { FaBirthdayCake, FaHeart } from 'react-icons/fa';
-import { GoChevronRight, GoHome } from 'react-icons/go';
-import { FiTruck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import './Shop.scss';
 import ProductCard from './ProductCard';
 import coverPage from '../images/coverPage.jpg';
-import winterBouq from '../images/winterBouq.jpg';
+import lightColorImg from '../images/lightColorImg.jpg';
 import colorfulImg from '../images/colorfulImg.jpg';
 import dataArr from '../utils/data';
+import rocket from '../images/rocket.svg';
+import calendar from '../images/calendar.svg';
+import flower from '../images/flower.svg';
 
 function Home() {
   const lightCollection = dataArr.map((x) => {
@@ -50,7 +50,7 @@ function Home() {
   });
 
   return (
-    <div className="Home">
+    <div className="home">
       <div className="header">
         <img
           className="coverPage"
@@ -59,32 +59,49 @@ function Home() {
         />
         <div className="captionHeader">
           <h1>
-            Something special for
+            Something special
             <br />
-            Someone unique
+            for someone unique
           </h1>
-          <h2>Flowers that inspire</h2>
+          <h2>It's time to give smiles</h2>
         </div>
       </div>
-
+      <section className="features">
+        <div className="featureWrapper">
+          <img src={rocket} alt="fast delivery" />
+          <h3>Two-days delivery</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius. Aliquam commodo ullamcorper non odio facilisis viverra dolor.</p>
+        </div>
+        <div className="featureWrapper">
+          <img src={flower} alt="fresh flowers" />
+          <h3>Guaranteed fresh</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius.</p>
+        </div>
+        <div className="featureWrapper">
+          <img src={calendar} alt="precise delivery date" />
+          <h3>Precise delivery date</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem. Aliquam commodo ullamcorper non odio facilisis viverra dolor.</p>
+        </div>
+      </section>
       <div className="gridProducts">
         <article className="colorfulCollection">
           <div className="productCollection">
             <img
               src={colorfulImg}
-              className="colorfulCollImg"
+              className="colorfulImg"
               alt="spring Bouquet"
             />
             <div className="caption">
-              <h1>Colorful Collection.</h1>
-              <h2>Vivid colors that inspire.</h2>
+              <h1 className="colorfulTitle">Colorful Collection</h1>
+              <h2 className="colorfulSubTitle">Vivid colors that inspire</h2>
               <Link to="/shop">
-                Discover it
-                <GoChevronRight />
+                <button type="button">
+                  Discover it
+                </button>
               </Link>
             </div>
           </div>
-          <h2 className="collectionHeader">Trending Colorful Bouquets</h2>
+          <h2 className="collectionHeader">Best-selling Colorful Bouquets</h2>
           <div className="gridWrapper">
             {colorfulCollection}
             <div className="subWrapper" />
@@ -93,20 +110,21 @@ function Home() {
         <article className="lightCollection">
           <div className="productCollection">
             <img
-              src={winterBouq}
-              className="winterBouquet"
+              src={lightColorImg}
+              className="lightColorImg"
               alt="Winter Bouquet"
             />
             <div className="caption">
-              <h1>Light Collection.</h1>
-              <h2>Full of elegance.</h2>
+              <h1 className="lightTitle">Light Collection</h1>
+              <h2 className="lightSubTitle">Full of elegance</h2>
               <Link to="/shop">
-                Discover it
-                <GoChevronRight />
+                <button type="button">
+                  Discover it
+                </button>
               </Link>
             </div>
           </div>
-          <h2 className="collectionHeader">Trending Light Bouquets</h2>
+          <h2 className="collectionHeader">Best-selling Light Bouquets</h2>
           <div className="gridWrapper">
             {lightCollection}
             <div className="subWrapper" />
@@ -114,31 +132,7 @@ function Home() {
         </article>
 
       </div>
-      <section className="trends">
-        <h2 className="collectionHeader">Discover our trends</h2>
-        <div className="services">
-          <Link to="/shop?occasion=birthday">
-            <FaBirthdayCake />
-            <p>Birthday</p>
-            <p>An occasion to celebrate with colorful flowers.</p>
-          </Link>
-          <Link to="/shop?occasion=love">
-            <FaHeart />
-            <p>Love</p>
-            <p>Give something special to someone unique.</p>
-          </Link>
-          <Link to="/shop?occasion=decoration">
-            <GoHome />
-            <p>Decoration</p>
-            <p>Decorate your home, decorate your business.</p>
-          </Link>
-          <Link to="/shop?occasion=fastdelivery">
-            <FiTruck />
-            <p>Fast delivery</p>
-            <p>Products to be delivered the next day.</p>
-          </Link>
-        </div>
-      </section>
+
     </div>
   );
 }

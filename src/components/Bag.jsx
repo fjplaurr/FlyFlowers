@@ -43,7 +43,7 @@ function mapStateToProps(state) {
 }
 
 Bag.propTypes = {
-  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired }).isRequired).isRequired,
+  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number }).isRequired).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);

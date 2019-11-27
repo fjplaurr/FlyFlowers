@@ -6,7 +6,7 @@ import './ProductCard.scss';
 
 function ProductCard(props) {
   const {
-    price, url, shortDescription, id,
+    price, url, id, title,
   } = props;
   return (
     <Link
@@ -19,16 +19,14 @@ function ProductCard(props) {
           style={{ backgroundImage: `url(${url})` }}
         />
         <div className="infoProduct">
-          <p className="description">{shortDescription}</p>
-          <div className="priceBag">
-            <p className="price">
-              {`${price}€`}
-            </p>
-            <p className="modifyBag">
-              Add to bag
-              <GoChevronRight />
-            </p>
-          </div>
+          <p className="description">{title}</p>
+          <p className="price">
+            {`${price.toFixed(2)} €`}
+          </p>
+          <p className="modifyBag">
+            See it
+            <GoChevronRight />
+          </p>
         </div>
       </div>
     </Link>
@@ -38,8 +36,8 @@ function ProductCard(props) {
 ProductCard.propTypes = {
   price: PropTypes.number.isRequired,
   url: PropTypes.string.isRequired,
-  shortDescription: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default ProductCard;

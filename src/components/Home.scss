@@ -1,12 +1,8 @@
-.Home {
+.home {
+  width: 100vw;
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   .gridWrapper {
     display: flex;
     flex-direction: row;
@@ -23,7 +19,12 @@
     align-items: center;
   }
 
+  .lightCollection {
+    margin: 10rem 0;
+  }
+
   .caption {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,15 +32,18 @@
     position: absolute;
     text-align: center;
     top: 0;
-    bottom: 60%;
+    bottom: 0;
     right: 0;
     left: 0;
+    h1 {
+      margin-top: 6rem;
+    }
   }
   .collectionHeader {
-    margin: 2rem 0px 0.5rem 0px;
+    margin: 5rem 0;
     font-weight: bold;
-    color: #143c41;
-    font-size: 1.7rem;
+    color: #222222;
+    font-size: 2.2rem;
   }
   .header {
     position: relative; /*Needed for caption below*/
@@ -51,26 +55,15 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       width: 50%;
       position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
-      left: 0;
-      a {
-        color: rgb(0, 112, 201);
-        font-size: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
+      left: 120px;
     }
     .coverPage {
-      height: 900px;
       width: 100%;
       object-fit: cover;
       object-position: 0% 0%;
@@ -78,62 +71,59 @@
     h1 {
       color: white;
       font-size: 4.5rem;
-      font-weight: normal;
+      font-weight: 600;
       line-height: 5rem;
-      text-align: center;
+      text-align: left;
     }
     h2 {
-      font-family: "Playfair Display";
+      font-family: "Playfair Display", serif;
       color: white;
       font-size: 2.25rem;
       font-weight: normal;
       line-height: 5rem;
-      text-align: center;
+      text-align: left;
     }
   }
 
   .gridProducts {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
     .productCollection {
-      margin-top: 5rem;
-      min-width: 100%;
       position: relative; /*Needed for caption below*/
-      .colorfulCollImg {
-        object-fit: cover;
-        object-position: 0% 60%;
-        width: 100%;
-        height: 500px;
-      }
-      .winterBouquet {
+      .lightColorImg {
         object-fit: cover;
         object-position: 0% 0%;
+        filter: opacity(0.9);
         width: 100%;
-        height: 500px;
+      }
+      .colorfulImg {
+        filter: brightness(0.9);
+        width: 100%;
       }
       h1 {
-        color: rgb(17, 17, 17);
-        font-size: 3rem;
-        font-weight: bold;
+        color: white;
+        font-size: 4rem;
+        font-weight: 700;
         line-height: 3rem;
       }
+      h1.lightTitle,
+      h2.lightSubTitle {
+        color: black;
+      }
       h2 {
-        color: rgb(17, 17, 17);
-        font-size: 1.7rem;
+        color: white;
+        font-size: 2.2rem;
+        font-family: "Playfair Display", serif;
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 2.2rem;
       }
-      a {
-        color: rgb(0, 112, 201);
-        font-size: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-      a:hover {
-        text-decoration: underline;
+      button {
+        background: #2e7322;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        color: white;
+        padding: 10px 40px;
+        cursor: pointer;
+        font-size: 2.2rem;
       }
     }
     .decorationCollection {
@@ -149,10 +139,37 @@
     }
   }
 
-  .trends {
-    margin: 5rem 0;
+  .features {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10rem 0;
+    flex-wrap: wrap;
   }
 
+  .featureWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5rem;
+    img {
+      height: 10rem;
+    }
+    h3 {
+      font-weight: 400;
+      color: #2e7322;
+      font-size: 2.3rem;
+      margin: 1.5rem 0;
+    }
+    p {
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      max-width: 20rem;
+    }
+  }
   .services {
     display: flex;
     flex-direction: row;
@@ -185,7 +202,13 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .Home {
+  .home {
+    .featureWrapper {
+      margin: 0 0;
+    }
+    .featureWrapper:nth-child(2) {
+      margin: 5rem 0;
+    }
     .wrapperCoverPage {
       h1 {
         font-size: 1.4rem;

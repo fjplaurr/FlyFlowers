@@ -174,17 +174,6 @@ class Shop extends React.Component {
                 />
                 <label htmlFor="decorationOccasion">Decoration</label>
               </div>
-              <div className="occasionRangeWrapper">
-                <input
-                  type="checkbox"
-                  data-search-value="fastdelivery"
-                  data-search-key="occasion"
-                  id="fastdeliveryOccasion"
-                  onChange={this.handleFilter}
-                  checked={fastDeliveryIsActive}
-                />
-                <label htmlFor="fastdeliveryOccasion">Fast Delivery</label>
-              </div>
             </div>
             <div className="filterWrapper">
               <h2 className="FilterTitle">Color</h2>
