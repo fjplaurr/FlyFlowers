@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
-import { FaAlignRight } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { MdClose } from 'react-icons/md';
 import { AiOutlineShopping } from 'react-icons/ai';
 
 class NavBar extends React.Component {
@@ -21,29 +22,30 @@ class NavBar extends React.Component {
   render() {
     const { open } = this.state;
     return (
-      <nav className={open ? 'navBar open' : 'navBar'}>
+      <nav className="navBar">
         <div className="navWrapper">
+          <button
+            type="button"
+            className="navButton hideHighResolut"
+            onClick={this.toggle}
+          >
+            {open ? <MdClose /> : <GiHamburgerMenu />}
+          </button>
           <div className="logoNavBar">
             <Link to="/">
               Fly Flowers
               <div className="logoPink" />
               <div className="logoGreen" />
             </Link>
-            <button
-              type="button"
-              className="navButton hideHighResolut"
-              onClick={this.toggle}
-            >
-              <FaAlignRight />
-            </button>
           </div>
-          <div className={open ? 'linksNavBar open' : 'linksNavBar'}>
+          <div className={open ? 'linksNavBar open' : 'linksNavBar close'}>
             <Link
               to={{
                 pathname: '/empty',
                 search: '?occasion=birthday',
                 state: { params: 'occasion=birthday' },
               }}
+              onClick={this.toggle}
             >
               Birthday
             </Link>
@@ -53,6 +55,7 @@ class NavBar extends React.Component {
                 search: '?occasion=love',
                 state: { params: 'occasion=love' },
               }}
+              onClick={this.toggle}
             >
               Love
             </Link>
@@ -62,13 +65,14 @@ class NavBar extends React.Component {
                 search: '?occasion=decoration',
                 state: { params: 'occasion=decoration' },
               }}
+              onClick={this.toggle}
             >
               Decoration
             </Link>
-            <Link to="/bag" className="bagWrapper">
-              <AiOutlineShopping />
-            </Link>
           </div>
+          <Link to="/bag" className="bagWrapper">
+            <AiOutlineShopping />
+          </Link>
         </div>
       </nav>
     );

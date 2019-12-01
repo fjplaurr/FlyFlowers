@@ -2,11 +2,10 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  opacity: 95%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #323232;
+  background-color: #333333;
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -16,19 +15,19 @@
   .navWrapper {
     width: 100%;
     display: flex;
+    flex-direction: row;
     max-width: 1920px;
     align-items: center;
     justify-content: space-between;
   }
 
   .linksNavBar {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-right: 10rem;
   }
   .logoNavBar {
     display: flex;
@@ -36,8 +35,8 @@
     justify-content: center;
     align-items: center;
     margin-right: auto;
-    margin-left: 10rem;
-    font-weight: 700;
+    margin-left: 5rem;
+    font-weight: 600;
     a {
       display: flex;
       flex-direction: row;
@@ -61,7 +60,7 @@
     }
   }
   a {
-    color: white;
+    color: rgb(230, 230, 230);
     padding: 1rem 2rem;
   }
   :hover {
@@ -69,6 +68,7 @@
   }
   .bagWrapper {
     font-size: 22px;
+    margin-right: 5rem;
     svg {
       stroke-width: 20px;
     }
@@ -82,39 +82,58 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .logoNavBar {
+  .navButton {
+    background-color: #333333;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    .navButton {
-      position: absolute;
-      right: 5%;
-      height: 1.5rem;
-      width: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    svg {
+      fill: rgb(230, 230, 230);
+      height: 1rem;
+      width: 1rem;
+      stroke-width: 1px;
+      color: rgb(230, 230, 230);
     }
   }
   .navBar {
+    .navWrapper {
+      position: relative;
+    }
+    .bagWrapper {
+      margin-right: 0;
+      padding: 0.4rem 0.8rem;
+    }
     .linksNavBar {
-      margin-right: auto;
+      margin-right: 0;
+      width: 90%; //With the 10% of padding-left, it adds 100%
       position: absolute;
       flex-direction: column;
-      height: 0;
-      opacity: 0;
+      height: 0px;
       overflow: hidden;
-      transition: height 0.3s linear;
+      top: 0;
+      transition: height 0.4s linear;
+      background-color: #333333;
+      top: 2rem;
+      align-items: flex-start;
+      padding-left: 10%;
+      font-weight: 400;
+      a {
+        border-bottom: 1px solid #e4e4e4;
+        width: 80%;
+        text-align: left;
+        padding: 0.8rem 0;
+      }
     }
-    .linksNavBar.open {
-      position: relative;
-      display: flex;
-      opacity: 1;
-      height: 10rem;
+    .open {
+      height: 12rem;
+    }
+    .logoNavBar {
+      margin-right: 0;
+      margin-left: 0;
     }
     a {
       padding: 0.4rem;
     }
-  }
-  .navBar.open {
-    flex-direction: column;
   }
 }

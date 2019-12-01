@@ -24,22 +24,22 @@
   }
 
   .caption {
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: absolute;
     text-align: center;
-    top: 35%;  
+    top: 0;
     bottom: 0;
     right: 0;
     left: 0;
   }
   .collectionHeader {
-    margin: 5rem 0;
+    margin: 4rem 0;
     font-weight: 600;
-    color: #2e7322;
+    color: #333333;
     font-size: 2rem;
   }
   .header {
@@ -53,17 +53,18 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      width: 50%;
+      width: 100%;
       position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
-      left: 120px;
+      left: 0;
     }
     .coverPage {
       width: 100%;
       object-fit: cover;
       object-position: 0% 0%;
+      filter: brightness(0.8);
     }
     h1 {
       color: white;
@@ -71,6 +72,7 @@
       font-weight: 600;
       line-height: 5rem;
       text-align: left;
+      margin-left: 3%;
     }
     h2 {
       font-family: "Playfair Display", serif;
@@ -79,6 +81,7 @@
       font-weight: normal;
       line-height: 5rem;
       text-align: left;
+      margin-left: 3%;
     }
   }
 
@@ -88,18 +91,17 @@
       .lightColorImg {
         object-fit: cover;
         object-position: 0% 0%;
-        filter: opacity(0.9);
+        filter: opacity(0.8);
         width: 100%;
       }
       .colorfulImg {
-        filter: brightness(0.9);
         width: 100%;
       }
       h1 {
         color: white;
         font-size: 4rem;
-        font-weight: 700;
-        line-height: 3rem;
+        font-weight: 900;
+        margin-top: 2rem;
       }
       h1.lightTitle,
       h2.lightSubTitle {
@@ -109,8 +111,9 @@
         color: white;
         font-size: 2.2rem;
         font-family: "Playfair Display", serif;
-        margin-bottom: 2rem;
+        margin: 2rem 0 3rem 0;
         font-size: 2.2rem;
+        font-weight: 700;
       }
       button {
         background: #2e7322;
@@ -138,9 +141,9 @@
   .features {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
-    margin: 10rem 0;
+    margin: 5rem 0; //Here 5rem instead of 10 because the featuers already have 5.
     flex-wrap: wrap;
   }
 
@@ -149,17 +152,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 5rem;
+    margin: 5rem 0 2.5rem 0;
     img {
       height: 10rem;
     }
     h3 {
       font-weight: 600;
-      color: #2e7322;
+      color: #333333;
       font-size: 1.5rem;
       margin: 1.5rem 0;
     }
     p {
+      color: #1a1a1a;
       font-weight: 500;
       font-size: 1rem;
       line-height: 2.5rem;
@@ -199,20 +203,34 @@
 
 @media only screen and (max-width: 767px) {
   .home {
+    .lightCollection {
+      margin: 5rem 0;
+    }
+
+    .features {
+      margin: 5rem 0;
+    }
     .featureWrapper {
       margin: 0 0;
       img {
-        height: 7rem;
+        height: 6rem;
       }
-      p{
+      p {
         max-width: 80%;
+        line-height: 1.9rem;
+      }
+      h3 {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin: 1rem 0;
       }
     }
-    .collectionHeader{
-      font-size: 1.5rem;
+    .collectionHeader {
+      margin: 2.5rem 0;
+      font-size: 1.2rem;
     }
     .featureWrapper:nth-child(2) {
-      margin: 5rem 0;
+      margin: 3rem 0;
     }
     .wrapperCoverPage {
       h1 {
@@ -224,25 +242,28 @@
       }
     }
     .header {
+      overflow: hidden;
       .coverPage {
         height: auto;
-        width: 100%;
-        object-fit: cover;
-        object-position: 0% 0%;
+        width: 150%;
+        filter: brightness(0.6);
       }
       .captionHeader {
-        left: 10px;
+        left: 0;
+        width: 100%;
+        display: flex;
         h1 {
           color: white;
-          font-size: 1.2rem;
+          font-size: 1.7rem;
           font-weight: normal;
-          line-height: 1.8rem;
           text-align: left;
-          line-height: 1.5rem;
+          line-height: 2rem;
+          font-weight: 700;
         }
         h2 {
-          font-size: 0.8rem;
-          line-height: 2.5rem;
+          font-size: 1.2rem;
+          line-height: 2.6rem;
+          font-weight: 500;
         }
         a {
           font-size: 1rem;
@@ -250,16 +271,25 @@
       }
     }
     .gridProducts {
+      .lightColorImg {
+        height: 250px;
+      }
+      .colorfulImg {
+        height: 250px;
+        object-fit: cover;
+      }
       .productCollection {
         button {
-          font-size: 1.5rem;
+          font-size: 1rem;
+          padding: 10px 30px;
         }
-
         h1 {
-          font-size: 1.4rem;
+          font-size: 1.6rem;
+          margin-top: 1rem;
         }
         h2 {
           font-size: 1.1rem;
+          margin: 0.5rem 0 1.5rem 0;
         }
         a {
           font-size: 0.9rem;

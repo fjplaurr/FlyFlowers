@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 import dataArr from '../utils/data';
 import {
-  birthday, love, decoration, fastdelivery, yellow, red, orange, pink, under15, between15and40, over40,
+  birthday, love, decoration, yellow, red, orange, pink, under15, between15and40, over40,
 } from '../utils/consts';
 
 class Shop extends React.Component {
@@ -19,7 +19,6 @@ class Shop extends React.Component {
       birthdayIsActive: searchArr.includes(birthday),
       loveIsActive: searchArr.includes(love),
       decorationIsActive: searchArr.includes(decoration),
-      fastDeliveryIsActive: searchArr.includes(fastdelivery),
       pinkIsActive: searchArr.includes(pink),
       redIsActive: searchArr.includes(red),
       orangeIsActive: searchArr.includes(orange),
@@ -45,9 +44,6 @@ class Shop extends React.Component {
     }
     if (searchArr.includes(decoration)) {
       filtered = filtered.filter((x) => x.occasions.includes(decoration));
-    }
-    if (searchArr.includes(fastdelivery)) {
-      filtered = filtered.filter((x) => x.occasions.includes(fastdelivery));
     }
     if (searchArr.includes(red)) {
       filtered = filtered.filter((x) => x.colors.includes(red));
@@ -101,149 +97,152 @@ class Shop extends React.Component {
 
   render() {
     const {
-      filteredArr, birthdayIsActive, loveIsActive, decorationIsActive, fastDeliveryIsActive, redIsActive,
-      pinkIsActive, yellowIsActive, orangeIsActive, under15isActive, between15and40isActive, over40isActive,
+      filteredArr, birthdayIsActive, loveIsActive, decorationIsActive, redIsActive,
+      pinkIsActive, yellowIsActive, orangeIsActive, under15isActive, between15and40isActive,
+      over40isActive,
     } = this.state;
     return (
-      <div className="shop">
-        <form className="filterForm">
-          <div className="filters">
-            <div className="filterWrapper">
-              <h2 className="FilterTitle">Color</h2>
-              <div className="colors">
-                <div className="occasionRangeWrapper">
-                  <input
-                    className="colorInput"
-                    type="checkbox"
-                    data-search-value="red"
-                    id="color1"
-                    data-search-key="color"
-                    onChange={this.handleFilter}
-                    checked={redIsActive}
-                  />
-                  <label htmlFor="color1" aria-label="Filter by red color" />
+      <div>
+        <h1 className="pageTitle">Search your flowers</h1>
+        <div className="shop">
+          <form className="filterForm">
+            <div className="filters">
+              <div className="filterWrapper">
+                <h2 className="FilterTitle">Colors</h2>
+                <div className="colors">
+                  <div className="occasionRangeWrapper">
+                    <input
+                      className="colorInput"
+                      type="checkbox"
+                      data-search-value="yellow"
+                      id="color4"
+                      data-search-key="color"
+                      onChange={this.handleFilter}
+                      checked={yellowIsActive}
+                    />
+                    <label htmlFor="color4" aria-label="Filter by yellow color" />
+                  </div>
+                  <div className="occasionRangeWrapper">
+                    <input
+                      className="colorInput"
+                      type="checkbox"
+                      data-search-value="orange"
+                      id="color5"
+                      data-search-key="color"
+                      onChange={this.handleFilter}
+                      checked={orangeIsActive}
+                    />
+                    <label htmlFor="color5" aria-label="Filter by orange color" />
+                  </div>
+                  <div className="occasionRangeWrapper">
+                    <input
+                      className="colorInput"
+                      type="checkbox"
+                      data-search-value="red"
+                      id="color1"
+                      data-search-key="color"
+                      onChange={this.handleFilter}
+                      checked={redIsActive}
+                    />
+                    <label htmlFor="color1" aria-label="Filter by red color" />
+                  </div>
+                  <div className="occasionRangeWrapper">
+                    <input
+                      className="colorInput"
+                      type="checkbox"
+                      data-search-value="pink"
+                      id="color3"
+                      data-search-key="color"
+                      onChange={this.handleFilter}
+                      checked={pinkIsActive}
+                    />
+                    <label htmlFor="color3" aria-label="Filter by pink color" />
+                  </div>
                 </div>
-                <div className="occasionRangeWrapper">
-                  <input
-                    className="colorInput"
-                    type="checkbox"
-                    data-search-value="yellow"
-                    id="color4"
-                    data-search-key="color"
-                    onChange={this.handleFilter}
-                    checked={yellowIsActive}
-                  />
-                  <label htmlFor="color4" aria-label="Filter by yellow color" />
-                </div>
-                <div className="occasionRangeWrapper">
-                  <input
-                    className="colorInput"
-                    type="checkbox"
-                    data-search-value="pink"
-                    id="color3"
-                    data-search-key="color"
-                    onChange={this.handleFilter}
-                    checked={pinkIsActive}
-                  />
-                  <label htmlFor="color3" aria-label="Filter by pink color" />
-                </div>
-                <div className="occasionRangeWrapper">
-                  <input
-                    className="colorInput"
-                    type="checkbox"
-                    data-search-value="orange"
-                    id="color5"
-                    data-search-key="color"
-                    onChange={this.handleFilter}
-                    checked={orangeIsActive}
-                  />
-                </div>
-                <label htmlFor="color5" aria-label="Filter by orange color" />
               </div>
-            </div>
-            <div className="filterWrapper">
-              <h2 className="FilterTitle">Price</h2>
-              <input
-                type="checkbox"
-                id="priceRange1"
-                onChange={this.handleFilter}
-                checked={under15isActive}
-                data-search-key="price"
-                data-search-value="under15"
-              />
-              <label htmlFor="priceRange1">Under 15€</label>
-              <input
-                type="checkbox"
-                id="priceRange2"
-                data-search-key="price"
-                data-search-value="between15and40"
-                onChange={this.handleFilter}
-                checked={between15and40isActive}
-              />
-              <label htmlFor="priceRange2">15€-40€</label>
-              <input
-                type="checkbox"
-                id="priceRange3"
-                data-search-key="price"
-                data-search-value="over40"
-                onChange={this.handleFilter}
-                checked={over40isActive}
-              />
-              <label htmlFor="priceRange3">Over 40€</label>
-            </div>
-            <div className="filterWrapper">
-              <h2 className="FilterTitle">Trend</h2>
-              <div className="occasionRangeWrapper">
+              <div className="filterWrapper">
+                <h2 className="FilterTitle">Occasions</h2>
+                <div className="occasionRangeWrapper">
+                  <input
+                    type="checkbox"
+                    data-search-value="birthday"
+                    data-search-key="occasion"
+                    id="birthdayOccasion"
+                    onChange={this.handleFilter}
+                    checked={birthdayIsActive}
+                  />
+                  <label htmlFor="birthdayOccasion">Birthday</label>
+                </div>
+                <div className="occasionRangeWrapper">
+                  <input
+                    type="checkbox"
+                    data-search-value="love"
+                    data-search-key="occasion"
+                    id="loveOccasion"
+                    onChange={this.handleFilter}
+                    checked={loveIsActive}
+                  />
+                  <label htmlFor="loveOccasion">Love</label>
+                </div>
+                <div className="occasionRangeWrapper">
+                  <input
+                    type="checkbox"
+                    data-search-value="decoration"
+                    data-search-key="occasion"
+                    id="decorationOccasion"
+                    onChange={this.handleFilter}
+                    checked={decorationIsActive}
+                  />
+                  <label htmlFor="decorationOccasion"> Decoration</label>
+                </div>
+              </div>
+              <div className="filterWrapper">
+                <h2 className="FilterTitle"> Price</h2>
                 <input
                   type="checkbox"
-                  data-search-value="birthday"
-                  data-search-key="occasion"
-                  id="birthdayOccasion"
+                  id="priceRange1"
                   onChange={this.handleFilter}
-                  checked={birthdayIsActive}
+                  checked={under15isActive}
+                  data-search-key="price"
+                  data-search-value="under15"
                 />
-                <label htmlFor="birthdayOccasion">Birthday</label>
-              </div>
-              <div className="occasionRangeWrapper">
+                <label htmlFor="priceRange1">0 - 15 EUR</label>
                 <input
                   type="checkbox"
-                  data-search-value="love"
-                  data-search-key="occasion"
-                  id="loveOccasion"
+                  id="priceRange2"
+                  data-search-key="price"
+                  data-search-value="between15and40"
                   onChange={this.handleFilter}
-                  checked={loveIsActive}
+                  checked={between15and40isActive}
                 />
-                <label htmlFor="loveOccasion">Love</label>
-              </div>
-              <div className="occasionRangeWrapper">
+                <label htmlFor="priceRange2">15 - 40 EUR</label>
                 <input
                   type="checkbox"
-                  data-search-value="decoration"
-                  data-search-key="occasion"
-                  id="decorationOccasion"
+                  id="priceRange3"
+                  data-search-key="price"
+                  data-search-value="over40"
                   onChange={this.handleFilter}
-                  checked={decorationIsActive}
+                  checked={over40isActive}
                 />
-                <label htmlFor="decorationOccasion">Decoration</label>
+                <label htmlFor="priceRange3">Over 40 EUR</label>
               </div>
             </div>
-
+          </form>
+          <div className="gridWrapper">
+            {filteredArr.map((x) => (
+              <ProductCard
+                url={x.url}
+                title={x.title}
+                longDescription={x.longDescription}
+                shortDescription={x.shortDescription}
+                colors={x.colors}
+                price={x.price}
+                trends={x.trends}
+                key={x.id}
+                id={x.id}
+              />
+            ))}
           </div>
-        </form>
-        <div className="gridWrapper">
-          {filteredArr.map((x) => (
-            <ProductCard
-              url={x.url}
-              title={x.title}
-              longDescription={x.longDescription}
-              shortDescription={x.shortDescription}
-              colors={x.colors}
-              price={x.price}
-              trends={x.trends}
-              key={x.id}
-              id={x.id}
-            />
-          ))}
         </div>
       </div>
 
