@@ -47,6 +47,7 @@ const routing = (
           />
           <Route component={NotFound} />
         </Switch>
+        <div className="spacer" />
         <Footer />
       </>
     </Router>

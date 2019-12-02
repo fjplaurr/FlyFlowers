@@ -1,10 +1,12 @@
 .pageTitle {
-  margin: 3rem 0;
   color: #333333;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  margin: 2rem 0;
 }
 .shop {
+  border-top: 1px solid #e4e4e4;
+
   width: 100vw;
   max-width: 1920px;
   margin-bottom: auto;
@@ -12,7 +14,6 @@
   margin-right: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: flex-start;
   .gridWrapper {
     display: flex;
@@ -21,11 +22,13 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    border-left: 1px solid #e4e4e4;
   }
   .filterForm {
     position: sticky;
     top: 5rem;
     left: 2rem;
+    margin-right: 2rem;
   }
   .FilterTitle {
     font-weight: 600;
@@ -48,6 +51,7 @@
     margin-bottom: 1.5rem;
   }
   .filters {
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -134,14 +138,24 @@
   }
 }
 
+.productsTitleWrapper {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
 @media only screen and (max-width: 767px) {
   .pageTitle {
     font-size: 1.2rem;
-    margin: 2.5rem 0;
+    margin: 1rem 0;
   }
   .shop {
     .gridWrapper {
       justify-content: space-evenly;
+      border-left: none;
     }
     .colors {
       width: 80px;
