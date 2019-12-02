@@ -130,9 +130,7 @@ function Home() {
             <div className="subWrapper" />
           </div>
         </article>
-
       </div>
-
     </div>
   );
 }

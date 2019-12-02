@@ -140,6 +140,9 @@
     margin: 2.5rem 0;
   }
   .shop {
+    .gridWrapper {
+      justify-content: space-evenly;
+    }
     .colors {
       width: 80px;
       flex-wrap: wrap;
