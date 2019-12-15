@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import dataArr from '../utils/data';
 import addToBag from '../redux/actions/addToBag';
+import calendarIcon from '../images/calendarIcon.svg';
 import increaseBilling from '../redux/actions/increaseBilling';
 
 function SingleProduct(props) {
@@ -20,28 +21,28 @@ function SingleProduct(props) {
   return (
     <div className="singleProductPage">
       <div className="singleProduct">
-        <img
-          className="flowersImg"
-          src={uniqueProduct.url}
-          alt="Flowers"
-        />
         <div className="productDescription">
           <h1>{uniqueProduct.title}</h1>
-          <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div className="priceWrapper">
-            <p className="price">
-              {`Price: ${uniqueProduct.price}€`}
-            </p>
-            <div className="addBag">
-              <input
-                type="button"
-                onClick={() => handleClick()}
-                value="Add to bag"
-              />
-              <GoChevronRight />
+          <p className="price">{`${uniqueProduct.price.toFixed(2)} €`}</p>
+          <div className="deliveryFeature">
+            <img src={calendarIcon} alt="Free delivery in two days" />
+            <div className="deliveryDescription">
+              <p>Delivery:</p>
+              <p>Free in two days</p>
             </div>
           </div>
+          <p className="description">{uniqueProduct.longDescription}</p>
+          <input
+            type="button"
+            onClick={() => handleClick()}
+            value="Add to bag"
+          />
         </div>
+
+        <div
+          className="imageWrapper"
+          style={{ backgroundImage: `url(${uniqueProduct.url})` }}
+        />
       </div>
     </div>
   );
@@ -49,6 +50,7 @@ function SingleProduct(props) {
 
 SingleProduct.propTypes = {
   addProductToBag: PropTypes.func.isRequired,
+  incrBilling: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,

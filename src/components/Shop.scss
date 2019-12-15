@@ -23,6 +23,8 @@
     justify-content: center;
     align-items: center;
     border-left: 1px solid #e4e4e4;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   .filterForm {
     position: sticky;
@@ -146,7 +148,6 @@
   align-items: flex-start;
 }
 
-
 @media only screen and (max-width: 767px) {
   .pageTitle {
     font-size: 1.2rem;
@@ -156,6 +157,7 @@
     .gridWrapper {
       justify-content: space-evenly;
       border-left: none;
+      padding-top: 0;
     }
     .colors {
       width: 80px;
@@ -174,7 +176,9 @@
     .filters {
       flex-direction: row;
       justify-content: space-evenly;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
     }
     label {
       font-size: 0.8rem;
@@ -182,6 +186,10 @@
     .filterWrapper {
       margin-right: 0;
       margin-bottom: 0;
+    }
+    input[type="checkbox"] + label:before,
+    input[type="radio"] + label:before {
+      margin-right: 0.5rem;
     }
   }
 }
