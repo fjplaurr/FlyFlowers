@@ -1,4 +1,5 @@
 {
+  "homepage": "http://fjplaurr.github.io/flowersShop",
   "name": "flowers-shop",
   "version": "0.1.0",
   "private": true,
@@ -24,7 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +54,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "gh-pages": "^2.1.1",
     "react-test-renderer": "^16.12.0",
     "source-map-explorer": "^2.1.2"
   }
