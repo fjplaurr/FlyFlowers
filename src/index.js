@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route, Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Bag from './components/Bag';
@@ -19,7 +19,7 @@ const history = createBrowserHistory();
 
 const routing = (
   <Provider store={store}>
-    <Router history={history}>
+    <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
       <>
         <NavBar />
         <ScrollToTop />
@@ -50,7 +50,7 @@ const routing = (
         <div className="spacer" />
         <Footer />
       </>
-    </Router>
+    </BrowserRouter>
   </Provider>
 );
 
