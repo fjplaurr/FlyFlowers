@@ -19,7 +19,7 @@ const history = createBrowserHistory();
 
 const routing = (
   <Provider store={store}>
-    <HashRouter history={history} basename={process.env.PUBLIC_URL}>
+    <HashRouter history={history} basename=''>
       <>
         <NavBar />
         <ScrollToTop />
