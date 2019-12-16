@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route, HashRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { Provider } from 'react-redux';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Bag from './components/Bag';
@@ -11,15 +13,13 @@ import NotFound from './components/NotFound';
 import SingleProduct from './components/SingleProduct';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import { Provider } from 'react-redux';
 import store from './redux/store';
-import { createBrowserHistory } from "history";
 
 const history = createBrowserHistory();
 
 const routing = (
   <Provider store={store}>
-    <HashRouter history={history} basename=''>
+    <BrowserRouter history={history} >
       <>
         <NavBar />
         <ScrollToTop />
@@ -50,7 +50,7 @@ const routing = (
         <div className="spacer" />
         <Footer />
       </>
-    </HashRouter >
+    </BrowserRouter >
   </Provider>
 );
 

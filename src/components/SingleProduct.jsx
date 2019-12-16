@@ -1,6 +1,5 @@
 import React from 'react';
 import './SingleProduct.scss';
-import { GoChevronRight } from 'react-icons/go';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
