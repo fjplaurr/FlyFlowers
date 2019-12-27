@@ -1,8 +1,9 @@
 import { ADDTOBAG } from '../constants/actionTypes';
 
-const addToBag = (product) => ({
+const addToBag = (productId, quantity) => ({
   type: ADDTOBAG,
-  payload: product,
+  productId,
+  quantity,
 });
 
 export default addToBag;

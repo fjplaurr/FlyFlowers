@@ -1,30 +1,33 @@
 import React from 'react';
-import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 import './ProductBag.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import addToBag from '../redux/actions/addToBag';
-import decreaseFromBag from '../redux/actions/decreaseFromBag';
+import deleteFromBag from '../redux/actions/deleteFromBag';
 import increaseBilling from '../redux/actions/increaseBilling';
 import decreaseBilling from '../redux/actions/decreaseBilling';
+import calendarIcon from '../images/calendarIcon.svg';
 
 class ProductBag extends React.Component {
   constructor(props) {
     super(props);
-    this.decreaseQuantity = this.decreaseQuantity.bind(this);
-    this.increaseQuantity = this.increaseQuantity.bind(this);
+    this.deleteProduct = this.deleteProduct.bind(this);
+    this.changeQuantity = this.changeQuantity.bind(this);
   }
 
-  decreaseQuantity() {
-    const { id, decreaseProductFromBag, reduceBilling, price } = this.props;
-    decreaseProductFromBag(id);
-    reduceBilling(price);
-  }
-
-  increaseQuantity() {
-    const { id, addProductToBag, price, incrBilling } = this.props;
-    addProductToBag(id);
+  changeQuantity(event) {
+    const {
+      id, addProductToBag, price, incrBilling,
+    } = this.props;
+    addProductToBag(id, event.target.value);
     incrBilling(price);
+  }
+
+  deleteProduct() {
+    const {
+      id, deleteProductFromBag,
+    } = this.props;
+    deleteProductFromBag(id);
   }
 
   render() {
@@ -37,26 +40,44 @@ class ProductBag extends React.Component {
           className="imageWrapper"
           style={{ backgroundImage: `url(${url})` }}
         />
-        <div className="infoWrapper">
-          <div>{shortDescription}</div>
-          <div className="quantityWrapper">
-            <p>Quantity:</p>
-            <button
-              type="button"
-              onClick={this.decreaseQuantity}
-            >
-              <FiMinusCircle />
-            </button>
-            <span className="quantity">{bag.find((product) => product.id === id).quantity}</span>
-            <button
-              type="button"
-              onClick={this.increaseQuantity}
-            >
-              <FiPlusCircle />
-            </button>
+        <div className="completeInfoWrapper">
+          <div className="infoWrapper">
+            <p className="descriptionProduct">
+              {shortDescription}
+            </p>
+            <div className="quantityWrapper">
+              {/* Use id as parameter for htmlFor property */}
+              <label htmlFor={id}>Quantity:</label>
+              <input
+                id={id}
+                type="number"
+                min="1"
+                value={bag.find((product) => product.id === id).quantity}
+                onInput={(event) => {
+                  if (event.target.value.length > 3) {
+                    event.target.value = event.target.value.slice(0, 3);
+                  }
+                }}
+                onChange={this.changeQuantity}
+              />
+            </div>
+            <div className="priceWrapper">{`${(bag.find((product) => product.id === id).quantity * price).toFixed(2)}€`}</div>
+          </div>
+          <div className="bottomInfoWrapper">
+            <div className="deliveryInfo">
+              <img
+                className="calendarIcon"
+                src={calendarIcon}
+                alt="free delivery"
+              />
+              <p>
+                Delivery:
+                <span> free in two days</span>
+              </p>
+            </div>
+            <button type="button" onClick={this.deleteProduct}>Remove</button>
           </div>
         </div>
-        <div className="priceWrapper">{`EUR ${price.toFixed(2)}`}</div>
       </div>
     );
   }
@@ -70,7 +91,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   addProductToBag: addToBag,
-  decreaseProductFromBag: decreaseFromBag,
+  deleteProductFromBag: deleteFromBag,
   reduceBilling: decreaseBilling,
   incrBilling: increaseBilling,
 };
@@ -80,7 +101,9 @@ ProductBag.propTypes = {
   url: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  deleteProductFromBag: PropTypes.func.isRequired,
   bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired }).isRequired).isRequired,
 };
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductBag);

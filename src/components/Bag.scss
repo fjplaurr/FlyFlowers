@@ -1,22 +1,152 @@
 .bag {
-  h1 {
-    color: rgb(20, 60, 65);
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  margin: 0 5rem;
+  padding-top: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin-bottom: auto;
-  .price {
-    border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 3rem;
+  margin: 0 20%;
+  .headerWithoutProducts {
+    margin-top: 5rem;
+    align-self: flex-start;
+    text-align: left;
+    padding-bottom: 5rem;
     width: 100%;
-    text-align: end;
+    border-bottom: 1px solid #e2e2e2;
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif;
+    }
+    h2 {
+      margin-top: 1.5rem;
+      font-size: 2rem;
+      color: #555555;
+      font-weight: 400;
+    }
+  }
+  .headerWithProducts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e2e2;
+    h1 {
+      white-space: nowrap;
+      color: #333333;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 2.2rem;
+      text-align: left;
+      flex-basis: 60%;
+    }
+    .totalWrapper {
+      display: flex;
+      flex-basis: 30%;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .totalProducts {
+      margin-right: 1rem;
+      margin-left: 2rem;
+      font-size: 1.5rem;
+      white-space: nowrap;
+      color: #444444;
+    }
+    .priceTop {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      color: #444444;
+    }
   }
   .total {
     width: 100%;
     text-align: end;
+  }
+  .recommendations {
+    align-self: center;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .recommendedFlowers {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+  }
+  .bagBottom {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    flex-direction: column;
+    color: #444444;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .priceBottom {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .bag {
+    margin: 0;
+    width: 80%;
+    align-self: center;
+
+    .headerWithoutProducts {
+      margin-top: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e2e2e2;
+      h1 {
+        font-size: 1.2rem;
+      }
+      h2 {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+    .headerWithProducts {
+      h1 {
+        font-size: 1rem;
+      }
+      .totalProducts {
+        font-size: 0.9rem;
+      }
+      .priceTop {
+        font-size: 0.9rem;
+      }
+    }
+    .priceBottom {
+      font-size: 1rem;
+      white-space: nowrap;
+      text-align: right;
+    }
+    .recommendations {
+      margin-top: 2rem;
+
+      .recommendedFlowers {
+      }
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }

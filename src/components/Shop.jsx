@@ -64,7 +64,7 @@ class Shop extends React.Component {
       filtered = filtered.filter((x) => x.price >= 15 && x.price <= 40);
     }
     if (searchArr.includes(over40)) {
-      filtered = filtered.filter((x) => x.price >= 40);
+      filtered = filtered.filter((x) => x.price > 40);
     }
     return filtered;
   }
@@ -103,8 +103,8 @@ class Shop extends React.Component {
     } = this.state;
     return (
       <div>
-        <h1 className="pageTitle">Search your flowers</h1>
         <div className="shop">
+
           <form className="filterForm">
             <div className="filters">
               <div className="filterWrapper">
@@ -228,21 +228,27 @@ class Shop extends React.Component {
               </div>
             </div>
           </form>
-          <div className="gridWrapper">
-            {filteredArr.map((x) => (
-              <ProductCard
-                url={x.url}
-                title={x.title}
-                longDescription={x.longDescription}
-                shortDescription={x.shortDescription}
-                colors={x.colors}
-                price={x.price}
-                trends={x.trends}
-                key={x.id}
-                id={x.id}
-              />
-            ))}
+          <div className="productsWrapper">
+            <h1 className="pageTitle">Search your flowers</h1>
+            <div className="gridWrapper">
+
+              {filteredArr.map((x) => (
+                <ProductCard
+                  url={x.url}
+                  title={x.title}
+                  longDescription={x.longDescription}
+                  shortDescription={x.shortDescription}
+                  colors={x.colors}
+                  price={x.price}
+                  trends={x.trends}
+                  key={x.id}
+                  id={x.id}
+                />
+              ))}
+            </div>
+
           </div>
+
         </div>
       </div>
 

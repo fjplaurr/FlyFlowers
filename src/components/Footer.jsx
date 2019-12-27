@@ -7,7 +7,7 @@ import {
 export default function Footer() {
   return (
     <div className="footer">
-      <p>© 2019 Fly Flowers. All rights reserved.</p>
+      <p>© 2020 Fly Flowers. All rights reserved.</p>
       <div className="iconsWrapper">
         <FaTwitter />
         <FaFacebookF />

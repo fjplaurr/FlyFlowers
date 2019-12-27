@@ -18,31 +18,28 @@ function SingleProduct(props) {
     history.push('/bag');
   };
   return (
-    <div className="singleProductPage">
-      <div className="singleProduct">
-        <div className="productDescription">
-          <h1>{uniqueProduct.title}</h1>
-          <p className="price">{`${uniqueProduct.price.toFixed(2)} €`}</p>
-          <div className="deliveryFeature">
-            <img src={calendarIcon} alt="Free delivery in two days" />
-            <div className="deliveryDescription">
-              <p>Delivery:</p>
-              <p>Free in two days</p>
-            </div>
+    <div className="singleProduct">
+      <div className="productDescription">
+        <h1>{uniqueProduct.title}</h1>
+        <p className="price">{`${uniqueProduct.price.toFixed(2)} €`}</p>
+        <div className="deliveryFeature">
+          <img src={calendarIcon} alt="Free delivery in two days" />
+          <div className="deliveryDescription">
+            <p>Delivery:</p>
+            <p>Free in two days</p>
           </div>
-          <p className="description">{uniqueProduct.longDescription}</p>
-          <input
-            type="button"
-            onClick={() => handleClick()}
-            value="Add to bag"
-          />
         </div>
-
-        <div
-          className="imageWrapper"
-          style={{ backgroundImage: `url(${uniqueProduct.url})` }}
+        <p className="description">{uniqueProduct.longDescription}</p>
+        <input
+          type="button"
+          onClick={() => handleClick()}
+          value="Add to bag"
         />
       </div>
+      <div
+        className="imageWrapper"
+        style={{ backgroundImage: `url(${uniqueProduct.url})` }}
+      />
     </div>
   );
 }

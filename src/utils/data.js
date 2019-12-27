@@ -24,6 +24,7 @@ const dataArr = [
     url: images['5.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '6',
@@ -36,6 +37,7 @@ const dataArr = [
     url: images['6.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '7',
@@ -48,6 +50,7 @@ const dataArr = [
     url: images['7.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '9',
@@ -60,6 +63,7 @@ const dataArr = [
     url: images['9.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '10',
@@ -72,6 +76,7 @@ const dataArr = [
     url: images['10.jpg'],
     collection: 'colorful',
     trending: true,
+    recommended: true,
   },
   {
     id: '13',
@@ -84,6 +89,7 @@ const dataArr = [
     url: images['13.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '17',
@@ -96,6 +102,7 @@ const dataArr = [
     url: images['17.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '18',
@@ -108,6 +115,7 @@ const dataArr = [
     url: images['18.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '19',
@@ -120,6 +128,7 @@ const dataArr = [
     url: images['19.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '20',
@@ -132,6 +141,7 @@ const dataArr = [
     url: images['20.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '21',
@@ -144,6 +154,7 @@ const dataArr = [
     url: images['21.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '22',
@@ -156,6 +167,7 @@ const dataArr = [
     url: images['22.jpg'],
     collection: 'colorful',
     trending: true,
+    recommended: true,
   },
   {
     id: '23',
@@ -168,6 +180,7 @@ const dataArr = [
     url: images['23.jpg'],
     collection: 'colorful',
     trending: true,
+    recommended: false,
   },
   {
     id: '27',
@@ -180,6 +193,7 @@ const dataArr = [
     url: images['27.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: true,
   },
   {
     id: '30',
@@ -192,6 +206,7 @@ const dataArr = [
     url: images['30.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '31',
@@ -204,6 +219,7 @@ const dataArr = [
     url: images['31.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '40',
@@ -216,6 +232,7 @@ const dataArr = [
     url: images['40.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '42',
@@ -228,6 +245,7 @@ const dataArr = [
     url: images['42.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '43',
@@ -240,6 +258,7 @@ const dataArr = [
     url: images['43.jpg'],
     collection: 'colorful',
     trending: true,
+    recommended: false,
   },
   {
     id: '44',
@@ -252,6 +271,7 @@ const dataArr = [
     url: images['44.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '47',
@@ -264,6 +284,7 @@ const dataArr = [
     url: images['47.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '48',
@@ -276,6 +297,7 @@ const dataArr = [
     url: images['48.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '49',
@@ -288,6 +310,7 @@ const dataArr = [
     url: images['49.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '50',
@@ -300,6 +323,7 @@ const dataArr = [
     url: images['50.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '51',
@@ -312,6 +336,7 @@ const dataArr = [
     url: images['51.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '52',
@@ -324,6 +349,7 @@ const dataArr = [
     url: images['52.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '53',
@@ -336,6 +362,7 @@ const dataArr = [
     url: images['53.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '54',
@@ -348,6 +375,7 @@ const dataArr = [
     url: images['54.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '55',
@@ -360,6 +388,7 @@ const dataArr = [
     url: images['55.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '56',
@@ -372,6 +401,7 @@ const dataArr = [
     url: images['56.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '57',
@@ -384,6 +414,7 @@ const dataArr = [
     url: images['57.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '58',
@@ -396,6 +427,7 @@ const dataArr = [
     url: images['58.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '61',
@@ -408,6 +440,7 @@ const dataArr = [
     url: images['61.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
 
   {
@@ -421,6 +454,7 @@ const dataArr = [
     url: images['63.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '64',
@@ -433,6 +467,7 @@ const dataArr = [
     url: images['64.jpg'],
     collection: 'light',
     trending: true,
+    recommended: false,
   },
   {
     id: '65',
@@ -445,6 +480,7 @@ const dataArr = [
     url: images['65.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '66',
@@ -457,6 +493,7 @@ const dataArr = [
     url: images['66.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '67',
@@ -469,6 +506,7 @@ const dataArr = [
     url: images['67.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '68',
@@ -481,6 +519,7 @@ const dataArr = [
     url: images['68.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '69',
@@ -493,6 +532,7 @@ const dataArr = [
     url: images['69.jpg'],
     collection: 'light',
     trending: true,
+    recommended: false,
   },
   {
     id: '73',
@@ -505,6 +545,7 @@ const dataArr = [
     url: images['73.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '76',
@@ -517,6 +558,7 @@ const dataArr = [
     url: images['76.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '77',
@@ -529,6 +571,7 @@ const dataArr = [
     url: images['77.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '78',
@@ -541,6 +584,7 @@ const dataArr = [
     url: images['78.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '80',
@@ -553,6 +597,7 @@ const dataArr = [
     url: images['80.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '82',
@@ -565,6 +610,7 @@ const dataArr = [
     url: images['82.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '83',
@@ -577,6 +623,7 @@ const dataArr = [
     url: images['83.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '85',
@@ -589,6 +636,7 @@ const dataArr = [
     url: images['85.jpg'],
     collection: 'light',
     trending: false,
+    recommended: false,
   },
   {
     id: '86',
@@ -601,6 +649,7 @@ const dataArr = [
     url: images['86.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '87',
@@ -613,6 +662,7 @@ const dataArr = [
     url: images['87.jpg'],
     collection: 'light',
     trending: true,
+    recommended: false,
   },
   {
     id: '88',
@@ -625,6 +675,7 @@ const dataArr = [
     url: images['88.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '91',
@@ -637,6 +688,7 @@ const dataArr = [
     url: images['91.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '92',
@@ -649,6 +701,7 @@ const dataArr = [
     url: images['92.jpg'],
     collection: 'light',
     trending: true,
+    recommended: false,
   },
   {
     id: '93',
@@ -661,6 +714,7 @@ const dataArr = [
     url: images['93.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '94',
@@ -673,6 +727,7 @@ const dataArr = [
     url: images['94.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '95',
@@ -685,6 +740,7 @@ const dataArr = [
     url: images['95.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '96',
@@ -697,6 +753,7 @@ const dataArr = [
     url: images['96.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
   {
     id: '97',
@@ -709,6 +766,7 @@ const dataArr = [
     url: images['97.jpg'],
     collection: 'colorful',
     trending: false,
+    recommended: false,
   },
 ];
 

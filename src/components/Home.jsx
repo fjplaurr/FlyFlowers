@@ -67,20 +67,23 @@ function Home() {
         </div>
       </div>
       <section className="features">
-        <div className="featureWrapper">
-          <img src={rocket} alt="fast delivery" />
-          <h3>Two-days delivery</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius. Aliquam commodo ullamcorper non odio facilisis viverra dolor.</p>
-        </div>
-        <div className="featureWrapper">
-          <img src={flower} alt="fresh flowers" />
-          <h3>Guaranteed fresh</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius.</p>
-        </div>
-        <div className="featureWrapper">
-          <img src={calendar} alt="precise delivery date" />
-          <h3>Precise delivery date</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem. Aliquam commodo ullamcorper non odio facilisis viverra dolor.</p>
+        <h2>See our services</h2>
+        <div className="featuresWrapper">
+          <div className="featureWrapper">
+            <img src={rocket} alt="fast delivery" />
+            <h3>Two-days delivery</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius. Aliquam commodo ullamcorper non odio facilisis viverra dolor.</p>
+          </div>
+          <div className="featureWrapper">
+            <img src={flower} alt="fresh flowers" />
+            <h3>Guaranteed fresh</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius.</p>
+          </div>
+          <div className="featureWrapper">
+            <img src={calendar} alt="precise delivery date" />
+            <h3>Precise delivery date</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem. Aliquam commodo ullamcorper non odio facilisis viverra dolor.</p>
+          </div>
         </div>
       </section>
       <div className="gridProducts">
