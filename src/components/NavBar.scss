@@ -112,7 +112,7 @@
       height: 0px;
       overflow: hidden;
       top: 0;
-      transition: height 0.4s linear;
+      transition: height 0.2s linear;
       background-color: #333333;
       top: 2rem;
       align-items: flex-start;
@@ -122,11 +122,12 @@
         border-bottom: 1px solid #e4e4e4;
         width: 80%;
         text-align: left;
-        padding: 0.8rem 0;
+        padding: 0.7rem 0;
+        padding-bottom: 0.4rem;
       }
     }
     .open {
-      height: 12rem;
+      height: 10rem;
     }
     .logoNavBar {
       margin-right: 0;

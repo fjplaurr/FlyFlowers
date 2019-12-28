@@ -102,7 +102,9 @@ ProductBag.propTypes = {
   shortDescription: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   deleteProductFromBag: PropTypes.func.isRequired,
-  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired }).isRequired).isRequired,
+  addProductToBag: PropTypes.func.isRequired,
+  incrBilling: PropTypes.func.isRequired,
+  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired).isRequired,
 };
 
 

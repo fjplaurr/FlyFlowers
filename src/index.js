@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import Home from './components/Home';
@@ -19,7 +19,7 @@ const history = createBrowserHistory();
 
 const routing = (
   <Provider store={store}>
-    <BrowserRouter history={history} >
+    <Router history={history} >
       <>
         <NavBar />
         <ScrollToTop />
@@ -50,7 +50,7 @@ const routing = (
         <div className="spacer" />
         <Footer />
       </>
-    </BrowserRouter >
+    </Router >
   </Provider>
 );
 

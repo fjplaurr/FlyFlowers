@@ -13,7 +13,6 @@ function Bag(props) {
   const productsBagArr = dataArr.map((x) => {
     const index = bag.findIndex((product) => product.id === x.id);
     if (bag.length > 0 && index !== -1) {
-      console.log('encontrado');
       totalQuantity += bag[index].quantity;
       totalPrice += x.price * bag[index].quantity;
       return (
@@ -48,7 +47,7 @@ function Bag(props) {
         : (
           <div className="headerWithoutProducts">
             <h1>Your bag is empty.</h1>
-            <h2>Explore our shop and add it some color.</h2>
+            <h2>Explore our shop and add some color.</h2>
           </div>
         )}
       {productsBagArr}
@@ -75,6 +74,7 @@ function Bag(props) {
                   />
                 );
               }
+              return (<></>);
             })}
           </div>
         </div>
@@ -91,7 +91,7 @@ function mapStateToProps(state) {
 }
 
 Bag.propTypes = {
-  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number }).isRequired).isRequired,
+  bag: PropTypes.arrayOf(PropTypes.shape({ quantity: PropTypes.number, id: PropTypes.string }).isRequired).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);

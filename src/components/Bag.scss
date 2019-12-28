@@ -107,9 +107,9 @@
 @media only screen and (max-width: 767px) {
   .bag {
     margin: 0;
-    width: 80%;
+    width: 90%;
     align-self: center;
-
+    padding-top: 0;
     .headerWithoutProducts {
       margin-top: 2rem;
       padding-bottom: 2rem;
@@ -123,14 +123,16 @@
       }
     }
     .headerWithProducts {
+      margin-bottom: 0;
+      padding-bottom: 0;
       h1 {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       .totalProducts {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
       .priceTop {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
     .priceBottom {
@@ -139,10 +141,7 @@
       text-align: right;
     }
     .recommendations {
-      margin-top: 2rem;
-
-      .recommendedFlowers {
-      }
+      margin-top: 2.5rem;
       h2 {
         font-size: 1.2rem;
         margin-bottom: 1rem;

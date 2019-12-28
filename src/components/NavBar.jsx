@@ -14,7 +14,7 @@ class NavBar extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle = () => {
+  toggle = (event) => {
     const { open } = this.state;
     this.setState({ open: !open });
   }
@@ -70,7 +70,10 @@ class NavBar extends React.Component {
               Decoration
             </Link>
           </div>
-          <Link to="/bag" className="bagWrapper">
+          <Link
+            to="/bag"
+            className="bagWrapper"
+          >
             <AiOutlineShopping />
           </Link>
         </div>

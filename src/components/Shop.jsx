@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 import dataArr from '../utils/data';
 import {
-  birthday, love, decoration, yellow, red, orange, pink, under15, between15and40, over40,
+  BIRTHDAY, LOVE, DECORATION, YELLOW, RED, ORANGE, PINK, UNDER15, BETWEEN15AND40, OVER40,
 } from '../utils/consts';
 
 class Shop extends React.Component {
@@ -16,16 +16,16 @@ class Shop extends React.Component {
     const filteredArr = this.filterInitialData();
     this.state = {
       filteredArr: [...filteredArr],
-      birthdayIsActive: searchArr.includes(birthday),
-      loveIsActive: searchArr.includes(love),
-      decorationIsActive: searchArr.includes(decoration),
-      pinkIsActive: searchArr.includes(pink),
-      redIsActive: searchArr.includes(red),
-      orangeIsActive: searchArr.includes(orange),
-      yellowIsActive: searchArr.includes(yellow),
-      under15isActive: searchArr.includes(under15),
-      between15and40isActive: searchArr.includes(between15and40),
-      over40isActive: searchArr.includes(over40),
+      birthdayIsActive: searchArr.includes(BIRTHDAY),
+      loveIsActive: searchArr.includes(LOVE),
+      decorationIsActive: searchArr.includes(DECORATION),
+      pinkIsActive: searchArr.includes(PINK),
+      redIsActive: searchArr.includes(RED),
+      orangeIsActive: searchArr.includes(ORANGE),
+      yellowIsActive: searchArr.includes(YELLOW),
+      under15isActive: searchArr.includes(UNDER15),
+      between15and40isActive: searchArr.includes(BETWEEN15AND40),
+      over40isActive: searchArr.includes(OVER40),
     };
     this.handleFilter = this.handleFilter.bind(this);
   }
@@ -36,34 +36,34 @@ class Shop extends React.Component {
     const query = new URLSearchParams(location.search);
     const searchIterator = query.values();
     const searchArr = Array.from(searchIterator);
-    if (searchArr.includes(birthday)) {
-      filtered = filtered.filter((x) => x.occasions.includes(birthday));
+    if (searchArr.includes(BIRTHDAY)) {
+      filtered = filtered.filter((x) => x.occasions.includes(BIRTHDAY));
     }
-    if (searchArr.includes(love)) {
-      filtered = filtered.filter((x) => x.occasions.includes(love));
+    if (searchArr.includes(LOVE)) {
+      filtered = filtered.filter((x) => x.occasions.includes(LOVE));
     }
-    if (searchArr.includes(decoration)) {
-      filtered = filtered.filter((x) => x.occasions.includes(decoration));
+    if (searchArr.includes(DECORATION)) {
+      filtered = filtered.filter((x) => x.occasions.includes(DECORATION));
     }
-    if (searchArr.includes(red)) {
-      filtered = filtered.filter((x) => x.colors.includes(red));
+    if (searchArr.includes(RED)) {
+      filtered = filtered.filter((x) => x.colors.includes(RED));
     }
-    if (searchArr.includes(pink)) {
-      filtered = filtered.filter((x) => x.colors.includes(pink));
+    if (searchArr.includes(PINK)) {
+      filtered = filtered.filter((x) => x.colors.includes(PINK));
     }
-    if (searchArr.includes(yellow)) {
-      filtered = filtered.filter((x) => x.colors.includes(yellow));
+    if (searchArr.includes(YELLOW)) {
+      filtered = filtered.filter((x) => x.colors.includes(YELLOW));
     }
-    if (searchArr.includes(orange)) {
-      filtered = filtered.filter((x) => x.colors.includes(orange));
+    if (searchArr.includes(ORANGE)) {
+      filtered = filtered.filter((x) => x.colors.includes(ORANGE));
     }
-    if (searchArr.includes(under15)) {
+    if (searchArr.includes(UNDER15)) {
       filtered = filtered.filter((x) => x.price <= 15);
     }
-    if (searchArr.includes(between15and40)) {
+    if (searchArr.includes(BETWEEN15AND40)) {
       filtered = filtered.filter((x) => x.price >= 15 && x.price <= 40);
     }
-    if (searchArr.includes(over40)) {
+    if (searchArr.includes(OVER40)) {
       filtered = filtered.filter((x) => x.price > 40);
     }
     return filtered;
@@ -206,7 +206,7 @@ class Shop extends React.Component {
                   data-search-key="price"
                   data-search-value="under15"
                 />
-                <label htmlFor="priceRange1">0 - 15 EUR</label>
+                <label htmlFor="priceRange1">0 - 15 €</label>
                 <input
                   type="checkbox"
                   id="priceRange2"
@@ -215,7 +215,7 @@ class Shop extends React.Component {
                   onChange={this.handleFilter}
                   checked={between15and40isActive}
                 />
-                <label htmlFor="priceRange2">15 - 40 EUR</label>
+                <label htmlFor="priceRange2">15 - 40 €</label>
                 <input
                   type="checkbox"
                   id="priceRange3"
@@ -224,7 +224,7 @@ class Shop extends React.Component {
                   onChange={this.handleFilter}
                   checked={over40isActive}
                 />
-                <label htmlFor="priceRange3">Over 40 EUR</label>
+                <label htmlFor="priceRange3">Over 40 €</label>
               </div>
             </div>
           </form>
@@ -246,12 +246,9 @@ class Shop extends React.Component {
                 />
               ))}
             </div>
-
           </div>
-
         </div>
       </div>
-
     );
   }
 }
@@ -259,8 +256,8 @@ class Shop extends React.Component {
 Shop.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
-    state: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
-    search: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+    state: PropTypes.objectOf(PropTypes.string.isRequired),
+    search: PropTypes.string.isRequired,
   }).isRequired,
 };
 
