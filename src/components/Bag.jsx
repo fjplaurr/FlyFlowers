@@ -91,6 +91,7 @@ function mapStateToProps(state) {
 }
 
 Bag.propTypes = {
+  // eslint-disable-next-line max-len
   bag: PropTypes.arrayOf(PropTypes.shape({ quantity: PropTypes.number, id: PropTypes.string }).isRequired).isRequired,
 };
 

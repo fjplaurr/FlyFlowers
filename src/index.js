@@ -18,14 +18,16 @@ import store from './redux/store';
 const history = createBrowserHistory();
 
 const routing = (
+  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
-    <Router history={history} >
+    <Router history={history}>
       <>
         <NavBar />
         <ScrollToTop />
         <Switch>
           <Route
-            exact path="/"
+            exact
+            path="/"
             component={Home}
           />
           <Route
@@ -50,7 +52,7 @@ const routing = (
         <div className="spacer" />
         <Footer />
       </>
-    </Router >
+    </Router>
   </Provider>
 );
 

@@ -55,6 +55,7 @@ class ProductBag extends React.Component {
                 value={bag.find((product) => product.id === id).quantity}
                 onInput={(event) => {
                   if (event.target.value.length > 3) {
+                    // eslint-disable-next-line no-param-reassign
                     event.target.value = event.target.value.slice(0, 3);
                   }
                 }}
@@ -104,6 +105,7 @@ ProductBag.propTypes = {
   deleteProductFromBag: PropTypes.func.isRequired,
   addProductToBag: PropTypes.func.isRequired,
   incrBilling: PropTypes.func.isRequired,
+  // eslint-disable-next-line max-len
   bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired).isRequired,
 };
 

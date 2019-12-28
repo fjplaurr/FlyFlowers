@@ -72,7 +72,7 @@ class Shop extends React.Component {
   handleFilter = (event) => {
     const { location, history } = this.props;
     const { search } = location;
-    let params = new URLSearchParams(search);
+    const params = new URLSearchParams(search);
     if (event.target.checked) {
       params.append(event.target.getAttribute('data-search-key'), event.target.getAttribute('data-search-value'));
     } else {
@@ -258,6 +258,9 @@ Shop.propTypes = {
     pathname: PropTypes.string.isRequired,
     state: PropTypes.objectOf(PropTypes.string.isRequired),
     search: PropTypes.string.isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
