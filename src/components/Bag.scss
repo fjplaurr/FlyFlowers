@@ -4,9 +4,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: auto;
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 0 1rem;
   padding-bottom: 3rem;
-  margin: 0 20%;
   .headerWithoutProducts {
     margin-top: 5rem;
     align-self: flex-start;
