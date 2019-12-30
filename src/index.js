@@ -16,7 +16,6 @@ import ScrollToTop from './components/ScrollToTop';
 import store from './redux/store';
 
 const history = createBrowserHistory();
-
 const routing = (
   // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
@@ -57,3 +56,8 @@ const routing = (
 );
 
 ReactDOM.render(routing, document.getElementById('root'));
+
+const wakeUpDyno = require('./wakeUpDyno');
+
+const DYNO_URL = 'https://flyflowers-shop.herokuapp.com';
+wakeUpDyno(DYNO_URL);
