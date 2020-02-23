@@ -7,7 +7,7 @@ This is online shop is built with React.js and Redux and packages like React-rou
 If you want to run the App in your computer, then follow the steps provided below:
 - Download the project from (https://github.com/fjplaurr/flowersShop) by pressing the green button "Clone or download".
 - Unzip the file downloaded.
-- Open a Command Line Interface and go to the root file of the project (It is called weatherVisualizer).
+- Open a Command Line Interface and go to the root file of the project (It is called flowersShop).
 - Type in the Command Line Interface: 'npm install'. An error will occur if you do not have npm installed in your computer. If so, download Node.js from here (https://nodejs.org/es/download/).
 - Wait for the installation to finish.
 - When finished, type in the Command Line Interface: 'npm start'.
