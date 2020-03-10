@@ -10,6 +10,7 @@ import dataArr from '../utils/data';
 import rocket from '../images/rocket.svg';
 import calendar from '../images/calendar.svg';
 import flower from '../images/flower.svg';
+import Button from './Button';
 
 function Home() {
   const lightCollection = dataArr.map((x) => {
@@ -98,9 +99,7 @@ function Home() {
               <h1 className="colorfulTitle">Colorful Collection</h1>
               <h2 className="colorfulSubTitle">Vivid colors that inspire</h2>
               <Link to="/shop">
-                <button type="button">
-                  Discover it
-                </button>
+                <Button>Discover it</Button>
               </Link>
             </div>
           </div>
@@ -121,9 +120,7 @@ function Home() {
               <h1 className="lightTitle">Light Collection</h1>
               <h2 className="lightSubTitle">Full of elegance</h2>
               <Link to="/shop">
-                <button type="button">
-                  Discover it
-                </button>
+                <Button>Discover it</Button>
               </Link>
             </div>
           </div>

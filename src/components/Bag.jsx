@@ -6,8 +6,7 @@ import ProductBag from './ProductBag';
 import ProductCard from './ProductCard';
 import './Bag.scss';
 
-function Bag(props) {
-  const { bag } = props;
+function Bag({ bag }) {
   let totalPrice = 0;
   let totalQuantity = 0;
   const productsBagArr = dataArr.map((x) => {
@@ -80,7 +79,6 @@ function Bag(props) {
         </div>
       </div>
     </div>
-
   );
 }
 
@@ -91,7 +89,6 @@ function mapStateToProps(state) {
 }
 
 Bag.propTypes = {
-  // eslint-disable-next-line max-len
   bag: PropTypes.arrayOf(PropTypes.shape({ quantity: PropTypes.number, id: PropTypes.string }).isRequired).isRequired,
 };
 

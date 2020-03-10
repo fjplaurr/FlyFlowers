@@ -7,6 +7,7 @@ import deleteFromBag from '../redux/actions/deleteFromBag';
 import increaseBilling from '../redux/actions/increaseBilling';
 import decreaseBilling from '../redux/actions/decreaseBilling';
 import calendarIcon from '../images/calendarIcon.svg';
+import Button from './Button';
 
 class ProductBag extends React.Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class ProductBag extends React.Component {
                 <span> free in two days</span>
               </p>
             </div>
-            <button type="button" onClick={this.deleteProduct}>Remove</button>
+            <Button onClick={this.deleteProduct}>Remove</Button>
           </div>
         </div>
       </div>
@@ -105,7 +106,6 @@ ProductBag.propTypes = {
   deleteProductFromBag: PropTypes.func.isRequired,
   addProductToBag: PropTypes.func.isRequired,
   incrBilling: PropTypes.func.isRequired,
-  // eslint-disable-next-line max-len
   bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired).isRequired,
 };
 

@@ -10,7 +10,7 @@
   margin-right: auto;
   width: 100vw;
   flex-wrap: wrap-reverse;
-  input[type="button"] {
+  button {
     background: #2e7322;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
@@ -21,6 +21,7 @@
     font-family: "Playfair Display", serif;
     width: 80%;
   }
+
   .flowersImg {
     width: 500px;
     height: 500px;
@@ -97,7 +98,7 @@
   .singleProduct {
     margin-top: 2rem;
     width: 80%;
-    input[type="button"] {
+    button {
       align-self: center;
       margin-top: 1rem;
     }

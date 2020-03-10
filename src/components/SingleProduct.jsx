@@ -7,6 +7,7 @@ import dataArr from '../utils/data';
 import addToBag from '../redux/actions/addToBag';
 import calendarIcon from '../images/calendarIcon.svg';
 import increaseBilling from '../redux/actions/increaseBilling';
+import Button from './Button';
 
 function SingleProduct(props) {
   const { id } = useParams();
@@ -23,18 +24,17 @@ function SingleProduct(props) {
         <h1>{uniqueProduct.title}</h1>
         <p className="price">{`${uniqueProduct.price.toFixed(2)} €`}</p>
         <div className="deliveryFeature">
-          <img src={calendarIcon} alt="Free delivery in two days" />
+          <img
+            src={calendarIcon}
+            alt="Free delivery in two days"
+          />
           <div className="deliveryDescription">
             <p>Delivery:</p>
             <p>Free in two days</p>
           </div>
         </div>
         <p className="description">{uniqueProduct.longDescription}</p>
-        <input
-          type="button"
-          onClick={() => handleClick()}
-          value="Add to bag"
-        />
+        <Button onClick={() => handleClick()} > Add to bag</Button>
       </div>
       <div
         className="imageWrapper"

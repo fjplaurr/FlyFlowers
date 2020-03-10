@@ -49,7 +49,7 @@ const routing = (
           <Route component={NotFound} />
         </Switch>
         <div className="spacer" />
-        <Footer />
+        <Footer title="© 2020 Fly Flowers. All rights reserved." />
       </>
     </Router>
   </Provider>

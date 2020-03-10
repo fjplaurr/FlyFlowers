@@ -2,8 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default function Empty(props) {
-  const { location } = props;
+function Empty({ location }) {
   return (
     <Redirect
       to={{
@@ -20,3 +19,5 @@ Empty.propTypes = {
     state: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,
 };
+
+export default Empty;

@@ -4,10 +4,10 @@ import {
   FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram,
 } from 'react-icons/fa';
 
-export default function Footer() {
+function Footer({ title }) {
   return (
     <div className="footer">
-      <p>© 2020 Fly Flowers. All rights reserved.</p>
+      <p>{title}</p>
       <div className="iconsWrapper">
         <FaTwitter />
         <FaFacebookF />
@@ -17,3 +17,5 @@ export default function Footer() {
     </div>
   );
 }
+
+export default Footer;
