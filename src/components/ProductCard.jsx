@@ -4,25 +4,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductCard.scss';
 
-function ProductCard(props) {
-  const {
-    price, url, id, title,
-  } = props;
+function ProductCard({
+  price, url, id, title,
+}) {
   return (
-    <Link
-      to={`/singleProduct/${id}`}
-      className="productCard"
-    >
+    <Link to={`/singleProduct/${id}`} className="productCard">
       <div className="card">
-        <div
-          className="imageWrapper"
-          style={{ backgroundImage: `url(${url})` }}
-        />
+        <div className="imageWrapper" style={{ backgroundImage: `url(${url})` }} />
         <div className="infoProduct">
           <p className="description">{title}</p>
-          <p className="price">
-            {`${price.toFixed(2)} €`}
-          </p>
+          <p className="price">{`${price.toFixed(2)} €`}</p>
           <p className="modifyBag">
             See it
             <GoChevronRight />

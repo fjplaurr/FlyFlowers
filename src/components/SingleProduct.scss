@@ -63,28 +63,7 @@
   a:hover {
     text-decoration: underline;
   }
-  .deliveryFeature {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      height: 6rem;
-    }
-  }
-  .deliveryDescription {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .deliveryDescription p:first-child {
-    color: #222222;
-    font-size: 1.5rem;
-  }
-  .deliveryDescription p:last-child {
-    color: #626262;
-    font-size: 1.5rem;
-  }
+
   .imageWrapper {
     width: 450px;
     height: 450px;
@@ -121,17 +100,6 @@
         margin: 1rem 0;
         font-size: 1.1rem;
         line-height: 1.4rem;
-      }
-    }
-    .deliveryDescription p:first-child {
-      font-size: 1.1rem;
-    }
-    .deliveryDescription p:last-child {
-      font-size: 1.1rem;
-    }
-    .deliveryFeature {
-      img {
-        height: 4rem;
       }
     }
   }

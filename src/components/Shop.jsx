@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 import dataArr from '../utils/data';
+import './Shop.scss';
 import {
   BIRTHDAY, LOVE, DECORATION, YELLOW, RED, ORANGE, PINK, UNDER15, BETWEEN15AND40, OVER40,
 } from '../utils/consts';

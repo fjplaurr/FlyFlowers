@@ -4,7 +4,6 @@ import './NavBar.scss';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineShopping } from 'react-icons/ai';
-import Button from './Button';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -25,9 +24,9 @@ class NavBar extends React.Component {
     return (
       <nav className="navBar">
         <div className="navWrapper">
-          <Button className="navButton hideHighResolut" onClick={this.toggle}>
+          <button type="button" className="navButton hideHighResolut" onClick={this.toggle}>
             {open ? <MdClose /> : <GiHamburgerMenu />}
-          </Button>
+          </button>
           <div className="logoNavBar">
             <Link to="/">
               Fly Flowers
