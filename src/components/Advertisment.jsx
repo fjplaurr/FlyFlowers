@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Advertisment(props) {
-  const { imageUrl, imageClass, imageAlt, history } = props;
+  const {
+    imageUrl, imageClass, imageAlt, history,
+  } = props;
   return (
     <div className="productCollection">
       <img src={imageUrl} className={imageClass} alt={imageAlt} />
