@@ -1,0 +1,140 @@
+.navBar {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #333333;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  align-items: center;
+  white-space: nowrap;
+  height: auto;
+  .navWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    max-width: 1920px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .linksNavBar {
+    font-weight: 400;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 5rem;
+    font-weight: 600;
+    a {
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+    }
+    .logoGreen {
+      margin-left: 2px;
+      background: #5bcb49;
+      border-radius: 21px;
+      transform: rotate(24.91deg);
+      height: 12px;
+      width: 6px;
+    }
+    .logoPink {
+      margin-left: 5px;
+      background: #ff4fe3;
+      border-radius: 21px;
+      transform: rotate(24.91deg);
+      height: 12px;
+      width: 6px;
+    }
+  }
+  a {
+    color: rgb(230, 230, 230);
+    padding: 1rem 2rem;
+  }
+  :hover {
+    color: #b3b3b3;
+  }
+  .bagWrapper {
+    font-size: 22px;
+    margin-right: 5rem;
+    svg {
+      stroke-width: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .hideHighResolut {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navButton {
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    svg {
+      fill: rgb(230, 230, 230);
+      height: 1rem;
+      width: 1rem;
+      stroke-width: 1px;
+      color: rgb(230, 230, 230);
+    }
+  }
+  .navBar {
+    .navWrapper {
+      position: relative;
+    }
+    .bagWrapper {
+      margin-right: 0;
+      padding: 0.4rem 0.8rem;
+    }
+    .linksNavBar {
+      margin-right: 0;
+      width: 90%; //With the 10% of padding-left, it adds 100%
+      position: absolute;
+      flex-direction: column;
+      height: 0px;
+      overflow: hidden;
+      top: 0;
+      transition: height 0.2s linear;
+      background-color: #333333;
+      top: 2rem;
+      align-items: flex-start;
+      padding-left: 10%;
+      font-weight: 400;
+      a {
+        border-bottom: 1px solid #e4e4e4;
+        width: 80%;
+        text-align: left;
+        padding: 0.7rem 0;
+        padding-bottom: 0.4rem;
+      }
+    }
+    .open {
+      height: 10rem;
+    }
+    .logoNavBar {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    a {
+      padding: 0.4rem;
+    }
+  }
+}
