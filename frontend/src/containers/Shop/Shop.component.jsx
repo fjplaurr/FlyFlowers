@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import './Shop.scss';
 import { URIPARAMS } from '../../utils/consts';
 import { connect } from 'react-redux';
 import fetchProducts from '../../redux/actions/productsActions';
 import ProductsGrid from '../../components/ProductGrid';
-import FilterPanel from '../../components/FilterPanel';
+import FilterPanel from './FilterPanel';
+import styles from './Shop.module.scss';
 
 const Shop = ({ location, history, productsStore }) => {
   const [filteredArr, setFilteredArr] = useState();
@@ -53,10 +53,8 @@ const Shop = ({ location, history, productsStore }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-
-
   return (
-    <div className="shop">
+    <div className={styles.shop}>
       <FilterPanel
         location={location}
         history={history}

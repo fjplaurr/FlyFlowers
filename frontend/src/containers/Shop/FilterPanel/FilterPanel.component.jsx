@@ -1,15 +1,15 @@
 import React from 'react';
-import CustomCheckBox from './CustomCheckBox';
+import CustomCheckBox from '../../../components/CustomCheckBox';
+import styles from './FilterPanel.module.scss';
 
 const FilterPanel = ({ location, history }) => {
   return (
-    <form className="filterForm">
-      <div className="filters">
-        <div className="filterWrapper">
-          <h2 className="FilterTitle">Colors</h2>
-          <div className="colors">
+    <div className={styles.filterContainer}>
+      <div className={styles.filters}>
+        <div className={styles.filterWrapper}>
+          <h2 className={styles.filterTitle}>Colors</h2>
+          <div className={styles.colors}>
             <CustomCheckBox
-              className="colorInput"
               location={location}
               history={history}
               dataSearchKey="color"
@@ -18,7 +18,6 @@ const FilterPanel = ({ location, history }) => {
               ariaLabel="Filter by orange color"
             />
             <CustomCheckBox
-              className="colorInput"
               location={location}
               history={history}
               dataSearchKey="color"
@@ -27,7 +26,6 @@ const FilterPanel = ({ location, history }) => {
               ariaLabel="Filter by orange color"
             />
             <CustomCheckBox
-              className="colorInput"
               location={location}
               history={history}
               dataSearchKey="color"
@@ -36,7 +34,6 @@ const FilterPanel = ({ location, history }) => {
               ariaLabel="Filter by red color"
             />
             <CustomCheckBox
-              className="colorInput"
               location={location}
               history={history}
               dataSearchKey="color"
@@ -46,8 +43,8 @@ const FilterPanel = ({ location, history }) => {
             />
           </div>
         </div>
-        <div className="filterWrapper">
-          <h2 className="FilterTitle">Occasions</h2>
+        <div className={styles.filterWrapper}>
+          <h2 className={styles.filterTitle}>Occasions</h2>
           <CustomCheckBox
             location={location}
             history={history}
@@ -72,7 +69,7 @@ const FilterPanel = ({ location, history }) => {
             id="decorationOccasion"
             labelValue="Decoration"
           />
-          <h2 className="FilterTitle">Price</h2>
+          <h2 className={styles.filterTitle}>Price</h2>
           <CustomCheckBox
             location={location}
             history={history}
@@ -99,7 +96,7 @@ const FilterPanel = ({ location, history }) => {
           />
         </div>
       </div>
-    </form>
+    </div>
   )
 }
 

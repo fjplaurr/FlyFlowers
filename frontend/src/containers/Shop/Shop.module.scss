@@ -1,0 +1,33 @@
+.shop {
+  width: 100vw;
+  max-width: 1920px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 767px) {
+  .shop {
+    margin: 1rem auto;
+    flex-direction: column;
+
+    label {
+      font-size: 0.8rem;
+    }
+
+    input[type="checkbox"] + label:before,
+    input[type="radio"] + label:before {
+      margin-right: 0.5rem;
+      width: 20px;
+      height: 20px;
+      transition: 0.2s;
+      font-size: 14px;
+    }
+
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+      font-size: 0.8rem;
+    }
+  }
+}

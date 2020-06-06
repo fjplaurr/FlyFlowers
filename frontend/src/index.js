@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import Home from './containers/Home';
 import NavBar from './components/NavBar';
 import Empty from './components/Empty';
-import NotFound from './components/NotFound';
+import NotFound from './containers/NotFound';
 import SingleProduct from './components/SingleProduct';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';

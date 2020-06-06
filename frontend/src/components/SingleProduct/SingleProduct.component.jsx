@@ -1,30 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import addToBag from '../../redux/actions/addToBag';
 import increaseBilling from '../../redux/actions/increaseBilling';
+import styles from './SingleProduct.module.scss';
 
-function SingleProduct(props) {
-  const { history, addProductToBag, incrBilling, products } = props;
+function SingleProduct({ history, addProductToBag, incrBilling, productsStore }) {
+  const [product, setProduct] = useState();
+  // get id from params 
   const { id } = useParams();
-  const item = products.find((elem) => elem.id === id);
+
+  // filter all products with the id received from params
+  useEffect(() => {
+    const item = productsStore.find((elem) => elem._id === id);
+    setProduct(item);
+  }, [productsStore, id]);
+
+  // add product to bag
   const handleClick = () => {
-    addProductToBag(id);
-    incrBilling(item.price);
+    addProductToBag(product.id);
+    incrBilling(product.price);
     history.push('/bag');
   };
-  return (
-    <div className="singleProduct">
-      <div className="productDescription">
-        <h1>{item.title}</h1>
-        <p className="price">{`${item.price.toFixed(2)} €`}</p>
-        <p className="description">{item.longDescription}</p>
-        <button type="button" onClick={() => handleClick()}>Add to bag</button>
+
+  useEffect(() => {
+    console.log('debug')
+    product && console.log(product.url);
+  }, [product])
+
+  return product ? (
+    <div className={styles.singleProduct}>
+      <div className={styles.productDescription}>
+        <h1 className={styles.title}>{product.title}</h1>
+        <p className={styles.price}>{`${product.price.toFixed(2)} €`}</p>
+        <p className={styles.description}>{product.longDescription}</p>
+        <button
+          className={styles.customButton}
+          type="button"
+          onClick={() => handleClick()}
+        >Add to bag
+         </button>
       </div>
-      <div className="imageWrapper" style={{ backgroundImage: `url(${item.url})` }} />
+      <div
+        className={styles.imageWrapper}
+        style={{ backgroundImage: `url(${product.url})` }}
+      />
     </div>
-  );
+  ) : <></>
 }
 
 SingleProduct.propTypes = {
@@ -42,7 +65,7 @@ const mapDispatchToProps = {
 
 function mapStateToProps(state) {
   return {
-    products: state.products,
+    productsStore: state.products.products,
   }
 }
 

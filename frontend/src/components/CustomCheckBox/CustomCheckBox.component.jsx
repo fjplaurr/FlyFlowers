@@ -54,7 +54,11 @@ const CustomCheckBox = ({ dataSearchKey, dataSearchValue, id, history, location,
         checked={checked}
         className={className}
       />
-      <label aria-label={ariaLabel} htmlFor={id}>{labelValue}</label>
+      <label
+        aria-label={ariaLabel}
+        htmlFor={id}>
+        {labelValue}
+      </label>
     </>
   )
 }

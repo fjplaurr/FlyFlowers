@@ -1,0 +1,36 @@
+.pageTitle {
+  padding-left: 5rem;
+  color: #333333;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 2rem 0;
+  font-size: 3rem;
+  align-self: flex-start;
+}
+.productsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.gridWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .pageTitle {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  .gridWrapper {
+    justify-content: space-evenly;
+    border-left: none;
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+}

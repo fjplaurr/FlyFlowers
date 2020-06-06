@@ -1,0 +1,59 @@
+.filterContainer {
+  position: sticky;
+  top: 5rem;
+  left: 2rem;
+}
+.filterTitle {
+  font-weight: 600;
+  color: #333333;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.colors {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.filterWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+}
+.filters {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 767px) {
+  .filterTitle {
+    font-size: 0.8rem;
+  }
+  .colors {
+    width: 80px;
+    flex-wrap: wrap;
+  }
+  .filterWrapper {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .filters {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  .filterForm {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

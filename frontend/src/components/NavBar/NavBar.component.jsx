@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.scss';
+import styles from './NavBar.module.scss';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineShopping } from 'react-icons/ai';
@@ -22,20 +22,43 @@ class NavBar extends React.Component {
   render() {
     const { open } = this.state;
     return (
-      <nav className="navBar">
-        <div className="navWrapper">
-          <button type="button" className="navButton hideHighResolut" onClick={this.toggle}>
-            {open ? <MdClose /> : <GiHamburgerMenu />}
+      <nav className={styles.navBar}>
+        <div className={styles.navWrapper}>
+          <button
+            type="button"
+            className={`${styles.navButton} ${styles.hideHighResolut}`}
+            onClick={this.toggle}>
+            {open ?
+              <MdClose
+                size={'1rem'}
+                color={'#ffffff'}
+              /> :
+              <GiHamburgerMenu
+                size={'1rem'}
+                color={'#ffffff'}
+              />}
           </button>
-          <div className="logoNavBar">
-            <Link to="/">
+          <div className={styles.logoNavBar}>
+            <Link
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                fontSize: '18px',
+              }}
+              to="/"
+            >
               Fly Flowers
-              <div className="logoPink" />
-              <div className="logoGreen" />
+              <div className={styles.logoPink} />
+              <div className={styles.logoGreen} />
             </Link>
           </div>
-          <div className={open ? 'linksNavBar open' : 'linksNavBar close'}>
+          <div
+            className={open ? `${styles.linksNavBar} ${styles.open}` : `${styles.linksNavBar} ${styles.close}`}>
             <Link
+              style={{
+                color: '#e6e6e6',
+                padding: '1rem 2rem',
+              }}
               to={{
                 pathname: '/empty',
                 search: '?occasion=birthday',
@@ -46,6 +69,10 @@ class NavBar extends React.Component {
               Birthday
             </Link>
             <Link
+              style={{
+                color: '#e6e6e6',
+                padding: '1rem 2rem',
+              }}
               to={{
                 pathname: '/empty',
                 search: '?occasion=love',
@@ -56,6 +83,10 @@ class NavBar extends React.Component {
               Love
             </Link>
             <Link
+              style={{
+                color: '#e6e6e6',
+                padding: '1rem 2rem',
+              }}
               to={{
                 pathname: '/empty',
                 search: '?occasion=decoration',
@@ -67,13 +98,17 @@ class NavBar extends React.Component {
             </Link>
           </div>
           <Link
+            style={{
+              color: '#e6e6e6',
+              padding: '1rem 2rem',
+            }}
             to="/bag"
-            className="bagWrapper"
+            className={styles.bagWrapper}
           >
             <AiOutlineShopping />
           </Link>
         </div>
-      </nav>
+      </nav >
     );
   }
 }

@@ -3,72 +3,71 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProductBag from './ProductBag';
 import ProductCard from '../../components/ProductCard';
-import './Bag.scss';
-
+import styles from './Bag.module.scss';
 function Bag({ bag, products }) {
   let totalPrice = 0;
   let totalQuantity = 0;
-  const productsBagArr = products.map((x) => {
-    const index = bag.findIndex((product) => product.id === x.id);
+  const productsBagArr = products.map((item) => {
+    const index = bag.findIndex((product) => product._id === item._id);
     if (bag.length > 0 && index !== -1) {
       totalQuantity += bag[index].quantity;
-      totalPrice += x.price * bag[index].quantity;
+      totalPrice += item.price * bag[index].quantity;
       return (
         <ProductBag
-          url={x.url}
-          title={x.title}
-          longDescription={x.longDescription}
-          shortDescription={x.shortDescription}
-          colors={x.colors}
-          price={x.price}
-          trends={x.trends}
-          key={x.id}
-          id={x.id}
-          name={x.title}
+          url={item.url}
+          title={item.title}
+          longDescription={item.longDescription}
+          shortDescription={item.shortDescription}
+          colors={item.colors}
+          price={item.price}
+          trends={item.trends}
+          key={item._id}
+          id={item._id}
+          name={item.title}
         />
       );
     }
     return false;
   });
   return (
-    <div className="bag">
+    <div className={styles.bag}>
       {bag.length > 0
         ? (
-          <div className="headerWithProducts">
-            <h1>Your bag</h1>
-            <div className="totalWrapper">
-              <p className="totalProducts">{`${parseInt(totalQuantity, 0)} Products`}</p>
-              <p className="priceTop">{`Total: ${totalPrice.toFixed(2)}€`}</p>
+          <div className={styles.headerWithProducts}>
+            <h1 className={styles.titleHeaderWithProducts}>Your bag</h1>
+            <div className={styles.totalWrapper}>
+              <p className={styles.totalProducts}>{`${parseInt(totalQuantity, 0)} Products`}</p>
+              <p className={styles.priceTop}>{`Total: ${totalPrice.toFixed(2)}€`}</p>
             </div>
           </div>
         )
         : (
-          <div className="headerWithoutProducts">
-            <h1>Your bag is empty.</h1>
-            <h2>Explore our shop and add some color.</h2>
+          <div className={styles.headerWithoutProducts}>
+            <h1 className={styles.titleHeader}>Your bag is empty.</h1>
+            <h2 className={styles.subtitleHeader}>Explore our shop and add some color.</h2>
           </div>
         )}
       {productsBagArr}
-      <div className="bagBottom">
+      <div className={styles.bagBottom}>
         {bag.length > 0 ? (
-          <p className="priceBottom">{`Total: ${totalPrice.toFixed(2)}€`}</p>
+          <p className={styles.priceBottom}>{`Total: ${totalPrice.toFixed(2)}€`}</p>
         ) : <></>}
-        <div className="recommendations">
-          <h2>A few recommended flowers.</h2>
-          <div className="recommendedFlowers">
-            {products.map((x) => {
-              if (x.recommended) {
+        <div className={styles.recommendations}>
+          <h2 className={styles.titleRecommendations}>A few recommended flowers.</h2>
+          <div className={styles.recommendedFlowers}>
+            {products.map((item) => {
+              if (item.recommended) {
                 return (
                   <ProductCard
-                    url={x.url}
-                    title={x.title}
-                    longDescription={x.longDescription}
-                    shortDescription={x.shortDescription}
-                    colors={x.colors}
-                    price={x.price}
-                    trends={x.trends}
-                    key={x.id}
-                    id={x.id}
+                    url={item.url}
+                    title={item.title}
+                    longDescription={item.longDescription}
+                    shortDescription={item.shortDescription}
+                    colors={item.colors}
+                    price={item.price}
+                    trends={item.trends}
+                    key={item._id}
+                    _id={item._id}
                   />
                 );
               }
@@ -84,7 +83,7 @@ function Bag({ bag, products }) {
 function mapStateToProps(state) {
   return {
     bag: state.bag,
-    products: state.products,
+    products: state.products.products,
   };
 }
 

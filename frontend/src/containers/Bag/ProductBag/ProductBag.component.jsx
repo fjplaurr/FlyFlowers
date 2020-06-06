@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductBag.scss';
+import styles from './ProductBag.module.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import addToBag from '../../../redux/actions/addToBag';
@@ -8,29 +8,39 @@ import increaseBilling from '../../../redux/actions/increaseBilling';
 import decreaseBilling from '../../../redux/actions/decreaseBilling';
 import CalendarIcon from '../../../images/CalendarIcon';
 
-function ProductBag(props) {
-  const {
-    id, addProductToBag, price, incrBilling, deleteProductFromBag, url, shortDescription, bag,
-  } = props;
+function ProductBag({
+  _id,
+  addProductToBag,
+  price,
+  incrBilling,
+  deleteProductFromBag,
+  url,
+  shortDescription,
+  bag,
+}) {
 
   function changeQuantity(event) {
-    addProductToBag(id, event.target.value);
+    addProductToBag(_id, event.target.value);
     incrBilling(price);
   }
 
   return (
-    <div className="productBag">
-      <div className="imageWrapper" style={{ backgroundImage: `url(${url})` }} />
-      <div className="completeInfoWrapper">
-        <div className="infoWrapper">
-          <p className="descriptionProduct">{shortDescription}</p>
-          <div className="quantityWrapper">
-            <label htmlFor={id}>Quantity:</label>
+    <div className={styles.productBag}>
+      <div
+        className={styles.imageWrapper}
+        style={{ backgroundImage: `url(${url})` }}
+      />
+      <div className={styles.completeInfoWrapper}>
+        <div className={styles.infoWrapper}>
+          <p className={styles.descriptionProduct}>{shortDescription}</p>
+          <div className={styles.quantityWrapper}>
+            <label className={styles.quantityWrapperLabel} htmlFor={_id}>Quantity:</label>
             <input
-              id={id}
+              className={styles.quantityWrapperInput}
+              id={_id}
               type="number"
               min="1"
-              value={bag.find((elem) => elem.id === id).quantity}
+              value={bag.find((elem) => elem._id === _id).quantity}
               onChange={changeQuantity}
               onInput={(event) => {
                 if (event.target.value.length > 2) {
@@ -40,15 +50,21 @@ function ProductBag(props) {
               }}
             />
           </div>
-          <div className="priceWrapper">{`${(bag.find((product) => product.id === id).quantity * price).toFixed(2)}€`}</div>
-        </div>
-        <div className="bottomInfoWrapper">
-          <div className="deliveryInfo">
-            <CalendarIcon />
-            {/* <img className="calendarIcon" src={calendarIcon} alt="free delivery" /> */}
-            <span>Delivery free in two days</span>
+          <div className={styles.priceWrapper}>
+            {`${(bag.find((product) => product._id === _id).quantity * price).toFixed(2)}€`}
           </div>
-          <button type="button" onClick={() => deleteProductFromBag(id)}>Remove</button>
+        </div>
+        <div className={styles.bottomInfoWrapper}>
+          <div className={styles.deliveryInfo}>
+            <CalendarIcon />
+            <span className={styles.deliverySpan}>Delivery free in two days</span>
+          </div>
+          <button
+            className={styles.customButton}
+            type="button"
+            onClick={() => deleteProductFromBag(_id)}
+          >Remove
+           </button>
         </div>
       </div>
     </div>

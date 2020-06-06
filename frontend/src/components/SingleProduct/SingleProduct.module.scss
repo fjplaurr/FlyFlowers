@@ -1,0 +1,99 @@
+.singleProduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
+  flex-wrap: wrap-reverse;
+}
+.customButton {
+  background: #2e7322;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
+  color: white;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  width: 80%;
+}
+.productDescription {
+  max-width: 30%;
+  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.title {
+  color: #333333;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: left;
+}
+.description {
+  margin: 2rem 0;
+  color: #333333;
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 2.2rem;
+}
+.price {
+  color: #4d4d4d;
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 2rem 0;
+}
+.modifyBag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+a:hover {
+  text-decoration: underline;
+}
+.imageWrapper {
+  width: 450px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .singleProduct {
+    margin-top: 2rem;
+    width: 80%;
+  }
+  .customButton {
+    align-self: center;
+    margin-top: 1rem;
+  }
+  .imageWrapper {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+  .productDescription {
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .price {
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+  .description {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+}

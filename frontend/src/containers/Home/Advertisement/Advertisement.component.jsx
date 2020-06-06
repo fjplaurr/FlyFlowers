@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Advertisement.module.scss'
 
-function Advertisement(props) {
-  const {
-    imageUrl, imageClass, imageAlt, history,
-  } = props;
+function Advertisement({ imageUrl, imageClass, imageAlt, history }) {
   return (
-    <div className="productCollection">
-      <img src={imageUrl} className={imageClass} alt={imageAlt} />
-      <div className="caption">
-        <h1 >Colorful Collection</h1>
-        <h2 className="colorfulSubTitle">Vivid colors that inspire</h2>
-        <button type="button" onClick={() => history.push('/shop')}>Discover it</button>
+    <div className={styles.advertisementContainer}>
+      <img
+        src={imageUrl}
+        className={imageClass}
+        alt={imageAlt}
+      />
+      <div>
+        <h1>Colorful Collection</h1>
+        <h2>Vivid colors that inspire</h2>
+        <button
+          type="button"
+          onClick={() => history.push('/shop')}
+        >
+          Discover it
+        </button>
       </div>
     </div>
   );

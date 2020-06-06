@@ -7,10 +7,6 @@ const initialState = {
 }
 
 const products = (state = initialState, action) => {
-  console.log('action isss')
-  console.log(action)
-  console.log('action.payload isssss')
-  console.log(action.payload)
   switch (action.type) {
     case FETCH_PRODUCTS_START:
       return {
