@@ -9,7 +9,6 @@
     "express": "^4.17.1",
     "mongoose": "^5.8.4"
   },
-  "eslintConfig": {},
   "scripts": {
     "start": "node server.js",
     "develop": "nodemon server.js"
