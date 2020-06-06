@@ -1,0 +1,18 @@
+{
+  "homepage": "http://fjplaurr.github.io/flowersShop",
+  "name": "flowers-shop",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.4"
+  },
+  "eslintConfig": {},
+  "scripts": {
+    "start": "node server.js",
+    "develop": "nodemon server.js"
+  },
+  "devDependencies": {}
+}
