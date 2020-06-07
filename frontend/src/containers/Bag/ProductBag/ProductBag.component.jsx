@@ -33,9 +33,13 @@ function ProductBag({ product, deleteProductFromBag, addProductToBag, incrBillin
 
   const handleInputChange = (event) => {
     const { value, maxLength } = event.target;
-    const quantity = value.slice(0, maxLength);
+    let quantity = value.slice(0, maxLength);
+    // if the input field is empty
+    if (!quantity) {
+      quantity = 0;
+    }
     // change total quantity in input
-    setTotalQuantity(quantity);
+    setTotalQuantity(parseInt(quantity));
     // increase the billing in redux
     incrBilling(price);
     // add product to redux
