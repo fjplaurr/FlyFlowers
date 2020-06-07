@@ -44,6 +44,8 @@ class NavBar extends React.Component {
                 display: 'flex',
                 flexDirection: 'row',
                 fontSize: '18px',
+                color: '#e6e6e6',
+                textDecoration: 'none',
               }}
               to="/"
             >
@@ -58,6 +60,7 @@ class NavBar extends React.Component {
               style={{
                 color: '#e6e6e6',
                 padding: '1rem 2rem',
+                textDecoration: 'none',
               }}
               to={{
                 pathname: '/empty',
@@ -72,6 +75,7 @@ class NavBar extends React.Component {
               style={{
                 color: '#e6e6e6',
                 padding: '1rem 2rem',
+                textDecoration: 'none',
               }}
               to={{
                 pathname: '/empty',
@@ -86,6 +90,7 @@ class NavBar extends React.Component {
               style={{
                 color: '#e6e6e6',
                 padding: '1rem 2rem',
+                textDecoration: 'none',
               }}
               to={{
                 pathname: '/empty',

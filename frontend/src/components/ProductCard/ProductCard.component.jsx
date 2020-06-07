@@ -9,6 +9,9 @@ function ProductCard({
 }) {
   return (
     <Link
+      style={{
+        textDecoration: 'none',
+      }}
       to={`/singleProduct/${_id}`}
       className={styles.productCard}>
       <div className={styles.card}>

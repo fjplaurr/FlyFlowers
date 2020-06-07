@@ -1,38 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProductBag from './ProductBag';
 import ProductCard from '../../components/ProductCard';
 import styles from './Bag.module.scss';
 function Bag({ bag, products }) {
-  // const [productsBag, setProductsBag] = useState([]);
-  // const [totalQuantity, setTotalQuantity] = useState(0);
-  // const [totalPrice, setTotalPrice] = useState(0);
-  let totalPrice = 0;
-  let totalQuantity = 0;
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const productsBagArr = products.map((item) => {
-    const index = bag.findIndex((product) => product._id === item._id);
-    if (bag.length > 0 && index !== -1) {
-      totalQuantity += bag[index].quantity;
-      totalPrice += item.price * bag[index].quantity;
-      return (
-        <ProductBag
-          url={item.url}
-          title={item.title}
-          longDescription={item.longDescription}
-          shortDescription={item.shortDescription}
-          colors={item.colors}
-          price={item.price}
-          trends={item.trends}
-          key={item._id}
-          _id={item._id}
-          name={item.title}
-        />
-      );
-    }
-    return false;
-  });
+  // set total quantity and price when bag is updated
+  useEffect(() => {
+    const getTotalQuantity = () => {
+      let total = 0;
+      bag.forEach(obj => {
+        total += parseInt(obj.quantity);
+      });
+      return total;
+    };
+    const getTotalPrice = () => {
+      let total = 0;
+      bag.forEach(obj => {
+        total += parseInt(obj.quantity) * obj.product.price;
+      });
+      return total;
+    };
+
+    setTotalQuantity(getTotalQuantity(bag));
+    setTotalPrice(getTotalPrice(bag));
+  }, [bag])
+
+  const productsBag = bag.map((item) =>
+    <ProductBag product={item.product} />
+  );
 
   return (
     <div className={styles.bag}>
@@ -52,7 +51,7 @@ function Bag({ bag, products }) {
             <h2 className={styles.subtitleHeader}>Explore our shop and add some color.</h2>
           </div>
         )}
-      {productsBagArr}
+      {productsBag}
       <div className={styles.bagBottom}>
         {bag.length > 0 ? (
           <p className={styles.priceBottom}>{`Total: ${totalPrice.toFixed(2)}€`}</p>
@@ -93,7 +92,18 @@ function mapStateToProps(state) {
 }
 
 Bag.propTypes = {
-  bag: PropTypes.arrayOf(PropTypes.shape({ quantity: PropTypes.number }).isRequired).isRequired,
+  bag:
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        product: PropTypes.shape({
+          price: PropTypes.number.isRequired,
+          url: PropTypes.string.isRequired,
+          shortDescription: PropTypes.string.isRequired,
+          _id: PropTypes.string.isRequired,
+        }),
+        quantity: PropTypes.number
+      }).isRequired
+    ).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);

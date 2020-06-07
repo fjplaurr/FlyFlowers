@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import addToBag from '../../redux/actions/addToBag';
-import increaseBilling from '../../redux/actions/increaseBilling';
+import { addToBag } from '../../redux/actions/bagActions';
+import { increaseBilling } from '../../redux/actions/billingActions';
 import styles from './SingleProduct.module.scss';
 
 function SingleProduct({ history, addProductToBag, incrBilling, productsStore }) {
@@ -19,15 +19,10 @@ function SingleProduct({ history, addProductToBag, incrBilling, productsStore })
 
   // add product to bag
   const handleClick = () => {
-    addProductToBag(product._id, 1);
+    addProductToBag(product, 1);
     incrBilling(product.price);
     history.push('/bag');
   };
-
-  useEffect(() => {
-    console.log('debug')
-    product && console.log(product.url);
-  }, [product])
 
   return product ? (
     <div className={styles.singleProduct}>
