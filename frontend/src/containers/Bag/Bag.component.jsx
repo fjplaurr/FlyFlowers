@@ -5,8 +5,12 @@ import ProductBag from './ProductBag';
 import ProductCard from '../../components/ProductCard';
 import styles from './Bag.module.scss';
 function Bag({ bag, products }) {
+  // const [productsBag, setProductsBag] = useState([]);
+  // const [totalQuantity, setTotalQuantity] = useState(0);
+  // const [totalPrice, setTotalPrice] = useState(0);
   let totalPrice = 0;
   let totalQuantity = 0;
+
   const productsBagArr = products.map((item) => {
     const index = bag.findIndex((product) => product._id === item._id);
     if (bag.length > 0 && index !== -1) {
@@ -22,13 +26,14 @@ function Bag({ bag, products }) {
           price={item.price}
           trends={item.trends}
           key={item._id}
-          id={item._id}
+          _id={item._id}
           name={item.title}
         />
       );
     }
     return false;
   });
+
   return (
     <div className={styles.bag}>
       {bag.length > 0

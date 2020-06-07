@@ -19,7 +19,7 @@ function SingleProduct({ history, addProductToBag, incrBilling, productsStore })
 
   // add product to bag
   const handleClick = () => {
-    addProductToBag(product.id);
+    addProductToBag(product._id, 1);
     incrBilling(product.price);
     history.push('/bag');
   };

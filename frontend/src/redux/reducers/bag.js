@@ -1,23 +1,27 @@
 import { ADD_TO_BAG, DELETE_FROM_BAG } from '../constants/actionTypes';
 
-export default function bag(state = [], action) {
+export default function bag(bag = [], action) {
   switch (action.type) {
     case ADD_TO_BAG: {
-      if (state && state.findIndex((x) => x._id === action.productId) !== -1) {
-        const newState = [...state];
-        const index = newState.findIndex((product) => product._id === action.productId);
-        newState[index].quantity = action.quantity;
-        return newState;
+      console.log('typeoff')
+      console.log(typeof(action.quantity))
+      console.log(bag.findIndex((item) => item._id === action.productId))
+      if (bag && bag.findIndex((item) => item._id === action.productId) !== -1) {
+        const newbag = [...bag];
+        const index = newbag.findIndex((product) => product._id === action.productId);
+        newbag[index].quantity = action.quantity;
+        return newbag;
+      } else {
+        return [...bag, { _id: action.productId, quantity: 1 }];
       }
-      return [...state, { id: action.productId, quantity: 1 }];
     }
     case DELETE_FROM_BAG: {
-      const newState = [...state];
-      const index = newState.findIndex((product) => product._id === action.payload);
-      newState.splice(index, 1);
-      return newState;
+      const newbag = [...bag];
+      const index = newbag.findIndex((product) => product._id === action.payload);
+      newbag.splice(index, 1);
+      return newbag;
     }
     default:
-      return state;
+      return bag;
   }
 }
