@@ -1,25 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Advertisement.module.scss'
+import styles from './Advertisement.module.scss';
 
-function Advertisement({ imageUrl, imageClass, imageAlt, history }) {
+function Advertisement({ imageUrl, imageClass, imageAlt,
+  history, title, subtitle, textColor, bottonColor, bottonTextColor,
+  bottonHoverColor, bottonTextHoverColor }) {
+  const [hover, setHover] = useState(false);
   return (
-    <div className={styles.advertisementContainer}>
+    <div className={styles.container}>
+      <h1 className={styles.title} style={{ color: textColor }}>{title}</h1>
+      <h2 className={styles.subtitle} style={{ color: textColor }}>{subtitle}</h2>
+      <button
+        style={hover ? {
+          backgroundColor: bottonHoverColor,
+          color: bottonTextHoverColor
+        } : {
+            backgroundColor: bottonColor,
+            color: bottonTextColor
+          }
+        }
+        className={styles.toShopButton}
+        type="button"
+        onClick={() => history.push('/shop')}
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+      >
+        Discover it
+        </button>
       <img
         src={imageUrl}
-        className={imageClass}
+        className={`${imageClass} ${styles.picture}`}
         alt={imageAlt}
       />
-      <div>
-        <h1>Colorful Collection</h1>
-        <h2>Vivid colors that inspire</h2>
-        <button
-          type="button"
-          onClick={() => history.push('/shop')}
-        >
-          Discover it
-        </button>
-      </div>
     </div>
   );
 }

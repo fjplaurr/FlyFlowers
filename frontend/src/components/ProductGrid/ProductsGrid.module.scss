@@ -1,7 +1,8 @@
+@import "../../variables.scss";
+
 .pageTitle {
   padding-left: 5rem;
-  color: #333333;
-  font-family: "Montserrat", sans-serif;
+  color: $darkGray;
   font-weight: 600;
   margin: 2rem 0;
   font-size: 3rem;

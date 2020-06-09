@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 .productBag {
   padding: 3rem 0;
   display: flex;
@@ -20,7 +22,7 @@
   width: 100%;
   text-align: center;
   font-size: 2rem;
-  color: #333333;
+  color: $darkGray;
 }
 .quantityWrapper {
   display: flex;
@@ -35,7 +37,7 @@
   padding: 15px;
 }
 .quantityWrapper:hover {
-  border: 1px #ff4fe3 solid;
+  border: 1px $pink solid;
   box-shadow: 0 0 2px 1px #ff4fe26e;
 }
 .bouquetImg {
@@ -50,7 +52,7 @@
   background-position: center;
 }
 .customButton {
-  background-color: white;
+  background-color: $white;
   font-size: 1rem;
   display: flex;
   justify-content: center;
@@ -58,18 +60,18 @@
   cursor: pointer;
 }
 .customButton {
-  color: #ff4fe3;
+  color: $pink;
   font-size: 1.2rem;
   font-weight: 500;
 }
 .customButton :hover {
-  color: #b3b3b3;
+  color: $orange;
 }
 .priceWrapper {
   flex-basis: 20%;
   text-align: right;
   font-size: 1.5rem;
-  color: #222222;
+  color: $lightBlack;
 }
 .quantityWrapperInput::-webkit-outer-spin-button,
 .quantityWrapperInput::-webkit-inner-spin-button {
@@ -106,7 +108,7 @@
   margin-right: 0 2rem;
   font-size: 1.5rem;
   .deliverySpan {
-    color: #626262;
+    color: $mediumGray;
   }
 }
 
@@ -151,7 +153,7 @@
   .priceWrapper {
     text-align: center;
     font-size: 1rem;
-    color: #222222;
+    color: $lightBlack;
     margin-top: 1rem;
   }
   .bottomInfoWrapper {

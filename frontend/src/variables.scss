@@ -1,0 +1,29 @@
+$lightGray: #ececec;
+$mediumGray: #555555;
+$darkGray: #333333;
+$white: #ffffff;
+$black: #000000;
+$darkBlack: #111111;
+$lightBlack: #222222;
+$pink: #ff4fe3;
+$red: #c00000;
+$orange: #f0a028;
+$yellow: #e6e614;
+$darkGreen: #2e7322;
+$darkGreenBlue: #143c41;
+
+// export to use in js files
+:export {
+  lightGray: $lightGray;
+  darkGray: $darkGray;
+  white: $white;
+  mediumGray: $mediumGray;
+  black: $black;
+  darkBlack: $darkBlack;
+  lightBlack: $lightBlack;
+  pink: $pink;
+  red: $red;
+  orange: $orange;
+  yellow: $yellow;
+  darkGreen: $darkGreen;
+}

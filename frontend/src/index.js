@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
@@ -51,7 +51,7 @@ const routing = (
             <Route component={NotFound} />
           </Switch>
           <div className="spacer" />
-          <Footer title="© 2020 Fly Flowers. All rights reserved." />
+          <Footer/>
         </>
       </Suspense>
     </Router>

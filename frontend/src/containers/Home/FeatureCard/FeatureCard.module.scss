@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 .featureWrapper {
   display: flex;
   flex-direction: column;
@@ -7,12 +9,12 @@
 
 .title {
   font-weight: 600;
-  color: #333333;
+  color: $darkGray;
   font-size: 1.5rem;
   margin: 1.5rem 0;
 }
 .paragraph {
-  color: #1a1a1a;
+  color: $darkBlack;
   font-weight: 500;
   font-size: 1rem;
   line-height: 2rem;

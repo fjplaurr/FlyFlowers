@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 html,
 body,
 #root,
@@ -12,10 +14,6 @@ body,
   min-height: 100vh; /*So that the spacer can work*/
 }
 
-h1 {
-  font-family: "Playfair Display", serif;
-}
-
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -28,16 +26,8 @@ h1 {
 }
 
 body {
-  color: #333333;
+  color: $darkGray;
   text-align: center;
-}
-
-ul {
-  list-style: none;
-}
-
-li {
-  list-style-type: none;
 }
 
 .companyLogo {

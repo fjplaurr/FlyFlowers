@@ -24,8 +24,11 @@ Things you need to be installed to run this app:
 
 * [React.js](https://es.reactjs.org)
 * [Redux](https://redux.js.org)
-* [npm](https://www.npmjs.com)
+* [Node.js](https://nodejs.org)
+* [Express.js](https://expressjs.com)
+* [Mongodb](https://www.mongodb.com)
 * [ESLint](https://eslint.org)
+* [npm](https://www.npmjs.com)
 
 ## Author
 

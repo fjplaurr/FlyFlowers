@@ -3,24 +3,21 @@ import styles from './Footer.module.scss';
 import {
   FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram,
 } from 'react-icons/fa';
-import PropTypes from 'prop-types';
+import variables from '../../variables.scss';
 
-function Footer({ title }) {
+function Footer() {
   return (
     <div className={styles.footer}>
-      <p>{title}</p>
+      <p>{"© 2020 Fly Flowers. All rights reserved."}</p>
       <div className={styles.iconsWrapper}>
-        <FaTwitter color={'#616161'} />
-        <FaFacebookF color={'#616161'} />
-        <FaLinkedinIn color={'#616161'} />
-        <FaInstagram color={'#616161'} />
+        <FaTwitter color={variables.mediumGray} />
+        <FaFacebookF color={variables.mediumGray} />
+        <FaLinkedinIn color={variables.mediumGray} />
+        <FaInstagram color={variables.mediumGray} />
       </div>
     </div>
   );
 }
 
-Footer.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default Footer;

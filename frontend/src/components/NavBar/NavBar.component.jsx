@@ -4,7 +4,7 @@ import styles from './NavBar.module.scss';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineShopping } from 'react-icons/ai';
-
+import variables from '../../variables.scss';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -31,11 +31,11 @@ class NavBar extends React.Component {
             {open ?
               <MdClose
                 size={'1rem'}
-                color={'#ffffff'}
+                color={variables.white}
               /> :
               <GiHamburgerMenu
                 size={'1rem'}
-                color={'#ffffff'}
+                color={variables.white}
               />}
           </button>
           <div className={styles.logoNavBar}>
@@ -44,7 +44,7 @@ class NavBar extends React.Component {
                 display: 'flex',
                 flexDirection: 'row',
                 fontSize: '18px',
-                color: '#e6e6e6',
+                color: variables.white,
                 textDecoration: 'none',
               }}
               to="/"
@@ -58,7 +58,7 @@ class NavBar extends React.Component {
             className={open ? `${styles.linksNavBar} ${styles.open}` : `${styles.linksNavBar} ${styles.close}`}>
             <Link
               style={{
-                color: '#e6e6e6',
+                color: variables.white,
                 padding: '1rem 2rem',
                 textDecoration: 'none',
               }}
@@ -73,7 +73,7 @@ class NavBar extends React.Component {
             </Link>
             <Link
               style={{
-                color: '#e6e6e6',
+                color: variables.white,
                 padding: '1rem 2rem',
                 textDecoration: 'none',
               }}
@@ -88,7 +88,7 @@ class NavBar extends React.Component {
             </Link>
             <Link
               style={{
-                color: '#e6e6e6',
+                color: variables.white,
                 padding: '1rem 2rem',
                 textDecoration: 'none',
               }}
@@ -104,7 +104,7 @@ class NavBar extends React.Component {
           </div>
           <Link
             style={{
-              color: '#e6e6e6',
+              color: variables.white,
               padding: '1rem 2rem',
             }}
             to="/bag"

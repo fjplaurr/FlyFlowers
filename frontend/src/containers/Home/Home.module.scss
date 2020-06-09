@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .home {
   width: 100vw;
   max-width: 1920px;
@@ -10,15 +12,15 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 200px;
 }
 .featuresSubTitle {
-  color: #333333;
+  color: $darkGray;
   font-size: 3rem;
-  font-family: "Playfair Display", serif;
   font-weight: 400;
 }
 .headerTitle {
-  color: white;
+  color: $white;
   font-size: 4rem;
   font-weight: 600;
   line-height: 5rem;
@@ -26,8 +28,7 @@
   margin-left: 3%;
 }
 .headerSubtitle {
-  font-family: "Playfair Display", serif;
-  color: white;
+  color: $white;
   font-size: 2.25rem;
   font-weight: normal;
   line-height: 5rem;
@@ -69,7 +70,7 @@
   margin: 5rem 0;
   margin-bottom: 2rem;
   font-weight: 600;
-  color: #333333;
+  color: $darkGray;
   font-size: 2rem;
 }
 .coverPage {
@@ -107,7 +108,7 @@
     font-size: 1.2rem;
   }
   .headerTitle {
-    color: white;
+    color: $white;
     font-size: 1.7rem;
     font-weight: normal;
     text-align: left;

@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 .filterContainer {
   position: sticky;
   top: 5rem;
@@ -5,7 +7,7 @@
 }
 .filterTitle {
   font-weight: 600;
-  color: #333333;
+  color: $darkGray;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }

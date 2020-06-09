@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .productCard {
   margin: 1rem 2rem;
 }
@@ -16,7 +18,7 @@
   align-items: center;
   white-space: nowrap;
   font-size: 1.1rem;
-  color: #2e7322;
+  color: $darkGreen;
 }
 .infoProduct {
   max-width: 300px;
@@ -31,13 +33,13 @@
 }
 .price {
   margin: 1rem 0;
-  color: #4d4d4d;
+  color: $mediumGray;
   font-size: 1.5rem;
   text-align: left;
   font-weight: 600;
 }
 .description {
-  color: #1a1a1a;
+  color: $darkBlack;
   text-align: center;
   font-size: 1.1rem;
 }
@@ -66,7 +68,7 @@
     width: 120px;
   }
   .description {
-    color: #1a1a1a;
+    color: $darkBlack;
     text-align: center;
     font-size: 0.9rem;
   }

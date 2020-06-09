@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .bag {
   padding-top: 4rem;
   display: flex;
@@ -20,18 +22,16 @@
 .titleHeaderWithoutProducts {
   font-size: 3rem;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif;
 }
 .subtitleHeaderWithoutProducts {
   margin-top: 1.5rem;
   font-size: 2rem;
-  color: #555555;
+  color: $mediumGray;
   font-weight: 400;
 }
 .titleHeaderWithProducts {
   white-space: nowrap;
-  color: #333333;
-  font-family: "Montserrat", sans-serif;
+  color: $darkGray;
   font-weight: 600;
   font-size: 2.2rem;
   text-align: left;
@@ -59,12 +59,12 @@
   margin-left: 2rem;
   font-size: 1.5rem;
   white-space: nowrap;
-  color: #444444;
+  color: $mediumGray;
 }
 .priceTop {
   font-size: 1.5rem;
   white-space: nowrap;
-  color: #444444;
+  color: $mediumGray;
 }
 .total {
   width: 100%;
@@ -95,7 +95,7 @@
   justify-content: center;
   align-self: flex-end;
   flex-direction: column;
-  color: #444444;
+  color: $mediumGray;
   width: 100%;
   margin-top: 1rem;
 }
