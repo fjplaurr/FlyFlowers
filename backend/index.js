@@ -25,7 +25,7 @@ console.log(buildFolder)
 // Routers
 app.use('/api/flowers', flowersRoutes);
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(buildFolder, 'index.html'));
 });
 

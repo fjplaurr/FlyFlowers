@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "cd frontend && npm install && npm run build && cd .. && cd backend && npm install && node server.js"
+    "start": "node backend", 
+    "build": "cd frontend/ && npm install && npm run build"
   },
   "license": "MIT",
   "author": "fjplaurr"

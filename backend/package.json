@@ -8,9 +8,12 @@
     "express": "^4.17.1",
     "mongoose": "^5.8.4"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
-    "start": "node server.js",
-    "develop": "nodemon server.js"
+    "start": "node server",
+    "build": "nodemon server.js"
   },
   "devDependencies": {}
 }
