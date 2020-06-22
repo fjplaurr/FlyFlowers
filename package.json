@@ -1,11 +1,21 @@
 {
-  "name": "flowers-shop",
+  "name": "flowers-shop-node",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node backend", 
+    "start": "node backend",
     "build": "cd frontend/ && npm install && npm run build"
   },
   "license": "MIT",
-  "author": "fjplaurr"
+  "author": "fjplaurr",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.4"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "devDependencies": {}
 }
