@@ -12,8 +12,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "node server",
-    "build": "nodemon server.js"
+    "start": "node server"
   },
   "devDependencies": {}
 }
