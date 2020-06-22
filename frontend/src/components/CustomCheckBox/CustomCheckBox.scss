@@ -16,7 +16,6 @@ input[data-search-value="red"] + label:before {
   border: 0.1rem solid transparent;
 }
 input[data-search-value="red"]:checked + label:before {
-  border: 0.1rem solid $red;
   background-color: $red;
 }
 input[data-search-value="pink"] + label:before {
@@ -25,7 +24,6 @@ input[data-search-value="pink"] + label:before {
   border: 0.1rem solid transparent;
 }
 input[data-search-value="pink"]:checked + label:before {
-  border: 0.1rem solid $pink;
   background-color: $pink;
 }
 input[data-search-value="orange"] + label:before {
@@ -34,7 +32,6 @@ input[data-search-value="orange"] + label:before {
   border: 0.1rem solid transparent;
 }
 input[data-search-value="orange"]:checked + label:before {
-  border: 0.1rem solid $orange;
   background-color: $orange;
 }
 input[data-search-value="yellow"] + label:before {
@@ -43,7 +40,6 @@ input[data-search-value="yellow"] + label:before {
   border: 0.1rem solid transparent;
 }
 input[data-search-value="yellow"]:checked + label:before {
-  border: 0.1rem solid $yellow;
   background-color: $yellow;
 }
 input[type="checkbox"] + label,
