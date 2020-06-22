@@ -1,4 +1,6 @@
-require('dotenv').config({ path: `${__dirname}/.env` });
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config({ path: `${__dirname}/.env` });
+}
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -40,4 +42,6 @@ function errorHandler(error, request, response, next) {
 app.use(errorHandler);
 
 // Server listening
-app.listen(PORT);
+app.listen(PORT,
+  () => console.log(`Listening on port ${PORT}`)
+);
