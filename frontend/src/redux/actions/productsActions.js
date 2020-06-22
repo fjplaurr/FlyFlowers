@@ -4,9 +4,8 @@ import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR } fr
 const fetchProducts = async (products) => {
   try {
     store.dispatch(fetchProductsStart());
-    const response = await fetch('http://localhost:5000/api/flowers');
+    const response = await fetch('/api/flowers');
     products = await response.json();
-    console.log(products)
     store.dispatch(fetchProductsSuccess(products));
   } catch (error) {
     store.dispatch(fetchProductsError(error));

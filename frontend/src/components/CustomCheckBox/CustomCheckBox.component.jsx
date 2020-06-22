@@ -17,7 +17,6 @@ const CustomCheckBox = ({ dataSearchKey, dataSearchValue, id, history, location,
 
   // add or delete params from uri
   const handleFilter = (event) => {
-    console.log(event.target)
     const { search } = location;
     setChecked((oldChecked) => !oldChecked);
     const params = new URLSearchParams(search);
