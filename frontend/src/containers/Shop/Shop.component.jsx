@@ -34,7 +34,7 @@ const Shop = ({ location, history, productsStore }) => {
       const possibleColors = URIPARAMS.COLOR;
       for (let prop in URIPARAMS.COLOR) {
         if (searchArr.includes(possibleColors[prop])) {
-          filtered = filtered.filter((item) => item.occasions.includes(possibleColors[prop]));
+          filtered = filtered.filter((item) => item.colors.includes(possibleColors[prop]));
         }
       }
       if (searchArr.includes(URIPARAMS.PRICE.UNDER15)) {

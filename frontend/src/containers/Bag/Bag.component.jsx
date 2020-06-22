@@ -47,8 +47,8 @@ function Bag({ bag, products }) {
         )
         : (
           <div className={styles.headerWithoutProducts}>
-            <h1 className={styles.titleHeader}>Your bag is empty.</h1>
-            <h2 className={styles.subtitleHeader}>Explore our shop and add some color.</h2>
+            <h1 className={styles.titleHeaderWithoutProducts}>Your bag is empty.</h1>
+            <h2 className={styles.subtitleHeaderWithoutProducts}>Explore our shop and add some color.</h2>
           </div>
         )}
       {productsBag}
