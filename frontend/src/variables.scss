@@ -9,8 +9,9 @@ $pink: #ff4fe3;
 $red: #c00000;
 $orange: #f0a028;
 $yellow: #e6e614;
-$darkGreen: #2e7322;
+$darkGreen: #2e8555;
 $darkGreenBlue: #143c41;
+$lightGreen: #f5faf5;
 
 // export to use in js files
 :export {
@@ -26,4 +27,5 @@ $darkGreenBlue: #143c41;
   orange: $orange;
   yellow: $yellow;
   darkGreen: $darkGreen;
+  lightGreen: $lightGreen;
 }
