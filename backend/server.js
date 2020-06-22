@@ -20,12 +20,14 @@ app.use(cors());
 app.use(express.json());
 const buildFolder = path.join(__dirname, '..', '/frontend', '/build');
 app.use(express.static(buildFolder));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(buildFolder, 'index.html'));
-});
+console.log(buildFolder)
 
 // Routers
 app.use('/api/flowers', flowersRoutes);
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(buildFolder, 'index.html'));
+});
 
 // Error handling
 function errorHandler(error, request, response, next) {
