@@ -10,10 +10,10 @@ function Footer() {
     <div className={styles.footer}>
       <p>{"© 2020 Fly Flowers. All rights reserved."}</p>
       <div className={styles.iconsWrapper}>
-        <FaTwitter color={variables.mediumGray} />
-        <FaFacebookF color={variables.mediumGray} />
-        <FaLinkedinIn color={variables.mediumGray} />
-        <FaInstagram color={variables.mediumGray} />
+        <FaTwitter color={variables.white} />
+        <FaFacebookF color={variables.white} />
+        <FaLinkedinIn color={variables.white} />
+        <FaInstagram color={variables.white} />
       </div>
     </div>
   );

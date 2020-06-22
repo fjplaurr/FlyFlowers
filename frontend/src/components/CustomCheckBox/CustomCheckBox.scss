@@ -6,8 +6,8 @@ input[type="radio"] + label:active:before {
 }
 input[type="checkbox"]:checked + label:before,
 input[type="radio"]:checked + label:before {
-  background-color: $darkGreenBlue;
-  border-color: $darkGreenBlue;
+  background-color: $darkGray;
+  border-color: $darkGray;
   color: $white;
 }
 input[data-search-value="red"] + label:before {
