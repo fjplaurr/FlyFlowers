@@ -51,7 +51,7 @@ const Shop = ({ location, history, productsStore }) => {
     const dataFiltered = filterInitialData();
     setFilteredArr(dataFiltered);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [productsStore])
 
   return (
     <div className={styles.shop}>

@@ -29,6 +29,7 @@ function ProductBag({ product, deleteProductFromBag, addProductToBag, incrBillin
         setTotalQuantity(bag[index].quantity);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleInputChange = (event) => {

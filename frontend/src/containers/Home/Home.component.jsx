@@ -76,24 +76,26 @@ const Home = ({ productsStore, history }) => {
           <h2 className={styles.headerSubtitle}>It's time to give smiles</h2>
         </div>
       </div>
-      <Advertisement
-        title="Colorful collection"
-        subtitle="Vivid colors that inspire"
-        history={history}
-        imageUrl={colorfulImg}
-        imageClass={styles.colorfulImg}
-        imageAlt="Spring Bouquet"
-        textColor={variables.white}
-        bottonColor={variables.white}
-        bottonTextColor={variables.darkBlack}
-        bottonHoverColor={variables.darkGreen}
-        bottonTextHoverColor={variables.white}
-      />
-      <h2 className={styles.collectionHeader}>Best-selling Colorful Bouquets</h2>
-      <div className={styles.gridWrapper}>
-        {colorfulCollection}
-        <div className={styles.subWrapper} />
-      </div>
+      <section className={styles.advertisementContainer}>
+        <Advertisement
+          title="Colorful collection"
+          subtitle="Vivid colors that inspire"
+          history={history}
+          imageUrl={colorfulImg}
+          imageClass={styles.colorfulImg}
+          imageAlt="Spring Bouquet"
+          textColor={variables.white}
+          bottonColor={variables.white}
+          bottonTextColor={variables.darkBlack}
+          bottonHoverColor={variables.darkGreen}
+          bottonTextHoverColor={variables.white}
+        />
+        <h2 className={styles.collectionHeader}>Best-selling Colorful Bouquets</h2>
+        <div className={styles.gridWrapper}>
+          {colorfulCollection}
+          <div className={styles.subWrapper} />
+        </div>
+      </section>
       <section className={styles.features}>
         <h2 className={styles.featuresSubTitle}>Our services</h2>
         <div className={styles.featuresWrapper}>
@@ -114,24 +116,26 @@ const Home = ({ productsStore, history }) => {
           />
         </div>
       </section>
-      <Advertisement
-        title="Light collection"
-        subtitle="The beauty of softness"
-        history={history}
-        imageUrl={lightColorImg}
-        imageClass={styles.lightColorImg}
-        imageAlt="Winter Bouquet"
-        textColor={variables.black}
-        bottonColor={variables.darkBlack}
-        bottonTextColor={variables.white}
-        bottonHoverColor={variables.darkGreen}
-        bottonTextHoverColor={variables.white}
-      />
-      <h2 className={styles.collectionHeader}>Best-selling Light Bouquets</h2>
-      <div className={styles.gridWrapper}>
-        {lightCollection}
-        <div className={styles.subWrapper} />
-      </div>
+      <section className={styles.advertisementContainer}>
+        <Advertisement
+          title="Light collection"
+          subtitle="The beauty of softness"
+          history={history}
+          imageUrl={lightColorImg}
+          imageClass={styles.lightColorImg}
+          imageAlt="Winter Bouquet"
+          textColor={variables.black}
+          bottonColor={variables.darkBlack}
+          bottonTextColor={variables.white}
+          bottonHoverColor={variables.darkGreen}
+          bottonTextHoverColor={variables.white}
+        />
+        <h2 className={styles.collectionHeader}>Best-selling Light Bouquets</h2>
+        <div className={styles.gridWrapper}>
+          {lightCollection}
+          <div className={styles.subWrapper} />
+        </div>
+      </section>
     </div>
   );
 }
