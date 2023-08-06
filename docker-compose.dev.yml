@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  frontend:
+    image: fjplaurr/flowers-shop
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/app
+      - exclude:/app/node_modules
+      - exclude:/app/dist
+    ports:
+      - 3000:3000
+      - 9229:9229 # For debugging
+volumes:
+  exclude:
