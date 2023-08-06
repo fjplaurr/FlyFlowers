@@ -18,7 +18,7 @@ class NavBar extends React.Component {
   toggle = (event) => {
     const { open } = this.state;
     this.setState({ open: !open });
-  }
+  };
 
   render() {
     const { open } = this.state;
@@ -28,16 +28,13 @@ class NavBar extends React.Component {
           <button
             type="button"
             className={`${styles.navButton} ${styles.hideHighResolut}`}
-            onClick={this.toggle}>
-            {open ?
-              <MdClose
-                size="1rem"
-                color={variables.white}
-              /> :
-              <GiHamburgerMenu
-                size="1rem"
-                color={variables.white}
-              />}
+            onClick={this.toggle}
+          >
+            {open ? (
+              <MdClose size="1rem" color={variables.white} />
+            ) : (
+              <GiHamburgerMenu size="1rem" color={variables.white} />
+            )}
           </button>
           <div className={styles.logoNavBar}>
             <Link
@@ -56,7 +53,12 @@ class NavBar extends React.Component {
             </Link>
           </div>
           <div
-            className={open ? `${styles.linksNavBar} ${styles.open}` : `${styles.linksNavBar} ${styles.close}`}>
+            className={
+              open
+                ? `${styles.linksNavBar} ${styles.open}`
+                : `${styles.linksNavBar} ${styles.close}`
+            }
+          >
             <Link
               style={{
                 color: variables.white,
@@ -114,7 +116,7 @@ class NavBar extends React.Component {
             <AiOutlineShopping />
           </Link>
         </div>
-      </nav >
+      </nav>
     );
   }
 }

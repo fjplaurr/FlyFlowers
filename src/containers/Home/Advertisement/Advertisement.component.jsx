@@ -2,22 +2,39 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Advertisement.module.scss';
 
-const Advertisement = ({ imageUrl, imageClass, imageAlt,
-  history, title, subtitle, textColor, bottonColor, bottonTextColor,
-  bottonHoverColor, bottonTextHoverColor }) => {
+const Advertisement = ({
+  imageUrl,
+  imageClass,
+  imageAlt,
+  history,
+  title,
+  subtitle,
+  textColor,
+  bottonColor,
+  bottonTextColor,
+  bottonHoverColor,
+  bottonTextHoverColor,
+}) => {
   const [hover, setHover] = useState(false);
   return (
     <div className={styles.container}>
-      <h1 className={styles.title} style={{ color: textColor }}>{title}</h1>
-      <h2 className={styles.subtitle} style={{ color: textColor }}>{subtitle}</h2>
+      <h1 className={styles.title} style={{ color: textColor }}>
+        {title}
+      </h1>
+      <h2 className={styles.subtitle} style={{ color: textColor }}>
+        {subtitle}
+      </h2>
       <button
-        style={hover ? {
-          backgroundColor: bottonHoverColor,
-          color: bottonTextHoverColor
-        } : {
-            backgroundColor: bottonColor,
-            color: bottonTextColor
-          }
+        style={
+          hover
+            ? {
+                backgroundColor: bottonHoverColor,
+                color: bottonTextHoverColor,
+              }
+            : {
+                backgroundColor: bottonColor,
+                color: bottonTextColor,
+              }
         }
         className={styles.toShopButton}
         type="button"
@@ -28,7 +45,7 @@ const Advertisement = ({ imageUrl, imageClass, imageAlt,
         onBlur={() => setHover(false)}
       >
         Discover it
-        </button>
+      </button>
       <img
         src={imageUrl}
         className={`${imageClass} ${styles.picture}`}
@@ -36,7 +53,7 @@ const Advertisement = ({ imageUrl, imageClass, imageAlt,
       />
     </div>
   );
-}
+};
 
 Advertisement.propTypes = {
   imageUrl: PropTypes.string.isRequired,
@@ -46,6 +63,5 @@ Advertisement.propTypes = {
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
-
 
 export default Advertisement;

@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 
 const Calendar = (small) => {
   if (small) {
@@ -13,7 +13,7 @@ const Calendar = (small) => {
           fill="#444"
         />
       </svg>
-    )
+    );
   }
   return (
     <svg width={180} height={180} viewBox="0 0 180 180" fill="none">
@@ -43,7 +43,7 @@ const Calendar = (small) => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
 export default Calendar;

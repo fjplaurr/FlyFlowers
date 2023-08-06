@@ -9,11 +9,11 @@ import {
   lightColorImg,
   Rocket,
   Calendar,
-  Flower
+  Flower,
 } from '../../assets';
 import FeatureCard from './FeatureCard';
 import fetchProducts from '../../redux/actions/productsActions';
-import variables from '../../variables.scss'
+import variables from '../../variables.scss';
 
 const Home = ({ productsStore, history }) => {
   const [lightCollection, setLightCollection] = useState();
@@ -28,28 +28,40 @@ const Home = ({ productsStore, history }) => {
 
   useEffect(() => {
     function getTrendingProducts(trendingCollection) {
-      return productsStore && productsStore.length && productsStore.map((product) => {
-        const {
-          trending, collection, url, title, longDescription,
-          shortDescription, colors, price, trends, _id,
-        } = product;
-        if (collection === trendingCollection && trending) {
-          return (
-            <ProductCard
-              url={url}
-              title={title}
-              longDescription={longDescription}
-              shortDescription={shortDescription}
-              colors={colors}
-              price={price}
-              trends={trends}
-              key={_id}
-              _id={_id}
-            />
-          );
-        }
-        return false;
-      });
+      return (
+        productsStore &&
+        productsStore.length &&
+        productsStore.map((product) => {
+          const {
+            trending,
+            collection,
+            url,
+            title,
+            longDescription,
+            shortDescription,
+            colors,
+            price,
+            trends,
+            _id,
+          } = product;
+          if (collection === trendingCollection && trending) {
+            return (
+              <ProductCard
+                url={url}
+                title={title}
+                longDescription={longDescription}
+                shortDescription={shortDescription}
+                colors={colors}
+                price={price}
+                trends={trends}
+                key={_id}
+                _id={_id}
+              />
+            );
+          }
+          return false;
+        })
+      );
     }
 
     const lightColl = getTrendingProducts('light');
@@ -72,7 +84,9 @@ const Home = ({ productsStore, history }) => {
             <br />
             for someone unique
           </h1>
-          <h2 className={styles.headerSubtitle}>{`It's time to give smiles`}</h2>
+          <h2
+            className={styles.headerSubtitle}
+          >{`It's time to give smiles`}</h2>
         </div>
       </div>
       <section className={styles.advertisementContainer}>
@@ -89,7 +103,9 @@ const Home = ({ productsStore, history }) => {
           bottonHoverColor={variables.darkGreen}
           bottonTextHoverColor={variables.white}
         />
-        <h2 className={styles.collectionHeader}>Best-selling Colorful Bouquets</h2>
+        <h2 className={styles.collectionHeader}>
+          Best-selling Colorful Bouquets
+        </h2>
         <div className={styles.gridWrapper}>
           {colorfulCollection}
           <div className={styles.subWrapper} />
@@ -137,12 +153,12 @@ const Home = ({ productsStore, history }) => {
       </section>
     </div>
   );
-}
+};
 
 function mapStateTopProps(state) {
   return {
     productsStore: state.products.products,
-  }
+  };
 }
 
 export default connect(mapStateTopProps, null)(Home);

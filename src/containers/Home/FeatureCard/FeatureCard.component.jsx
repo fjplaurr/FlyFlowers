@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './FeatureCard.module.scss'
+import styles from './FeatureCard.module.scss';
 
 const FeatureCard = (props) => {
-  const {
-    featureSvg, title, featureDescript,
-  } = props;
+  const { featureSvg, title, featureDescript } = props;
   return (
     <div className={styles.featureWrapper}>
       {featureSvg()}

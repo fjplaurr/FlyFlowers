@@ -5,11 +5,4 @@ import Calendar from './Calendar';
 import Flower from './Flower';
 import Rocket from './Rocket';
 
-export {
-  colorfulImg,
-  coverPage,
-  lightColorImg,
-  Calendar,
-  Flower,
-  Rocket
-};
+export { colorfulImg, coverPage, lightColorImg, Calendar, Flower, Rocket };

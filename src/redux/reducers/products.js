@@ -1,10 +1,14 @@
-import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR } from '../constants/actionTypes';
+import {
+  FETCH_PRODUCTS_START,
+  FETCH_PRODUCTS_SUCCESS,
+  FETCH_PRODUCTS_ERROR,
+} from '../constants/actionTypes';
 
 const initialState = {
   products: [],
   loading: false,
   error: null,
-}
+};
 
 const products = (state = initialState, action) => {
   switch (action.type) {
@@ -26,10 +30,10 @@ const products = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload,
-      }
+      };
     default:
-      return { ...state }
+      return { ...state };
   }
-}
+};
 
 export default products;

@@ -13,14 +13,14 @@ const Bag = ({ bag, products }) => {
   useEffect(() => {
     const getTotalQuantity = () => {
       let total = 0;
-      bag.forEach(obj => {
+      bag.forEach((obj) => {
         total += parseInt(obj.quantity, 10);
       });
       return total;
     };
     const getTotalPrice = () => {
       let total = 0;
-      bag.forEach(obj => {
+      bag.forEach((obj) => {
         total += parseInt(obj.quantity, 10) * obj.product.price;
       });
       return total;
@@ -28,37 +28,46 @@ const Bag = ({ bag, products }) => {
 
     setTotalQuantity(getTotalQuantity(bag));
     setTotalPrice(getTotalPrice(bag));
-  }, [bag])
+  }, [bag]);
 
-  const productsBag = bag.map((item) =>
-    <ProductBag product={item.product} />
-  );
+  const productsBag = bag.map((item) => <ProductBag product={item.product} />);
 
   return (
     <div className={styles.bag}>
-      {bag.length > 0
-        ? (
-          <div className={styles.headerWithProducts}>
-            <h1 className={styles.titleHeaderWithProducts}>Your bag</h1>
-            <div className={styles.totalWrapper}>
-              <p className={styles.totalProducts}>{`${parseInt(totalQuantity, 10)} Products`}</p>
-              <p className={styles.priceTop}>{`Total: ${totalPrice.toFixed(2)}€`}</p>
-            </div>
+      {bag.length > 0 ? (
+        <div className={styles.headerWithProducts}>
+          <h1 className={styles.titleHeaderWithProducts}>Your bag</h1>
+          <div className={styles.totalWrapper}>
+            <p className={styles.totalProducts}>{`${parseInt(
+              totalQuantity,
+              10,
+            )} Products`}</p>
+            <p className={styles.priceTop}>{`Total: ${totalPrice.toFixed(
+              2,
+            )}€`}</p>
           </div>
-        )
-        : (
-          <div className={styles.headerWithoutProducts}>
-            <h1 className={styles.titleHeaderWithoutProducts}>Your bag is empty.</h1>
-            <h2 className={styles.subtitleHeaderWithoutProducts}>Explore our shop and add some color.</h2>
-          </div>
-        )}
+        </div>
+      ) : (
+        <div className={styles.headerWithoutProducts}>
+          <h1 className={styles.titleHeaderWithoutProducts}>
+            Your bag is empty.
+          </h1>
+          <h2 className={styles.subtitleHeaderWithoutProducts}>
+            Explore our shop and add some color.
+          </h2>
+        </div>
+      )}
       {productsBag}
       <div className={styles.bagBottom}>
         {bag.length > 0 ? (
-          <p className={styles.priceBottom}>{`Total: ${totalPrice.toFixed(2)}€`}</p>
+          <p className={styles.priceBottom}>{`Total: ${totalPrice.toFixed(
+            2,
+          )}€`}</p>
         ) : null}
         <div className={styles.recommendations}>
-          <h2 className={styles.titleRecommendations}>A few recommended flowers.</h2>
+          <h2 className={styles.titleRecommendations}>
+            A few recommended flowers.
+          </h2>
           <div className={styles.recommendedFlowers}>
             {products.map((item) => {
               if (item.recommended) {
@@ -83,7 +92,7 @@ const Bag = ({ bag, products }) => {
       </div>
     </div>
   );
-}
+};
 
 function mapStateToProps(state) {
   return {
@@ -93,18 +102,17 @@ function mapStateToProps(state) {
 }
 
 Bag.propTypes = {
-  bag:
-    PropTypes.arrayOf(
-      PropTypes.shape({
-        product: PropTypes.shape({
-          price: PropTypes.number.isRequired,
-          url: PropTypes.string.isRequired,
-          shortDescription: PropTypes.string.isRequired,
-          _id: PropTypes.string.isRequired,
-        }),
-        quantity: PropTypes.number
-      }).isRequired
-    ).isRequired,
+  bag: PropTypes.arrayOf(
+    PropTypes.shape({
+      product: PropTypes.shape({
+        price: PropTypes.number.isRequired,
+        url: PropTypes.string.isRequired,
+        shortDescription: PropTypes.string.isRequired,
+        _id: PropTypes.string.isRequired,
+      }),
+      quantity: PropTypes.number,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);

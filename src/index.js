@@ -26,32 +26,15 @@ const routing = (
           <NavBar />
           <ScrollToTop />
           <Switch>
-            <Route
-              exact
-              path="/"
-              component={Home}
-            />
-            <Route
-              path="/shop"
-              component={Shop}
-            />
-            <Route
-              path="/singleProduct/:id"
-              component={SingleProduct}
-            />
-            <Route
-              path="/bag"
-              component={Bag}
-            />
-            <Route
-              path="/empty"
-              component={Empty}
-              key="empty"
-            />
+            <Route exact path="/" component={Home} />
+            <Route path="/shop" component={Shop} />
+            <Route path="/singleProduct/:id" component={SingleProduct} />
+            <Route path="/bag" component={Bag} />
+            <Route path="/empty" component={Empty} key="empty" />
             <Route component={NotFound} />
           </Switch>
           <div className="spacer" />
-          <Footer/>
+          <Footer />
         </>
       </Suspense>
     </Router>

@@ -3,23 +3,27 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './ProductBag.module.scss';
 import { addToBag, deleteFromBag } from '../../../redux/actions/bagActions';
-import { increaseBilling, decreaseBilling } from '../../../redux/actions/billingActions';
+import {
+  increaseBilling,
+  decreaseBilling,
+} from '../../../redux/actions/billingActions';
 import { Calendar } from '../../../assets';
 
-const ProductBag = ({ product, deleteProductFromBag, addProductToBag, incrBilling, bag }) => {
+const ProductBag = ({
+  product,
+  deleteProductFromBag,
+  addProductToBag,
+  incrBilling,
+  bag,
+}) => {
   const [totalQuantity, setTotalQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
-  const {
-    _id,
-    price,
-    url,
-    shortDescription,
-  } = product;
+  const { _id, price, url, shortDescription } = product;
 
   useEffect(() => {
     // change total price every time the bag is updated
     setTotalPrice((totalQuantity * price).toFixed(2));
-  }, [bag, _id, price, totalQuantity])
+  }, [bag, _id, price, totalQuantity]);
 
   useEffect(() => {
     // set total quantity the first time it renders
@@ -29,7 +33,7 @@ const ProductBag = ({ product, deleteProductFromBag, addProductToBag, incrBillin
         setTotalQuantity(bag[index].quantity);
       }
     }
-  }, [])
+  }, []);
 
   const handleInputChange = (event) => {
     const { value, maxLength } = event.target;
@@ -44,7 +48,7 @@ const ProductBag = ({ product, deleteProductFromBag, addProductToBag, incrBillin
     incrBilling(price);
     // add product to redux
     addProductToBag(product, quantity);
-  }
+  };
 
   return (
     <div className={styles.productBag}>
@@ -56,7 +60,9 @@ const ProductBag = ({ product, deleteProductFromBag, addProductToBag, incrBillin
         <div className={styles.infoWrapper}>
           <p className={styles.descriptionProduct}>{shortDescription}</p>
           <div className={styles.quantityWrapper}>
-            <label className={styles.quantityWrapperLabel} htmlFor={_id}>Quantity:</label>
+            <label className={styles.quantityWrapperLabel} htmlFor={_id}>
+              Quantity:
+            </label>
             <input
               className={styles.quantityWrapperInput}
               id={_id}
@@ -72,21 +78,24 @@ const ProductBag = ({ product, deleteProductFromBag, addProductToBag, incrBillin
         <div className={styles.bottomInfoWrapper}>
           <div className={styles.deliveryInfo}>
             {Calendar(true)}
-            <span className={styles.deliverySpan}>Delivery free in two days</span>
+            <span className={styles.deliverySpan}>
+              Delivery free in two days
+            </span>
           </div>
           <button
             className={styles.customButton}
             type="button"
             onClick={() => {
-              deleteProductFromBag(_id)
+              deleteProductFromBag(_id);
             }}
-          >Remove
-           </button>
+          >
+            Remove
+          </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 function mapStateToProps(state) {
   return {
@@ -111,7 +120,9 @@ ProductBag.propTypes = {
   deleteProductFromBag: PropTypes.func.isRequired,
   addProductToBag: PropTypes.func.isRequired,
   incrBilling: PropTypes.func.isRequired,
-  bag: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired).isRequired,
+  bag: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired,
+  ).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductBag);

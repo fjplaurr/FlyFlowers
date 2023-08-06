@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 .shop {
   width: 100vw;
@@ -18,8 +18,8 @@
       font-size: 0.8rem;
     }
 
-    input[type="checkbox"] + label:before,
-    input[type="radio"] + label:before {
+    input[type='checkbox'] + label:before,
+    input[type='radio'] + label:before {
       margin-right: 0.5rem;
       width: 20px;
       height: 20px;
@@ -27,8 +27,8 @@
       font-size: 14px;
     }
 
-    input[type="checkbox"] + label,
-    input[type="radio"] + label {
+    input[type='checkbox'] + label,
+    input[type='radio'] + label {
       font-size: 0.8rem;
     }
   }

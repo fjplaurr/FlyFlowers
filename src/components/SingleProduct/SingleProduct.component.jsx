@@ -6,9 +6,14 @@ import { addToBag } from '../../redux/actions/bagActions';
 import { increaseBilling } from '../../redux/actions/billingActions';
 import styles from './SingleProduct.module.scss';
 
-const SingleProduct = ({ history, addProductToBag, incrBilling, productsStore }) => {
+const SingleProduct = ({
+  history,
+  addProductToBag,
+  incrBilling,
+  productsStore,
+}) => {
   const [product, setProduct] = useState();
-  // get id from params 
+  // get id from params
   const { id } = useParams();
 
   // filter all products with the id received from params
@@ -34,16 +39,17 @@ const SingleProduct = ({ history, addProductToBag, incrBilling, productsStore })
           className={styles.customButton}
           type="button"
           onClick={() => handleClick()}
-        >Add to bag
-         </button>
+        >
+          Add to bag
+        </button>
       </div>
       <div
         className={styles.imageWrapper}
         style={{ backgroundImage: `url(${product.url})` }}
       />
     </div>
-  ) : null
-}
+  ) : null;
+};
 
 SingleProduct.propTypes = {
   addProductToBag: PropTypes.func.isRequired,
@@ -61,7 +67,7 @@ const mapDispatchToProps = {
 function mapStateToProps(state) {
   return {
     productsStore: state.products.products,
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);

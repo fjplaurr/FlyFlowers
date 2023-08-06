@@ -14,5 +14,5 @@ export const URIPARAMS = {
     UNDER15: 'under15',
     BETWEEN15AND40: 'between15and40',
     OVER40: 'over40',
-  }
-}
+  },
+};

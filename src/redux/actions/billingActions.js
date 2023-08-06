@@ -1,4 +1,4 @@
-import { INCREASE_BILLING , DECREASE_BILLING } from '../constants/actionTypes';
+import { INCREASE_BILLING, DECREASE_BILLING } from '../constants/actionTypes';
 
 export function increaseBilling(product) {
   return {
