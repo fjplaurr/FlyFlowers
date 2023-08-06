@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './NavBar.module.scss';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { AiOutlineShopping } from 'react-icons/ai';
+import styles from './NavBar.module.scss';
 import variables from '../../variables.scss';
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -30,11 +31,11 @@ class NavBar extends React.Component {
             onClick={this.toggle}>
             {open ?
               <MdClose
-                size={'1rem'}
+                size="1rem"
                 color={variables.white}
               /> :
               <GiHamburgerMenu
-                size={'1rem'}
+                size="1rem"
                 color={variables.white}
               />}
           </button>

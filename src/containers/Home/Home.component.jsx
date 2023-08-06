@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import styles from './Home.module.scss';
 import ProductCard from '../../components/ProductCard';
 import Advertisement from './Advertisement';
@@ -11,7 +12,6 @@ import {
   Flower
 } from '../../assets';
 import FeatureCard from './FeatureCard';
-import { connect } from 'react-redux';
 import fetchProducts from '../../redux/actions/productsActions';
 import variables from '../../variables.scss'
 
@@ -24,7 +24,6 @@ const Home = ({ productsStore, history }) => {
     if (!productsStore.length) {
       fetchProducts();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -73,7 +72,7 @@ const Home = ({ productsStore, history }) => {
             <br />
             for someone unique
           </h1>
-          <h2 className={styles.headerSubtitle}>It's time to give smiles</h2>
+          <h2 className={styles.headerSubtitle}>{`It's time to give smiles`}</h2>
         </div>
       </div>
       <section className={styles.advertisementContainer}>

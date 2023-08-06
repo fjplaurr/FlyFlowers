@@ -6,7 +6,7 @@ import { addToBag } from '../../redux/actions/bagActions';
 import { increaseBilling } from '../../redux/actions/billingActions';
 import styles from './SingleProduct.module.scss';
 
-function SingleProduct({ history, addProductToBag, incrBilling, productsStore }) {
+const SingleProduct = ({ history, addProductToBag, incrBilling, productsStore }) => {
   const [product, setProduct] = useState();
   // get id from params 
   const { id } = useParams();
@@ -42,7 +42,7 @@ function SingleProduct({ history, addProductToBag, incrBilling, productsStore })
         style={{ backgroundImage: `url(${product.url})` }}
       />
     </div>
-  ) : <></>
+  ) : null
 }
 
 SingleProduct.propTypes = {

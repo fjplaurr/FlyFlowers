@@ -2,8 +2,7 @@ import React from 'react';
 import CustomCheckBox from '../../../components/CustomCheckBox';
 import styles from './FilterPanel.module.scss';
 
-const FilterPanel = ({ location, history }) => {
-  return (
+const FilterPanel = ({ location, history }) => (
     <div className={styles.filterContainer}>
       <div className={styles.filters}>
         <div className={styles.filterWrapper}>
@@ -98,6 +97,5 @@ const FilterPanel = ({ location, history }) => {
       </div>
     </div>
   )
-}
 
 export default FilterPanel;

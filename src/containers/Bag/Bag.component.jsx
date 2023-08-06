@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import ProductBag from './ProductBag';
 import ProductCard from '../../components/ProductCard';
 import styles from './Bag.module.scss';
-function Bag({ bag, products }) {
+
+const Bag = ({ bag, products }) => {
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -13,14 +14,14 @@ function Bag({ bag, products }) {
     const getTotalQuantity = () => {
       let total = 0;
       bag.forEach(obj => {
-        total += parseInt(obj.quantity);
+        total += parseInt(obj.quantity, 10);
       });
       return total;
     };
     const getTotalPrice = () => {
       let total = 0;
       bag.forEach(obj => {
-        total += parseInt(obj.quantity) * obj.product.price;
+        total += parseInt(obj.quantity, 10) * obj.product.price;
       });
       return total;
     };
@@ -40,7 +41,7 @@ function Bag({ bag, products }) {
           <div className={styles.headerWithProducts}>
             <h1 className={styles.titleHeaderWithProducts}>Your bag</h1>
             <div className={styles.totalWrapper}>
-              <p className={styles.totalProducts}>{`${parseInt(totalQuantity, 0)} Products`}</p>
+              <p className={styles.totalProducts}>{`${parseInt(totalQuantity, 10)} Products`}</p>
               <p className={styles.priceTop}>{`Total: ${totalPrice.toFixed(2)}€`}</p>
             </div>
           </div>
@@ -55,7 +56,7 @@ function Bag({ bag, products }) {
       <div className={styles.bagBottom}>
         {bag.length > 0 ? (
           <p className={styles.priceBottom}>{`Total: ${totalPrice.toFixed(2)}€`}</p>
-        ) : <></>}
+        ) : null}
         <div className={styles.recommendations}>
           <h2 className={styles.titleRecommendations}>A few recommended flowers.</h2>
           <div className={styles.recommendedFlowers}>
@@ -75,7 +76,7 @@ function Bag({ bag, products }) {
                   />
                 );
               }
-              return (<></>);
+              return null;
             })}
           </div>
         </div>

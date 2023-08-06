@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import styles from './ProductBag.module.scss';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import styles from './ProductBag.module.scss';
 import { addToBag, deleteFromBag } from '../../../redux/actions/bagActions';
 import { increaseBilling, decreaseBilling } from '../../../redux/actions/billingActions';
 import { Calendar } from '../../../assets';
 
-function ProductBag({ product, deleteProductFromBag, addProductToBag, incrBilling, bag }) {
+const ProductBag = ({ product, deleteProductFromBag, addProductToBag, incrBilling, bag }) => {
   const [totalQuantity, setTotalQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const {
@@ -24,12 +24,11 @@ function ProductBag({ product, deleteProductFromBag, addProductToBag, incrBillin
   useEffect(() => {
     // set total quantity the first time it renders
     if (bag) {
-      const index = bag.findIndex((product) => product.product._id === _id);
+      const index = bag.findIndex((element) => element.product._id === _id);
       if (index !== -1) {
         setTotalQuantity(bag[index].quantity);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleInputChange = (event) => {
@@ -40,7 +39,7 @@ function ProductBag({ product, deleteProductFromBag, addProductToBag, incrBillin
       quantity = 0;
     }
     // change total quantity in input
-    setTotalQuantity(parseInt(quantity));
+    setTotalQuantity(parseInt(quantity, 10));
     // increase the billing in redux
     incrBilling(price);
     // add product to redux

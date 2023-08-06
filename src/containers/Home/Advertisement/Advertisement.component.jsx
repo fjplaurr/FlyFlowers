@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Advertisement.module.scss';
 
-function Advertisement({ imageUrl, imageClass, imageAlt,
+const Advertisement = ({ imageUrl, imageClass, imageAlt,
   history, title, subtitle, textColor, bottonColor, bottonTextColor,
-  bottonHoverColor, bottonTextHoverColor }) {
+  bottonHoverColor, bottonTextHoverColor }) => {
   const [hover, setHover] = useState(false);
   return (
     <div className={styles.container}>
@@ -23,7 +23,9 @@ function Advertisement({ imageUrl, imageClass, imageAlt,
         type="button"
         onClick={() => history.push('/shop')}
         onMouseOver={() => setHover(true)}
+        onFocus={() => setHover(true)}
         onMouseOut={() => setHover(false)}
+        onBlur={() => setHover(false)}
       >
         Discover it
         </button>

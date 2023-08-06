@@ -12,7 +12,6 @@ const CustomCheckBox = ({ dataSearchKey, dataSearchValue, id, history, location,
     const searchIterator = query.values();
     const searchArr = Array.from(searchIterator);
     setChecked(searchArr.includes(dataSearchValue));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // add or delete params from uri

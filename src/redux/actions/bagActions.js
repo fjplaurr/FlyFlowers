@@ -1,5 +1,4 @@
-import { ADD_TO_BAG } from '../constants/actionTypes';
-import { DELETE_FROM_BAG } from '../constants/actionTypes';
+import { ADD_TO_BAG , DELETE_FROM_BAG } from '../constants/actionTypes';
 
 export function addToBag(product, quantity) {
   return {

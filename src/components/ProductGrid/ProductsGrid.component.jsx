@@ -2,8 +2,7 @@ import React from 'react';
 import ProductCard from '../ProductCard';
 import styles from './ProductsGrid.module.scss';
 
-const ProductsGrid = ({ items = [] }) => {
-  return (
+const ProductsGrid = ({ items = [] }) => (
     <div className={styles.productsWrapper}>
       <h1 className={styles.pageTitle}>Search your flowers</h1>
       <div className={styles.gridWrapper}>
@@ -23,6 +22,5 @@ const ProductsGrid = ({ items = [] }) => {
       </div>
     </div>
   );
-};
 
 export default ProductsGrid;

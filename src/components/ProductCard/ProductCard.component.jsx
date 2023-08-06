@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ProductCard.module.scss';
 
-function ProductCard({
+const ProductCard = ({
   price, url, _id, title,
-}) {
-  return (
+}) => (
     <Link
       style={{
         textDecoration: 'none',
@@ -29,8 +28,7 @@ function ProductCard({
         </div>
       </div>
     </Link>
-  );
-}
+  )
 
 ProductCard.propTypes = {
   price: PropTypes.number.isRequired,

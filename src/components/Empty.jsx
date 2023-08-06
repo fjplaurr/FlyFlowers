@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function Empty({ location }) {
+const Empty = ({ location })=> {
   const locat = {
     pathname: '/shop',
     search: `?${location.state.params}`,
