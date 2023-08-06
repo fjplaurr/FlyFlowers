@@ -59,8 +59,3 @@ const routing = (
 );
 
 ReactDOM.render(routing, document.getElementById('root'));
-
-const wakeUpDyno = require('./wakeUpDyno');
-
-const DYNO_URL = 'https://flyflowers-shop.herokuapp.com';
-wakeUpDyno(DYNO_URL);
