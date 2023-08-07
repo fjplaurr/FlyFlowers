@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import styles from './Home.module.scss';
-import ProductCard from '../../components/ProductCard';
 import Advertisement from './Advertisement';
 import BestSellers from './BestSellers';
 import {
@@ -15,61 +14,15 @@ import {
 import FeatureCard from './FeatureCard';
 import fetchProducts from '../../redux/actions/productsActions';
 import variables from '../../variables.scss';
+import { filterByBestSellersAndCollection } from './helpers';
 
 const Home = ({ productsStore, history }) => {
-  const [lightCollection, setLightCollection] = useState();
-  const [colorfulCollection, setColorfulCollection] = useState();
-
   // fetch products first time it renders if they are not in the store
   useEffect(() => {
     if (!productsStore.length) {
       fetchProducts();
     }
   }, []);
-
-  useEffect(() => {
-    function getTrendingProducts(trendingCollection) {
-      return (
-        productsStore &&
-        productsStore.length &&
-        productsStore.map((product) => {
-          const {
-            trending,
-            collection,
-            url,
-            title,
-            longDescription,
-            shortDescription,
-            colors,
-            price,
-            trends,
-            _id,
-          } = product;
-          if (collection === trendingCollection && trending) {
-            return (
-              <ProductCard
-                url={url}
-                title={title}
-                longDescription={longDescription}
-                shortDescription={shortDescription}
-                colors={colors}
-                price={price}
-                trends={trends}
-                key={_id}
-                _id={_id}
-              />
-            );
-          }
-          return false;
-        })
-      );
-    }
-
-    const lightColl = getTrendingProducts('light');
-    setLightCollection(lightColl);
-    const colorfultColl = getTrendingProducts('colorful');
-    setColorfulCollection(colorfultColl);
-  }, [productsStore]);
 
   return (
     <div className={styles.home}>
@@ -126,7 +79,10 @@ const Home = ({ productsStore, history }) => {
       <section>
         <BestSellers
           title="Best-selling Colorful Bouquets"
-          collection={colorfulCollection}
+          collection={filterByBestSellersAndCollection(
+            productsStore,
+            'colorful',
+          )}
         />
       </section>
       <section>
@@ -147,7 +103,7 @@ const Home = ({ productsStore, history }) => {
       <section>
         <BestSellers
           title="Best-selling Light Bouquets"
-          collection={lightCollection}
+          collection={filterByBestSellersAndCollection(productsStore, 'light')}
         />
       </section>
     </div>
