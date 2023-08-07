@@ -1,0 +1,20 @@
+@import "../../../variables.scss";
+
+.gridWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.featureWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.collectionHeader {
+  font-weight: 600;
+  color: $darkGray;
+  font-size: 2rem;
+}

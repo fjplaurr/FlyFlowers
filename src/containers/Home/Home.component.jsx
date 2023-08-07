@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styles from './Home.module.scss';
 import ProductCard from '../../components/ProductCard';
 import Advertisement from './Advertisement';
+import BestSellers from './BestSellers';
 import {
   colorfulImg,
   coverPage,
@@ -84,12 +85,30 @@ const Home = ({ productsStore, history }) => {
             <br />
             for someone unique
           </h1>
-          <h2
-            className={styles.headerSubtitle}
-          >{`It's time to give smiles`}</h2>
+          <h2 className={styles.headerSubtitle}>Flowers that inspire</h2>
         </div>
       </div>
-      <section className={styles.advertisementContainer}>
+      <section className={styles.features}>
+        <h2 className={styles.featuresSubTitle}>We offer you our services</h2>
+        <div className={styles.featuresWrapper}>
+          <FeatureCard
+            description="Swift and reliable delivery, with bouquets arriving in just two days to brighten your day or surprise a loved one."
+            featureSvg={Rocket}
+            title="Two-days delivery"
+          />
+          <FeatureCard
+            description="Meticulously handcrafted bouquets with the freshest and most vibrant blooms, ensuring long-lasting beauty and fragrance."
+            featureSvg={Flower}
+            title="Guaranteed fresh"
+          />
+          <FeatureCard
+            description="Never miss a special moment again. Schedule the exact arrival of your floral masterpiece for the perfect heartfelt gift."
+            featureSvg={Calendar}
+            title="Precise delivery date"
+          />
+        </div>
+      </section>
+      <section>
         <Advertisement
           title="Colorful collection"
           subtitle="Vivid colors that inspire"
@@ -103,35 +122,14 @@ const Home = ({ productsStore, history }) => {
           bottonHoverColor={variables.darkGreen}
           bottonTextHoverColor={variables.white}
         />
-        <h2 className={styles.collectionHeader}>
-          Best-selling Colorful Bouquets
-        </h2>
-        <div className={styles.gridWrapper}>
-          {colorfulCollection}
-          <div className={styles.subWrapper} />
-        </div>
       </section>
-      <section className={styles.features}>
-        <h2 className={styles.featuresSubTitle}>Our services</h2>
-        <div className={styles.featuresWrapper}>
-          <FeatureCard
-            featureDescript="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius. Aliquam commodo ullamcorper non."
-            featureSvg={Rocket}
-            title="Two-days delivery"
-          />
-          <FeatureCard
-            featureDescript="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet rper non."
-            featureSvg={Flower}
-            title="Guaranteed fresh"
-          />
-          <FeatureCard
-            featureDescript="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eget adipiscing eleifend laoreet lorem malesuada varius. Aliquam commodo ullamcorper non ."
-            featureSvg={Calendar}
-            title="Precise delivery date"
-          />
-        </div>
+      <section>
+        <BestSellers
+          title="Best-selling Colorful Bouquets"
+          collection={colorfulCollection}
+        />
       </section>
-      <section className={styles.advertisementContainer}>
+      <section>
         <Advertisement
           title="Light collection"
           subtitle="The beauty of softness"
@@ -145,11 +143,12 @@ const Home = ({ productsStore, history }) => {
           bottonHoverColor={variables.darkGreen}
           bottonTextHoverColor={variables.white}
         />
-        <h2 className={styles.collectionHeader}>Best-selling Light Bouquets</h2>
-        <div className={styles.gridWrapper}>
-          {lightCollection}
-          <div className={styles.subWrapper} />
-        </div>
+      </section>
+      <section>
+        <BestSellers
+          title="Best-selling Light Bouquets"
+          collection={lightCollection}
+        />
       </section>
     </div>
   );
