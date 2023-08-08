@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import styles from './Home.module.scss';
 import Advertisement from './Advertisement';
 import BestSellers from './BestSellers';
-import { colorfulImg, coverPage, lightColorImg } from '../../assets';
+import { colorfulImg, lightColorImg } from '../../assets';
 import Services from './Services';
+import Header from './Header';
 import fetchProducts from '../../redux/actions/productsActions';
 import variables from '../../variables.scss';
 import { filterByBestSellersAndCollection } from './helpers';
@@ -17,21 +18,7 @@ const Home = ({ productsStore, history }) => {
 
   return (
     <div className={styles.home}>
-      <div className={styles.header}>
-        <img
-          className={styles.coverPage}
-          src={coverPage}
-          alt="Flowers as a gift"
-        />
-        <div className={styles.captionHeader}>
-          <h1 className={styles.headerTitle}>
-            Something special
-            <br />
-            for someone unique
-          </h1>
-          <h2 className={styles.headerSubtitle}>Flowers that inspire</h2>
-        </div>
-      </div>
+      <Header />
       <Services />
       <Advertisement
         title="Colorful collection"
