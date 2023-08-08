@@ -4,7 +4,7 @@ import styles from './BestSellers.module.scss';
 import ProductCard from '../../../components/ProductCard';
 
 const BestSellers = ({ title, collection }) => (
-  <div className={styles.featureWrapper}>
+  <section className={styles.featureWrapper}>
     <h2 className={styles.collectionHeader}>{title}</h2>
     <div className={styles.gridWrapper}>
       {collection.map((product) => (
@@ -21,7 +21,7 @@ const BestSellers = ({ title, collection }) => (
         />
       ))}
     </div>
-  </div>
+  </section>
 );
 
 BestSellers.propTypes = {

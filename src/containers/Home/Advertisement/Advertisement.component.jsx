@@ -17,7 +17,7 @@ const Advertisement = ({
 }) => {
   const [hover, setHover] = useState(false);
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <h1 className={styles.title} style={{ color: textColor }}>
         {title}
       </h1>
@@ -51,7 +51,7 @@ const Advertisement = ({
         className={`${imageClass} ${styles.picture}`}
         alt={imageAlt}
       />
-    </div>
+    </section>
   );
 };
 

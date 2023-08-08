@@ -35,51 +35,40 @@ const Home = ({ productsStore, history }) => {
         </div>
       </div>
       <Services />
-      <section>
-        <Advertisement
-          title="Colorful collection"
-          subtitle="Vivid colors that inspire"
-          history={history}
-          imageUrl={colorfulImg}
-          imageClass={styles.colorfulImg}
-          imageAlt="Spring Bouquet"
-          textColor={variables.white}
-          bottonColor={variables.white}
-          bottonTextColor={variables.darkBlack}
-          bottonHoverColor={variables.darkGreen}
-          bottonTextHoverColor={variables.white}
-        />
-      </section>
-      <section>
-        <BestSellers
-          title="Best-selling Colorful Bouquets"
-          collection={filterByBestSellersAndCollection(
-            productsStore,
-            'colorful',
-          )}
-        />
-      </section>
-      <section>
-        <Advertisement
-          title="Light collection"
-          subtitle="The beauty of softness"
-          history={history}
-          imageUrl={lightColorImg}
-          imageClass={styles.lightColorImg}
-          imageAlt="Winter Bouquet"
-          textColor={variables.black}
-          bottonColor={variables.darkBlack}
-          bottonTextColor={variables.white}
-          bottonHoverColor={variables.darkGreen}
-          bottonTextHoverColor={variables.white}
-        />
-      </section>
-      <section>
-        <BestSellers
-          title="Best-selling Light Bouquets"
-          collection={filterByBestSellersAndCollection(productsStore, 'light')}
-        />
-      </section>
+      <Advertisement
+        title="Colorful collection"
+        subtitle="Vivid colors that inspire"
+        history={history}
+        imageUrl={colorfulImg}
+        imageClass={styles.colorfulImg}
+        imageAlt="Spring Bouquet"
+        textColor={variables.white}
+        bottonColor={variables.white}
+        bottonTextColor={variables.darkBlack}
+        bottonHoverColor={variables.darkGreen}
+        bottonTextHoverColor={variables.white}
+      />
+      <BestSellers
+        title="Best-selling Colorful Bouquets"
+        collection={filterByBestSellersAndCollection(productsStore, 'colorful')}
+      />
+      <Advertisement
+        title="Light collection"
+        subtitle="The beauty of softness"
+        history={history}
+        imageUrl={lightColorImg}
+        imageClass={styles.lightColorImg}
+        imageAlt="Winter Bouquet"
+        textColor={variables.black}
+        bottonColor={variables.darkBlack}
+        bottonTextColor={variables.white}
+        bottonHoverColor={variables.darkGreen}
+        bottonTextHoverColor={variables.white}
+      />
+      <BestSellers
+        title="Best-selling Light Bouquets"
+        collection={filterByBestSellersAndCollection(productsStore, 'light')}
+      />
     </div>
   );
 };
