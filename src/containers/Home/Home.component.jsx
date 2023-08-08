@@ -3,15 +3,8 @@ import { connect } from 'react-redux';
 import styles from './Home.module.scss';
 import Advertisement from './Advertisement';
 import BestSellers from './BestSellers';
-import {
-  colorfulImg,
-  coverPage,
-  lightColorImg,
-  Rocket,
-  Calendar,
-  Flower,
-} from '../../assets';
-import FeatureCard from './FeatureCard';
+import { colorfulImg, coverPage, lightColorImg } from '../../assets';
+import Services from './Services';
 import fetchProducts from '../../redux/actions/productsActions';
 import variables from '../../variables.scss';
 import { filterByBestSellersAndCollection } from './helpers';
@@ -41,26 +34,7 @@ const Home = ({ productsStore, history }) => {
           <h2 className={styles.headerSubtitle}>Flowers that inspire</h2>
         </div>
       </div>
-      <section className={styles.features}>
-        <h2 className={styles.featuresSubTitle}>We offer you our services</h2>
-        <div className={styles.featuresWrapper}>
-          <FeatureCard
-            description="Swift and reliable delivery, with bouquets arriving in just two days to brighten your day or surprise a loved one."
-            featureSvg={Rocket}
-            title="Two-days delivery"
-          />
-          <FeatureCard
-            description="Meticulously handcrafted bouquets with the freshest and most vibrant blooms, ensuring long-lasting beauty and fragrance."
-            featureSvg={Flower}
-            title="Guaranteed fresh"
-          />
-          <FeatureCard
-            description="Never miss a special moment again. Schedule the exact arrival of your floral masterpiece for the perfect heartfelt gift."
-            featureSvg={Calendar}
-            title="Precise delivery date"
-          />
-        </div>
-      </section>
+      <Services />
       <section>
         <Advertisement
           title="Colorful collection"

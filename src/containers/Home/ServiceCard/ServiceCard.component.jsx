@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './FeatureCard.module.scss';
+import styles from './ServiceCard.module.scss';
 
-const FeatureCard = (props) => {
+const ServiceCard = (props) => {
   const { featureSvg, title, description } = props;
   return (
     <div className={styles.featureWrapper}>
@@ -13,9 +13,9 @@ const FeatureCard = (props) => {
   );
 };
 
-FeatureCard.propTypes = {
+ServiceCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
 
-export default FeatureCard;
+export default ServiceCard;
