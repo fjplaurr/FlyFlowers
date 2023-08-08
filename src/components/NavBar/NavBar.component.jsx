@@ -15,7 +15,7 @@ class NavBar extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle = (event) => {
+  toggle = () => {
     const { open } = this.state;
     this.setState({ open: !open });
   };

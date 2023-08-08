@@ -157,7 +157,6 @@
         }
       ],
       "no-undef": "off",
-      "no-unused-vars": "off",
       "react/function-component-definition": [
         "error",
         {
