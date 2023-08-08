@@ -12,9 +12,7 @@ import { filterByBestSellersAndCollection } from './helpers';
 const Home = ({ productsStore, history }) => {
   // fetch products first time it renders if they are not in the store
   useEffect(() => {
-    if (!productsStore.length) {
-      fetchProducts();
-    }
+    fetchProducts();
   }, []);
 
   return (
