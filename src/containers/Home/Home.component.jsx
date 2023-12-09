@@ -17,8 +17,6 @@ const Home = ({ productsStore, history }) => {
     fetchProducts();
   }, []);
 
-  console.log('productsStore', productsStore);
-
   return (
     <div className={styles.home}>
       <Header />
