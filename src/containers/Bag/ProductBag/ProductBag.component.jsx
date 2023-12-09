@@ -121,7 +121,10 @@ ProductBag.propTypes = {
   addProductToBag: PropTypes.func.isRequired,
   incrBilling: PropTypes.func.isRequired,
   bag: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired,
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      quantity: PropTypes.number,
+    }).isRequired,
   ).isRequired,
 };
 

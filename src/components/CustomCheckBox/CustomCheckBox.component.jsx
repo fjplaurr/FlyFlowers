@@ -77,4 +77,19 @@ const CustomCheckBox = ({
   );
 };
 
+CustomCheckBox.propTypes = {
+  dataSearchKey: PropTypes.string.isRequired,
+  dataSearchValue: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired,
+  }).isRequired,
+  className: PropTypes.string.isRequired,
+  labelValue: PropTypes.string,
+  ariaLabel: PropTypes.string,
+};
+
 export default CustomCheckBox;

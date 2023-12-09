@@ -46,11 +46,7 @@ const Advertisement = ({
       >
         Discover it
       </button>
-      <img
-        src={imageUrl}
-        className={`${imageClass} ${styles.picture}`}
-        alt={imageAlt}
-      />
+      <img src={imageUrl} className={imageClass} alt={imageAlt} />
     </section>
   );
 };
@@ -62,6 +58,13 @@ Advertisement.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  textColor: PropTypes.string.isRequired,
+  bottonColor: PropTypes.string.isRequired,
+  bottonTextColor: PropTypes.string.isRequired,
+  bottonHoverColor: PropTypes.string.isRequired,
+  bottonTextHoverColor: PropTypes.string.isRequired,
 };
 
 export default Advertisement;

@@ -78,6 +78,21 @@ Shop.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  productsStore: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      longDescription: PropTypes.string.isRequired,
+      shortDescription: PropTypes.string.isRequired,
+      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+      price: PropTypes.number.isRequired,
+      occasions: PropTypes.arrayOf(PropTypes.string).isRequired,
+      url: PropTypes.string.isRequired,
+      collection: PropTypes.string.isRequired,
+      trending: PropTypes.bool.isRequired,
+      recommended: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
 };
 
 function mapStateTopProps(state) {

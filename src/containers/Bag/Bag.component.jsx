@@ -113,6 +113,21 @@ Bag.propTypes = {
       quantity: PropTypes.number,
     }).isRequired,
   ).isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      longDescription: PropTypes.string.isRequired,
+      shortDescription: PropTypes.string.isRequired,
+      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+      price: PropTypes.number.isRequired,
+      occasions: PropTypes.arrayOf(PropTypes.string).isRequired,
+      url: PropTypes.string.isRequired,
+      collection: PropTypes.string.isRequired,
+      trending: PropTypes.bool.isRequired,
+      recommended: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);

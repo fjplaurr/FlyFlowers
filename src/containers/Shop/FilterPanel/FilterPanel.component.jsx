@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CustomCheckBox from '../../../components/CustomCheckBox';
 import styles from './FilterPanel.module.scss';
 
@@ -97,5 +98,14 @@ const FilterPanel = ({ location, history }) => (
     </div>
   </div>
 );
+
+FilterPanel.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string.isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default FilterPanel;

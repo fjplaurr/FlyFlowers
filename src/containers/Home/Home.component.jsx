@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './Home.module.scss';
 import Advertisement from './Advertisement';
 import BestSellers from './BestSellers';
@@ -15,6 +16,8 @@ const Home = ({ productsStore, history }) => {
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  console.log('productsStore', productsStore);
 
   return (
     <div className={styles.home}>
@@ -56,6 +59,27 @@ const Home = ({ productsStore, history }) => {
       />
     </div>
   );
+};
+
+Home.propTypes = {
+  productsStore: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      longDescription: PropTypes.string.isRequired,
+      shortDescription: PropTypes.string.isRequired,
+      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+      price: PropTypes.number.isRequired,
+      occasions: PropTypes.arrayOf(PropTypes.string).isRequired,
+      url: PropTypes.string.isRequired,
+      collection: PropTypes.string.isRequired,
+      trending: PropTypes.bool.isRequired,
+      recommended: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 function mapStateTopProps(state) {

@@ -16,6 +16,7 @@ const ServiceCard = (props) => {
 ServiceCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  featureSvg: PropTypes.func.isRequired,
 };
 
 export default ServiceCard;
