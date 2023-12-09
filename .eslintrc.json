@@ -94,6 +94,7 @@
       "error",
       { "namedComponents": "arrow-function" }
     ],
-    "import/order": "warn"
+    "import/order": "warn",
+    "default-param-last": "off"
   }
 }
