@@ -3,28 +3,16 @@
 .header {
   position: relative;
 }
-.captionHeader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  color: $white;
-  margin-left: 3%;
-  text-align: left;
-  line-height: 5rem;
-}
 .headerTitle {
-  font-size: 4rem;
-  font-weight: 600;
-}
-.headerSubtitle {
-  font-size: 2rem;
-  font-weight: normal;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 5rem;
+  font-weight: 500;
+  color: $white;
+  font-family: "Playfair Display", sans-serif;
+  text-align: left;
 }
 .coverPage {
   width: 100%;
@@ -32,21 +20,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .captionHeader {
-    left: 0;
-    width: 100%;
-    display: flex;
-    line-height: 2rem;
-  }
   .headerTitle {
     font-size: 1.7rem;
-    font-weight: 700;
-  }
-  .headerSubtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  .header {
-    overflow: hidden;
   }
 }
