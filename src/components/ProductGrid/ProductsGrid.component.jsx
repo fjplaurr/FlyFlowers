@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProductCard from '../ProductCard';
 import styles from './ProductsGrid.module.scss';
 
@@ -23,7 +24,6 @@ const ProductsGrid = ({ items = [] }) => (
   </div>
 );
 
-// generate proptypes
 ProductsGrid.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({

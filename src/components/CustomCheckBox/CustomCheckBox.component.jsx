@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './CustomCheckBox.scss';
+import PropTypes from 'prop-types';
 
 const CustomCheckBox = ({
   dataSearchKey,
