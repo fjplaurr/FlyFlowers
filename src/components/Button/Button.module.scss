@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+.button {
+  border: none;
+  background: $darkGreen;
+  border-radius: 16px;
+  color: $white;
+  padding: 16px 64px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", sans-serif;
+
+  &:hover {
+    background-color: $darkGreenBlue;
+  }
+}
