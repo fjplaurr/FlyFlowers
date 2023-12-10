@@ -15,7 +15,7 @@ const Advertisement = ({ backgroundImage, history, title, subtitle }) => {
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
         <div className={styles.buttonWrapper}>
-          <Button type="button" onClick={() => history.push('/shop')}>
+          <Button type="button" onClick={() => history.push('/shop')} size='big'>
             Discover it
           </Button>
         </div>
