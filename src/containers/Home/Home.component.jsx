@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './Home.module.scss';
 import Advertisement from './Advertisement';
 import BestSellers from './BestSellers';
-import { colorfulImg, lightColorImg } from '../../assets';
 import Services from './Services';
 import Header from './Header';
 import fetchProducts from '../../redux/actions/productsActions';
-import variables from '../../variables.scss';
 import { filterByBestSellersAndCollection } from './helpers';
 
 const Home = ({ productsStore, history }) => {
@@ -22,34 +20,20 @@ const Home = ({ productsStore, history }) => {
       <Header />
       <Services />
       <Advertisement
+        backgroundImage="colorful"
+        history={history}
         title="Colorful collection"
         subtitle="Vivid colors that inspire"
-        history={history}
-        imageUrl={colorfulImg}
-        imageClass={styles.colorfulImg}
-        imageAlt="Spring Bouquet"
-        textColor={variables.white}
-        bottonColor={variables.white}
-        bottonTextColor={variables.darkBlack}
-        bottonHoverColor={variables.darkGreen}
-        bottonTextHoverColor={variables.white}
       />
       <BestSellers
         title="Best-selling Colorful Bouquets"
         collection={filterByBestSellersAndCollection(productsStore, 'colorful')}
       />
       <Advertisement
+        backgroundImage="light"
+        history={history}
         title="Light collection"
         subtitle="The beauty of softness"
-        history={history}
-        imageUrl={lightColorImg}
-        imageClass={styles.lightColorImg}
-        imageAlt="Winter Bouquet"
-        textColor={variables.black}
-        bottonColor={variables.darkBlack}
-        bottonTextColor={variables.white}
-        bottonHoverColor={variables.darkGreen}
-        bottonTextHoverColor={variables.white}
       />
       <BestSellers
         title="Best-selling Light Bouquets"

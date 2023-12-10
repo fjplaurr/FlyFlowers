@@ -1,60 +1,61 @@
 @import "../../../variables.scss";
 
+.backgroundImageColorful {
+  background-image: url("../../../assets/colorfulImg.jpg");
+}
+
+.backgroundImageLight {
+  background-image: url("../../../assets/lightColorImg.png");
+}
+
 .container {
-  position: relative; /*Needed for caption below*/
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 650px;
+  width: 100%;
+  color: $white;
 
-  .title {
-    font-size: 5rem;
-    font-weight: 600;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 200px;
-    z-index: 100;
-  }
+  .lightBox {
+    background-color: rgba($black, 0.7);
+    padding: 1.5rem 3rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
 
-  .subtitle {
-    margin-top: 1rem;
-    font-size: 3rem;
-    font-weight: 600;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 300px;
-    z-index: 100;
-  }
+    .title {
+      font-size: 5rem;
+      font-weight: 700;
+      font-family: "Playfair Display", sans-serif;
+    }
 
-  .toShopButton {
-    padding: 10px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 2rem;
-    font-weight: 500;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 400px;
-    z-index: 100;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
-    width: 307px;
+    .subtitle {
+      margin-top: 0.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: "Playfair Display", sans-serif;
+    }
+
+    .buttonWrapper {
+      margin-top: 1.5rem;
+    }
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .toShopButton {
-    font-size: 1rem;
-    padding: 10px 30px;
-  }
-  .title {
-    font-size: 1.6rem;
-    margin-top: 1rem;
-  }
-  .subtitle {
-    font-size: 1.1rem;
-    margin: 0.5rem 0 1.5rem 0;
+  .container {
+    .lightBox {
+      .title {
+        font-size: 0.4rem;
+      }
+      .subtitle {
+        font-size: 0.2rem;
+      }
+    }
   }
 }
