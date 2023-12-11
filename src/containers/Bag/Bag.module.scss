@@ -26,12 +26,12 @@
 .subtitleHeaderWithoutProducts {
   margin-top: 1.5rem;
   font-size: 2rem;
-  color: $mediumGray;
+  color: $black;
   font-weight: 400;
 }
 .titleHeaderWithProducts {
   white-space: nowrap;
-  color: $darkGray;
+  color: $black;
   font-weight: 600;
   font-size: 2rem;
   text-align: left;
@@ -59,12 +59,12 @@
   margin-left: 2rem;
   font-size: 1.5rem;
   white-space: nowrap;
-  color: $mediumGray;
+  color: $black;
 }
 .priceTop {
   font-size: 1.5rem;
   white-space: nowrap;
-  color: $mediumGray;
+  color: $black;
 }
 .total {
   width: 100%;
@@ -95,7 +95,7 @@
   justify-content: center;
   align-self: flex-end;
   flex-direction: column;
-  color: $mediumGray;
+  color: $black;
   width: 100%;
   margin-top: 1rem;
 }

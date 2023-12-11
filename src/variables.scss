@@ -1,31 +1,24 @@
-$lightGray: #ececec;
-$mediumGray: #555555;
-$darkGray: #333333;
-$white: #ffffff;
-$black: #000000;
-$darkBlack: #111111;
-$lightBlack: #222222;
+$midGreen: #2e7322;
+$darkGreen: #054a02;
 $pink: #ff4fe3;
-$red: #c00000;
-$orange: #f0a028;
 $yellow: #e6e614;
-$darkGreen: #2e8555;
-$darkGreenBlue: #143c41;
-$lightGreen: #f5faf5;
+$orange: #f0a028;
+$red: #c00000;
+$black: #111111;
+$gray: #f0f0f0;
+$white: #ffffff;
+$lightGreen: #5bcb49;
 
 // export to use in js files
 :export {
-  lightGray: $lightGray;
-  darkGray: $darkGray;
-  white: $white;
-  mediumGray: $mediumGray;
-  black: $black;
-  darkBlack: $darkBlack;
-  lightBlack: $lightBlack;
-  pink: $pink;
-  red: $red;
-  orange: $orange;
-  yellow: $yellow;
+  midGreen: $midGreen;
   darkGreen: $darkGreen;
+  pink: $pink;
+  yellow: $yellow;
+  orange: $orange;
+  red: $red;
+  black: $black;
+  gray: $gray;
+  white: $white;
   lightGreen: $lightGreen;
 }

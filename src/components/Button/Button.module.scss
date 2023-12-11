@@ -2,12 +2,12 @@
 
 .button {
   border: none;
-  background: $darkGreen;
+  background: $midGreen;
   color: $white;
   cursor: pointer;
 
   &:hover {
-    background-color: $darkGreenBlue;
+    background-color: $darkGreen;
   }
 }
 

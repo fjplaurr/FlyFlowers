@@ -6,8 +6,8 @@ input[type='radio'] + label:active:before {
 }
 input[type='checkbox']:checked + label:before,
 input[type='radio']:checked + label:before {
-  background-color: $darkGray;
-  border-color: $darkGray;
+  background-color: $black;
+  border-color: $black;
   color: $white;
 }
 input[data-search-value='red'] + label:before {
@@ -50,7 +50,7 @@ input[type='radio'] + label {
   margin-left: 0;
   cursor: pointer;
   white-space: nowrap;
-  color: $darkGray;
+  color: $black;
   font-size: 1.5rem;
 }
 input[type='checkbox'],
@@ -60,7 +60,7 @@ input[type='radio'] {
 input[type='checkbox'] + label:before,
 input[type='radio'] + label:before {
   content: '\2714';
-  border: 1px solid $mediumGray;
+  border: 1px solid $black;
   margin-right: 10px;
   border-radius: 3px;
   display: inline-block;

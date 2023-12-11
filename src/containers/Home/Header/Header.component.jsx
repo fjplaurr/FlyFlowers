@@ -7,7 +7,7 @@ const Header = () => (
     <img
       className={styles.coverPage}
       src={coverPage}
-      alt="Flowers that inspire"
+      alt="girl holding a bouquet of flowers"
     />
     <h1 className={styles.headerTitle}>
       Something special

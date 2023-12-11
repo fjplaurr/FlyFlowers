@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: $darkGray;
+  background-color: $black;
   position: sticky;
   top: 0;
   z-index: 10000;
@@ -71,7 +71,7 @@
 
 @media only screen and (max-width: 767px) {
   .navButton {
-    background-color: $darkGray;
+    background-color: $black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +93,7 @@
     overflow: hidden;
     top: 0;
     transition: height 0.2s linear;
-    background-color: $darkGray;
+    background-color: $black;
     top: 2rem;
     align-items: flex-start;
     padding-left: 10%;

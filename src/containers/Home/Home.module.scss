@@ -1,39 +1,10 @@
 @import "../../variables.scss";
 
 .home {
-  width: 100vw;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 10rem;
-}
-
-.colorfulImg {
-  width: 100%;
-}
-
-.lightColorImg {
-  object-fit: cover;
-  object-position: 0% 0%;
-  filter: opacity(0.8);
-  width: 100%;
-}
-
-@media only screen and (max-width: 767px) {
-  .collectionHeader {
-    margin: 2.5rem 0;
-    margin-bottom: 1.2rem;
-    font-size: 1.2rem;
-  }
-  .colorfulImg {
-    height: 250px;
-    object-fit: cover;
-  }
-  .lightColorImg {
-    height: 250px;
-  }
+  margin-bottom: 5rem;
+  gap: 5rem;
 }
