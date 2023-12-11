@@ -8,3 +8,9 @@
   margin-bottom: 5rem;
   gap: 5rem;
 }
+
+@media (max-width: 767px) {
+  .home {
+    gap: 2.5rem;
+  }
+}

@@ -27,7 +27,7 @@ class NavBar extends React.Component {
         <div className={styles.navWrapper}>
           <button
             type="button"
-            className={`${styles.navButton} ${styles.hideHighResolut}`}
+            className={`${styles.navButton}`}
             onClick={this.toggle}
           >
             {open ? (
@@ -36,35 +36,18 @@ class NavBar extends React.Component {
               <GiHamburgerMenu size="1rem" color={variables.white} />
             )}
           </button>
-          <div className={styles.logoNavBar}>
-            <Link
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                fontSize: '18px',
-                color: variables.white,
-                textDecoration: 'none',
-              }}
-              to="/"
-            >
-              Fly Flowers
-              <div className={styles.logoPink} />
-              <div className={styles.logoGreen} />
-            </Link>
-          </div>
+          <Link to="/" className={styles.logoLink}>
+            Fly Flowers
+            <div className={styles.logoPink} />
+            <div className={styles.logoGreen} />
+          </Link>
           <div
-            className={
-              open
-                ? `${styles.linksNavBar} ${styles.open}`
-                : `${styles.linksNavBar} ${styles.close}`
-            }
+            className={`${styles.linksNavBar} ${
+              open ? styles.open : styles.close
+            }`}
           >
             <Link
-              style={{
-                color: variables.white,
-                padding: '1rem 2rem',
-                textDecoration: 'none',
-              }}
+              className={styles.categoryLink}
               to={{
                 pathname: '/empty',
                 search: '?occasion=birthday',
@@ -75,11 +58,7 @@ class NavBar extends React.Component {
               Birthday
             </Link>
             <Link
-              style={{
-                color: variables.white,
-                padding: '1rem 2rem',
-                textDecoration: 'none',
-              }}
+              className={styles.categoryLink}
               to={{
                 pathname: '/empty',
                 search: '?occasion=love',
@@ -90,11 +69,7 @@ class NavBar extends React.Component {
               Love
             </Link>
             <Link
-              style={{
-                color: variables.white,
-                padding: '1rem 2rem',
-                textDecoration: 'none',
-              }}
+              className={styles.categoryLink}
               to={{
                 pathname: '/empty',
                 search: '?occasion=decoration',
@@ -105,14 +80,7 @@ class NavBar extends React.Component {
               Decoration
             </Link>
           </div>
-          <Link
-            style={{
-              color: variables.white,
-              padding: '1rem 2rem',
-            }}
-            to="/bag"
-            className={styles.bagWrapper}
-          >
+          <Link to="/bag" className={styles.bagWrapper}>
             <AiOutlineShopping />
           </Link>
         </div>

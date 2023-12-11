@@ -3,15 +3,11 @@ import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addToBag } from '../../redux/actions/bagActions';
-import { increaseBilling } from '../../redux/actions/billingActions';
 import styles from './SingleProduct.module.scss';
+import DeliveryAd from '../DeliveryAd';
+import Button from '../Button';
 
-const SingleProduct = ({
-  history,
-  addProductToBag,
-  incrBilling,
-  productsStore,
-}) => {
+const SingleProduct = ({ history, addProductToBag, productsStore }) => {
   const [product, setProduct] = useState();
   // get id from params
   const { id } = useParams();
@@ -25,35 +21,32 @@ const SingleProduct = ({
   // add product to bag
   const handleClick = () => {
     addProductToBag(product, 1);
-    incrBilling(product.price);
     history.push('/bag');
   };
 
   return product ? (
-    <div className={styles.singleProduct}>
-      <div className={styles.productDescription}>
+    <div className={styles.container}>
+      <div className={styles.productInfo}>
         <h1 className={styles.title}>{product.title}</h1>
         <p className={styles.price}>{`${product.price.toFixed(2)} €`}</p>
+        <DeliveryAd />
         <p className={styles.description}>{product.longDescription}</p>
-        <button
-          className={styles.customButton}
-          type="button"
-          onClick={() => handleClick()}
-        >
-          Add to bag
-        </button>
       </div>
-      <div
-        className={styles.imageWrapper}
-        style={{ backgroundImage: `url(${product.url})` }}
-      />
+      <div className={styles.imageAndButtonContainer}>
+        <div
+          className={styles.imageWrapper}
+          style={{ backgroundImage: `url(${product.url})` }}
+        />
+        <Button size="big" onClick={() => handleClick()}>
+          Add to bag
+        </Button>
+      </div>
     </div>
   ) : null;
 };
 
 SingleProduct.propTypes = {
   addProductToBag: PropTypes.func.isRequired,
-  incrBilling: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
@@ -61,10 +54,8 @@ SingleProduct.propTypes = {
 
 const mapDispatchToProps = {
   addProductToBag: addToBag,
-  incrBilling: increaseBilling,
 };
 
-// proptypes
 SingleProduct.propTypes = {
   productsStore: PropTypes.arrayOf(
     PropTypes.shape({

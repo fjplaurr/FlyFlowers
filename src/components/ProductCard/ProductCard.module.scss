@@ -1,8 +1,5 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
-.productCard {
-  margin: 1rem 2rem;
-}
 .card {
   display: flex;
   flex-direction: column;
@@ -10,6 +7,7 @@
   width: 100%;
   transition: all 0.3s;
   cursor: pointer;
+  border: 1px solid $gray;
 }
 .modifyBag {
   display: flex;
@@ -19,6 +17,10 @@
   white-space: nowrap;
   font-size: 1rem;
   color: $midGreen;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .infoProduct {
   max-width: 300px;
@@ -27,9 +29,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-}
-.modifyBag:hover {
-  text-decoration: underline;
 }
 .price {
   margin: 1rem 0;
@@ -53,30 +52,4 @@
 }
 .card:hover {
   box-shadow: 0 0 8px 1px $midGreen;
-}
-
-@media only screen and (max-width: 767px) {
-  .productCard {
-    margin: 0.8rem;
-  }
-  .imageWrapper {
-    width: 120px;
-    height: 120px;
-  }
-  .infoProduct {
-    margin-bottom: 0;
-    width: 120px;
-  }
-  .description {
-    color: $black;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  .modifyBag {
-    font-size: 0.9rem;
-  }
-  .price {
-    font-size: 0.9rem;
-    margin: 0.5rem 0;
-  }
 }

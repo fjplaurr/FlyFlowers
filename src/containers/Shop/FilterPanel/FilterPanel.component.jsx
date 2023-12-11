@@ -15,7 +15,7 @@ const FilterPanel = ({ location, history }) => (
             dataSearchKey="color"
             dataSearchValue="yellow"
             id="color4"
-            ariaLabel="Filter by orange color"
+            ariaLabel="Filter by yellow color"
           />
           <CustomCheckBox
             location={location}
@@ -69,6 +69,8 @@ const FilterPanel = ({ location, history }) => (
           id="decorationOccasion"
           labelValue="Decoration"
         />
+      </div>
+      <div className={styles.filterWrapper}>
         <h2 className={styles.filterTitle}>Price</h2>
         <CustomCheckBox
           location={location}

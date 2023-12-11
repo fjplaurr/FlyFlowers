@@ -8,7 +8,6 @@ const CustomCheckBox = ({
   id,
   history,
   location,
-  className,
   labelValue = '',
   ariaLabel = '',
 }) => {
@@ -28,30 +27,21 @@ const CustomCheckBox = ({
     const { search } = location;
     setChecked((oldChecked) => !oldChecked);
     const params = new URLSearchParams(search);
+    const key = event.target.getAttribute('data-search-key');
+    const value = event.target.getAttribute('data-search-value');
+
     if (event.target.checked) {
-      params.append(
-        event.target.getAttribute('data-search-key'),
-        event.target.getAttribute('data-search-value'),
-      );
+      params.append(key, value);
     } else {
-      const paramsToKeep = [];
-      const keyValueArr = [...params.entries()];
-      for (let i = 0; i < keyValueArr.length; i += 1) {
-        if (
-          keyValueArr[i][0] === event.target.getAttribute('data-search-key') &&
-          keyValueArr[i][1] !== event.target.getAttribute('data-search-value')
-        ) {
-          paramsToKeep.push(keyValueArr[i][1]);
-        }
-      }
-      params.delete(event.target.getAttribute('data-search-key'));
-      for (let i = 0; i < paramsToKeep.length; i += 1) {
-        params.append(
-          event.target.getAttribute('data-search-key'),
-          paramsToKeep[i],
-        );
-      }
+      const paramsToKeep = [...params.entries()].filter(
+        ([entryKey, entryValue]) => entryKey !== key || entryValue !== value,
+      );
+      params.delete(key);
+      paramsToKeep.forEach(([entryKey, entryValue]) => {
+        params.append(entryKey, entryValue);
+      });
     }
+
     const newLocation = {
       pathname: '/empty',
       state: {
@@ -60,6 +50,7 @@ const CustomCheckBox = ({
     };
     history.push(newLocation);
   };
+
   return (
     <>
       <input
@@ -69,7 +60,6 @@ const CustomCheckBox = ({
         id={id}
         onChange={handleFilter}
         checked={checked}
-        className={className}
       />
       <label aria-label={ariaLabel} htmlFor={id}>
         {labelValue}
@@ -88,7 +78,6 @@ CustomCheckBox.propTypes = {
   location: PropTypes.shape({
     search: PropTypes.string.isRequired,
   }).isRequired,
-  className: PropTypes.string.isRequired,
   labelValue: PropTypes.string,
   ariaLabel: PropTypes.string,
 };

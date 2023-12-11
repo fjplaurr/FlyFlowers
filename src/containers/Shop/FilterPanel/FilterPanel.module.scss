@@ -1,4 +1,4 @@
-@import '../../../variables.scss';
+@import "../../../variables.scss";
 
 .filterContainer {
   position: sticky;
@@ -8,7 +8,7 @@
 .filterTitle {
   font-weight: 600;
   color: $black;
-  font-size: 1.5rem;
+  font-size: clamp(0.75rem, 3vw, 1.5rem);
   margin-bottom: 0.5rem;
 }
 .colors {
@@ -23,19 +23,18 @@
   justify-content: center;
   align-items: flex-start;
   margin-right: 2rem;
-  margin-bottom: 1.5rem;
 }
 .filters {
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 3rem;
 }
 
 @media only screen and (max-width: 767px) {
-  .filterTitle {
-    font-size: 0.8rem;
+  .filterContainer {
+    position: static;
   }
   .colors {
     width: 80px;
@@ -43,19 +42,11 @@
   }
   .filterWrapper {
     margin-right: 0;
-    margin-bottom: 0;
   }
   .filters {
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-bottom: 1.5rem;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
-  }
-  .filterForm {
-    position: static;
-    top: 0;
-    left: 0;
-    width: 100%;
+    gap: 1rem;
   }
 }

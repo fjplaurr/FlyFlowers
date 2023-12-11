@@ -8,7 +8,7 @@ import FilterPanel from './FilterPanel';
 import styles from './Shop.module.scss';
 
 const Shop = ({ location, history, productsStore }) => {
-  const [filteredArr, setFilteredArr] = useState();
+  const [filteredArr, setFilteredArr] = useState([]);
 
   // fetch flowers
   useEffect(() => {
@@ -64,7 +64,7 @@ const Shop = ({ location, history, productsStore }) => {
   return (
     <div className={styles.shop}>
       <FilterPanel location={location} history={history} />
-      <ProductsGrid items={filteredArr} />
+      {filteredArr.length > 0 && <ProductsGrid items={filteredArr} />}
     </div>
   );
 };

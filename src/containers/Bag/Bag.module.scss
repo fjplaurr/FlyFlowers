@@ -7,20 +7,19 @@
   justify-content: center;
   align-items: flex-start;
   margin: 0 auto;
-  max-width: 1920px;
   padding: 0 1rem;
   padding-bottom: 3rem;
 }
 .headerWithoutProducts {
-  margin-top: 5rem;
+  margin-top: 2rem;
   align-self: flex-start;
   text-align: left;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
   width: 100%;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid $gray;
 }
 .titleHeaderWithoutProducts {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
 }
 .subtitleHeaderWithoutProducts {
@@ -52,7 +51,7 @@
   margin: 2rem 0;
   margin-bottom: 0.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid $gray;
 }
 .totalProducts {
   margin-right: 1rem;
@@ -84,11 +83,13 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 5rem;
 }
 .titleRecommendations {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .bagBottom {
   display: flex;
@@ -97,9 +98,9 @@
   flex-direction: column;
   color: $black;
   width: 100%;
-  margin-top: 1rem;
 }
 .priceBottom {
+  margin-top: 1rem;
   font-size: 1.5rem;
   white-space: nowrap;
   text-align: right;
@@ -122,7 +123,7 @@
   .headerWithoutProducts {
     margin-top: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid $gray;
   }
   .titleHeaderWithProducts {
     font-size: 1.1rem;

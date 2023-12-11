@@ -11,12 +11,7 @@ const BestSellers = ({ title, collection }) => (
         <ProductCard
           url={product.url}
           title={product.title}
-          longDescription={product.longDescription}
-          shortDescription={product.shortDescription}
-          colors={product.colors}
           price={product.price}
-          trends={product.trends}
-          key={product._id}
           _id={product._id}
         />
       ))}

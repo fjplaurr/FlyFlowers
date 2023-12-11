@@ -9,17 +9,17 @@ const Services = () => (
     <div className={styles.featuresWrapper}>
       <ServiceCard
         description="Swift and reliable delivery, with bouquets arriving in just two days to brighten your day or surprise a loved one."
-        featureSvg={Rocket}
+        FeatureSvg={Rocket}
         title="Two-days delivery"
       />
       <ServiceCard
         description="Meticulously handcrafted bouquets with the freshest and most vibrant blooms, ensuring long-lasting beauty and fragrance."
-        featureSvg={Flower}
+        FeatureSvg={Flower}
         title="Guaranteed fresh"
       />
       <ServiceCard
         description="Never miss a special moment again. Schedule the exact arrival of your floral masterpiece for the perfect heartfelt gift."
-        featureSvg={Calendar}
+        FeatureSvg={Calendar}
         title="Precise delivery date"
       />
     </div>

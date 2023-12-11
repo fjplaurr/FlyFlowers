@@ -1,56 +1,82 @@
-@import '../../../variables.scss';
+@import "../../../variables.scss";
 
-.productBag {
-  padding: 3rem 0;
+.container {
   display: flex;
   justify-content: space-between;
+  gap: 1.5rem;
   align-items: center;
-  flex-direction: row;
-  border-bottom: 1px solid #e2e2e2;
+  padding: 2rem 0;
+  border-bottom: 1px solid $gray;
   width: 100%;
+
+  .imageWrapper {
+    min-width: 150px;
+    min-height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .infoWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    .topInfoWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bottomInfoWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 .descriptionProduct {
   font-weight: 600;
   flex-basis: 70%;
   text-align: left;
   font-size: 1.5rem;
-}
-.quantityWrapperLabel {
-  cursor: text;
-}
-.quantityWrapperInput {
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  color: $black;
+  line-height: 2.25rem;
 }
 .quantityWrapper {
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
   align-items: center;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 400;
+}
+.quantityIncreaserDecreaserWrapper {
+  display: inline-flex;
   flex-direction: column;
-  flex-basis: 10%;
-  margin: 0 2rem;
+}
+.quantityModifierButton {
+  border: none;
+  background: transparent;
+  color: $pink;
   font-size: 1.5rem;
-  border: 1px #cacaca solid;
-  border-radius: 12px;
-  padding: 15px;
+  font-weight: 700;
+  cursor: pointer;
 }
-.quantityWrapper:hover {
-  border: 1px $pink solid;
-  box-shadow: 0 0 2px 1px #ff4fe26e;
+.verticalRotate {
+  transform: rotate(180deg);
 }
+
 .bouquetImg {
   height: 15rem;
   width: 15rem;
 }
-.imageWrapper {
-  min-width: 18rem;
-  min-height: 18rem;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
+
 .customButton {
   background-color: $white;
   font-size: 1rem;
@@ -61,8 +87,9 @@
 }
 .customButton {
   color: $pink;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
 }
 .customButton :hover {
   color: $orange;
@@ -73,67 +100,38 @@
   font-size: 1.5rem;
   color: $black;
 }
-.quantityWrapperInput::-webkit-outer-spin-button,
-.quantityWrapperInput::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.quantityWrapperInput {
-  -moz-appearance: textfield;
-}
-.infoWrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.completeInfoWrapper {
-  padding-left: 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.bottomInfoWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.deliveryInfo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 0 2rem;
-  font-size: 1.5rem;
-  .deliverySpan {
-    color: $black;
-  }
-}
 
 @media only screen and (max-width: 767px) {
-  .productBag {
+  .container {
     padding: 1rem 0;
     flex-direction: column;
-  }
-  .imageWrapper {
-    min-width: 250px;
-    min-height: 250px;
-  }
-  .completeInfoWrapper {
-    padding-left: 0.5rem;
-    margin: 1rem 0;
+
+    .imageWrapper {
+      min-width: 250px;
+      min-height: 250px;
+    }
+
+    .infoWrapper {
+      padding-left: 0.5rem;
+      margin: 1rem 0;
+
+      .topInfoWrapper {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .bottomInfoWrapper {
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   }
   .descriptionProduct {
     margin-bottom: 1rem;
     font-size: 1rem;
     text-align: left;
-  }
-  .infoWrapper {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
   }
   .customButton {
     font-size: 0.9rem;
@@ -143,25 +141,13 @@
     width: 40%;
     margin: 0;
     font-size: 1rem;
-    border: 1px #cacaca solid;
     border-radius: 10px;
     padding: 5px;
-  }
-  .quantityWrapperInput {
-    font-size: 1rem;
   }
   .priceWrapper {
     text-align: center;
     font-size: 1rem;
     color: $black;
     margin-top: 1rem;
-  }
-  .bottomInfoWrapper {
-    margin-top: 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .deliveryInfo {
-    font-size: 0.9rem;
   }
 }

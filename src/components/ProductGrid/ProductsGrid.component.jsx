@@ -11,12 +11,7 @@ const ProductsGrid = ({ items = [] }) => (
         <ProductCard
           url={item.url}
           title={item.title}
-          longDescription={item.longDescription}
-          shortDescription={item.shortDescription}
-          colors={item.colors}
           price={item.price}
-          trends={item.trends}
-          key={item._id}
           _id={item._id}
         />
       ))}
@@ -33,7 +28,7 @@ ProductsGrid.propTypes = {
       shortDescription: PropTypes.string.isRequired,
       colors: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
       price: PropTypes.number.isRequired,
-      trends: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+      trending: PropTypes.bool.isRequired,
       _id: PropTypes.string.isRequired,
     }),
   ).isRequired,
