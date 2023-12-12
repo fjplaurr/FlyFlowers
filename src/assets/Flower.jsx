@@ -1,8 +1,20 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import variables from '../variables.scss';
 
-const Flower = () => (
-  <svg width={180} height={180} viewBox="0 0 180 180" fill="none">
+const sizes = {
+  big: 180,
+  small: 90,
+  xs: 48,
+};
+
+const Flower = ({ size = 'big' }) => (
+  <svg
+    width={sizes[size]}
+    height={sizes[size]}
+    viewBox="0 0 180 180"
+    fill="none"
+  >
     <path
       d="M89.971 54.643L90 172.5"
       stroke={variables.black}
@@ -34,5 +46,9 @@ const Flower = () => (
     />
   </svg>
 );
+
+Flower.propTypes = {
+  size: PropTypes.oneOf(['big', 'small', 'xs']),
+};
 
 export default Flower;

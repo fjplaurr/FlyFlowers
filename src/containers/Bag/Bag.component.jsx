@@ -56,9 +56,9 @@ const Bag = ({ bag, productsStore }) => {
         </div>
       ) : (
         <div className={styles.headerWithoutProducts}>
-          <h1 className={styles.titleHeader}>Your bag is empty.</h1>
+          <h1 className={styles.titleHeader}>Your bag is empty</h1>
           <h2 className={styles.subtitleHeaderWithoutProducts}>
-            Explore our shop and add some color.
+            Explore our shop and add some color
           </h2>
         </div>
       )}
@@ -70,12 +70,14 @@ const Bag = ({ bag, productsStore }) => {
           2,
         )}€`}</p>
       ) : null}
-      <div className={styles.recommendationsContainer}>
-        <BestSellers
-          title="A few recommended flowers"
-          collection={filteredRecommendedProducts}
-        />
-      </div>
+      {bag.length === 0 && (
+        <div className={styles.recommendationsContainer}>
+          <BestSellers
+            title="A few recommended flowers"
+            collection={filteredRecommendedProducts}
+          />
+        </div>
+      )}
     </div>
   );
 };

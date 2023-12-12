@@ -4,7 +4,7 @@ import styles from './DeliveryAd.module.scss';
 
 const DeliveryAd = () => (
   <div className={styles.container}>
-    <Calendar size="small" />
+    <Calendar size="xs" />
     <p>Delivery free in two days</p>
   </div>
 );

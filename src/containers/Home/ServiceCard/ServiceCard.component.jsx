@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
 import styles from './ServiceCard.module.scss';
 
-const ServiceCard = (props) => {
-  const { FeatureSvg, title, description } = props;
+const ServiceCard = ({ description, title, FeatureSvg }) => {
+  const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
+
   return (
     <div className={styles.featureWrapper}>
-      <FeatureSvg />
+      <FeatureSvg size={isDesktop ? 'big' : 'small'} />
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.paragraph}>{description}</p>
     </div>

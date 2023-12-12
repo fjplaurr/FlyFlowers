@@ -8,7 +8,7 @@
   left: 5%;
   top: 50%;
   transform: translate(0, -50%);
-  font-size: 5rem;
+  font-size: clamp(1.6rem, 6vw, 5rem);
   font-weight: 500;
   color: $white;
   font-family: "Playfair Display", sans-serif;
@@ -17,10 +17,4 @@
 .coverPage {
   width: 100%;
   filter: brightness(0.8);
-}
-
-@media only screen and (max-width: 767px) {
-  .headerTitle {
-    font-size: 1.7rem;
-  }
 }

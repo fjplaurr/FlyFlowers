@@ -4,10 +4,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
   margin-block: 2rem;
   width: 100vw;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   gap: 4rem;
   max-width: 90%;
   margin-left: auto;
@@ -63,13 +62,14 @@
   .container {
     padding-inline: 0.8rem;
     max-width: 100%;
-    gap: 2rem;
+    gap: 1rem;
 
     > * {
       max-width: 100%;
     }
 
     .productInfo {
+      gap: 1rem;
       flex-basis: 100%;
     }
 
@@ -77,5 +77,9 @@
       width: 250px;
       height: 250px;
     }
+  }
+
+  .imageAndButtonContainer {
+    gap: 1rem;
   }
 }
