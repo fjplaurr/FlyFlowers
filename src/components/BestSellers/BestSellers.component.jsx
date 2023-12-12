@@ -9,12 +9,14 @@ const BestSellers = ({ title, collection }) => (
     <h2 className={styles.title}>{title}</h2>
     <div className={styles.gridContainer}>
       {collection.map((product) => (
-        <ProductCard
-          url={product.url}
-          title={product.title}
-          price={product.price}
-          _id={product._id}
-        />
+        <div key={product._id}>
+          <ProductCard
+            url={product.url}
+            title={product.title}
+            price={product.price}
+            _id={product._id}
+          />
+        </div>
       ))}
     </div>
   </section>
