@@ -30,21 +30,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .bottomInfoWrapper {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
   }
 }
 .productTitle {
   font-weight: 600;
-  flex-basis: 70%;
+  flex-basis: 60%;
   text-align: left;
-  font-size: 1.5rem;
-  line-height: 2.25rem;
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  line-height: clamp(1.5rem, 7.5vw, 2.25rem);
 }
 .quantityWrapper {
   display: flex;
@@ -52,8 +55,8 @@
   gap: 0.5rem;
   align-items: center;
   border-radius: 0.5rem;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: clamp(1rem, 5vw, 2rem);
+  line-height: clamp(1.5rem, 7.5vw, 3rem);
   font-weight: 400;
 }
 .quantityIncreaserDecreaserWrapper {
@@ -80,74 +83,33 @@
 .customButton {
   background-color: $white;
   font-size: 1rem;
-  display: flex;
-  justify-content: center;
-  align-self: center;
   cursor: pointer;
-}
-.customButton {
   color: $pink;
-  font-size: 1rem;
   font-weight: 400;
   border: none;
 }
-.customButton :hover {
-  color: $orange;
-}
+
 .priceWrapper {
-  flex-basis: 20%;
   text-align: right;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 5vw, 1.5rem);
   color: $black;
 }
 
 @media only screen and (max-width: 767px) {
   .container {
-    padding: 1rem 0;
     flex-direction: column;
 
-    .imageWrapper {
-      min-width: 250px;
-      min-height: 250px;
-    }
-
     .infoWrapper {
-      padding-left: 0.5rem;
-      margin: 1rem 0;
-
       .topInfoWrapper {
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .bottomInfoWrapper {
-        margin-top: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: flex-start;
       }
     }
   }
+
   .productTitle {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    text-align: left;
-  }
-  .customButton {
-    font-size: 0.9rem;
-    align-self: flex-end;
-  }
-  .quantityWrapper {
-    width: 40%;
-    margin: 0;
-    font-size: 1rem;
-    border-radius: 10px;
-    padding: 5px;
+    flex-basis: 100%;
   }
   .priceWrapper {
-    text-align: center;
-    font-size: 1rem;
-    color: $black;
-    margin-top: 1rem;
+    flex-basis: auto;
   }
 }

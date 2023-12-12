@@ -1,11 +1,9 @@
 @import "../../variables.scss";
 
-input[type="checkbox"] + label:active:before,
-input[type="radio"] + label:active:before {
+input[type="checkbox"] + label:active:before {
   transform: scale(0);
 }
-input[type="checkbox"]:checked + label:before,
-input[type="radio"]:checked + label:before {
+input[type="checkbox"]:checked + label:before {
   background-color: $black;
   border-color: $black;
   color: $white;
@@ -42,8 +40,7 @@ input[data-search-value="yellow"] + label:before {
 input[data-search-value="yellow"]:checked + label:before {
   background-color: $yellow;
 }
-input[type="checkbox"] + label,
-input[type="radio"] + label {
+input[type="checkbox"] + label {
   display: flex;
   align-items: center;
   margin: 0.2rem;
@@ -51,14 +48,12 @@ input[type="radio"] + label {
   cursor: pointer;
   white-space: nowrap;
   color: $black;
-  font-size: 1.5rem;
+  font-size: clamp(0.75rem, 3vw, 1.5rem);
 }
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"] {
   display: none;
 }
-input[type="checkbox"] + label:before,
-input[type="radio"] + label:before {
+input[type="checkbox"] + label:before {
   content: "\2714";
   border: 1px solid $black;
   margin-right: 10px;
@@ -73,16 +68,10 @@ input[type="radio"] + label:before {
 }
 
 @media only screen and (max-width: 767px) {
-  input[type="checkbox"] + label:before,
-  input[type="radio"] + label:before {
+  input[type="checkbox"] + label:before {
     margin-right: 0.5rem;
     width: 20px;
     height: 20px;
     font-size: 14px;
-  }
-
-  input[type="checkbox"] + label,
-  input[type="radio"] + label {
-    font-size: 16px;
   }
 }

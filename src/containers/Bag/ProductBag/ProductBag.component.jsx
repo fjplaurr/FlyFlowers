@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { useMediaQuery } from 'react-responsive';
 import styles from './ProductBag.module.scss';
 import { addToBag, deleteFromBag } from '../../../redux/actions/bagActions';
 import DeliveryAd from '../../../components/DeliveryAd';
@@ -15,6 +16,8 @@ const ProductBag = ({
   const [totalQuantity, setTotalQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const { _id, price, url, title } = product;
+
+  const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
 
   useEffect(() => {
     // change total price every time the bag is updated
@@ -77,7 +80,7 @@ const ProductBag = ({
           <div className={styles.priceWrapper}>{`${totalPrice}€`}</div>
         </div>
         <div className={styles.bottomInfoWrapper}>
-          <DeliveryAd />
+          {isDesktop && <DeliveryAd />}
           <button
             className={styles.customButton}
             type="button"

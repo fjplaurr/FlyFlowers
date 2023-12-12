@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
 import { addToBag } from '../../redux/actions/bagActions';
 import styles from './SingleProduct.module.scss';
 import DeliveryAd from '../DeliveryAd';
@@ -25,6 +26,8 @@ const SingleProduct = ({ history, addProductToBag, productsStore }) => {
     history.push('/bag');
   };
 
+  const isDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
+
   return product ? (
     <div className={styles.container}>
       <div className={styles.productInfo}>
@@ -38,7 +41,10 @@ const SingleProduct = ({ history, addProductToBag, productsStore }) => {
           className={styles.imageWrapper}
           style={{ backgroundImage: `url(${product.url})` }}
         />
-        <Button size="big" onClick={() => handleClick()}>
+        <Button
+          size={isDesktop ? 'big' : 'small'}
+          onClick={() => handleClick()}
+        >
           Add to bag
         </Button>
       </div>

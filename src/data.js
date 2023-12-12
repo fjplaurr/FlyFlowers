@@ -94,7 +94,7 @@ export const products = [
     url: 'https://res.cloudinary.com/fjplaurr/image/upload/v1590711757/Fly-flowers/18_r3d3q1.jpg',
     collection: 'colorful',
     trending: false,
-    recommended: false,
+    recommended: true,
   },
   {
     _id: '5ed3f619c7dedd4948252e8d',
@@ -106,7 +106,7 @@ export const products = [
     url: 'https://res.cloudinary.com/fjplaurr/image/upload/v1590711757/Fly-flowers/13_y21dxl.jpg',
     collection: 'colorful',
     trending: false,
-    recommended: false,
+    recommended: true,
   },
   {
     _id: '5ed3f619c7dedd4948252e8e',

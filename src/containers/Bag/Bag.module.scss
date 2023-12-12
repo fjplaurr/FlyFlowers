@@ -13,17 +13,17 @@
 .headerWithoutProducts {
   margin-top: 2rem;
   text-align: left;
-  padding-bottom: 2rem;
   width: 100%;
   border-bottom: 1px solid $gray;
 }
 .titleHeader {
-  font-size: 3rem;
+  font-size: clamp(1rem, 8vw, 3rem);
   font-weight: 600;
   color: $black;
 }
 .subtitleHeaderWithoutProducts {
-  font-size: 2rem;
+  margin-top: 2rem;
+  font-size: clamp(1rem, 5vw, 2rem);
   color: $black;
   font-weight: 400;
 }
@@ -41,16 +41,17 @@
   width: 100%;
   margin-top: 2rem;
   border-bottom: 1px solid $gray;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .totalProducts {
   margin-right: 1rem;
-  margin-left: 2rem;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   white-space: nowrap;
   color: $black;
 }
 .priceTop {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   white-space: nowrap;
   color: $black;
 }
@@ -70,12 +71,15 @@
 
 .priceBottom {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   color: $black;
   margin-left: auto;
 }
 
 @media only screen and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+  }
   .bag {
     margin: 0;
     width: 90%;
@@ -84,30 +88,10 @@
   }
   .subtitleHeaderWithoutProducts {
     margin-top: 0.5rem;
-    font-size: 1rem;
-  }
-  .titleHeader {
-    font-size: 1.2rem;
   }
   .headerWithoutProducts {
     margin-top: 2rem;
-    padding-bottom: 2rem;
     border-bottom: 1px solid $gray;
-  }
-  .headerWithProducts {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-  .totalProducts {
-    font-size: 0.8rem;
-  }
-  .priceTop {
-    font-size: 0.8rem;
-  }
-  .priceBottom {
-    font-size: 1rem;
-    white-space: nowrap;
-    text-align: right;
   }
   .recommendationsContainer {
     margin-top: 2.5rem;

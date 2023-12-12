@@ -23,67 +23,65 @@ class NavBar extends React.Component {
   render() {
     const { open } = this.state;
     return (
-      <nav className={styles.navBar}>
-        <div className={styles.navWrapper}>
-          <button
-            type="button"
-            className={`${styles.navButton}`}
+      <nav className={styles.navWrapper}>
+        <button
+          type="button"
+          className={`${styles.navButton}`}
+          onClick={this.toggle}
+        >
+          {open ? (
+            <MdClose size="1rem" color={variables.white} />
+          ) : (
+            <GiHamburgerMenu size="1rem" color={variables.white} />
+          )}
+        </button>
+        <Link to="/" className={styles.logoLink}>
+          Fly Flowers
+          <div className={styles.logoPink} />
+          <div className={styles.logoGreen} />
+        </Link>
+        <div
+          className={`${styles.flowersCategoriesWrapper} ${
+            open ? styles.open : styles.close
+          }`}
+        >
+          <Link
+            className={styles.categoryLink}
+            to={{
+              pathname: '/empty',
+              search: '?occasion=birthday',
+              state: { params: 'occasion=birthday' },
+            }}
             onClick={this.toggle}
           >
-            {open ? (
-              <MdClose size="1rem" color={variables.white} />
-            ) : (
-              <GiHamburgerMenu size="1rem" color={variables.white} />
-            )}
-          </button>
-          <Link to="/" className={styles.logoLink}>
-            Fly Flowers
-            <div className={styles.logoPink} />
-            <div className={styles.logoGreen} />
+            Birthday
           </Link>
-          <div
-            className={`${styles.linksNavBar} ${
-              open ? styles.open : styles.close
-            }`}
+          <Link
+            className={styles.categoryLink}
+            to={{
+              pathname: '/empty',
+              search: '?occasion=love',
+              state: { params: 'occasion=love' },
+            }}
+            onClick={this.toggle}
           >
-            <Link
-              className={styles.categoryLink}
-              to={{
-                pathname: '/empty',
-                search: '?occasion=birthday',
-                state: { params: 'occasion=birthday' },
-              }}
-              onClick={this.toggle}
-            >
-              Birthday
-            </Link>
-            <Link
-              className={styles.categoryLink}
-              to={{
-                pathname: '/empty',
-                search: '?occasion=love',
-                state: { params: 'occasion=love' },
-              }}
-              onClick={this.toggle}
-            >
-              Love
-            </Link>
-            <Link
-              className={styles.categoryLink}
-              to={{
-                pathname: '/empty',
-                search: '?occasion=decoration',
-                state: { params: 'occasion=decoration' },
-              }}
-              onClick={this.toggle}
-            >
-              Decoration
-            </Link>
-          </div>
-          <Link to="/bag" className={styles.bagWrapper}>
-            <AiOutlineShopping />
+            Love
+          </Link>
+          <Link
+            className={styles.categoryLink}
+            to={{
+              pathname: '/empty',
+              search: '?occasion=decoration',
+              state: { params: 'occasion=decoration' },
+            }}
+            onClick={this.toggle}
+          >
+            Decoration
           </Link>
         </div>
+        <Link to="/bag" className={styles.bagWrapper}>
+          <AiOutlineShopping />
+        </Link>
       </nav>
     );
   }

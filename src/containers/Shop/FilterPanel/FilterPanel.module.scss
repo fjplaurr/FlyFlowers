@@ -37,7 +37,6 @@
     position: static;
   }
   .colors {
-    width: 80px;
     flex-wrap: wrap;
   }
   .filterWrapper {
@@ -45,8 +44,8 @@
   }
   .filters {
     flex-direction: row;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-    gap: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    gap: 0.5rem;
   }
 }

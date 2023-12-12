@@ -20,21 +20,24 @@ const Bag = ({ bag, productsStore }) => {
 
   // set total quantity and price when bag is updated
   useEffect(() => {
-    const getTotalQuantity = () => {
-      bag.reduce((total, obj) => total + parseInt(obj.quantity, 10), 0);
-    };
+    const newTotalQuantity = bag.reduce(
+      (total, obj) => total + parseInt(obj.quantity, 10),
+      0,
+    );
 
-    const getTotalPrice = () =>
-      bag.reduce(
-        (total, obj) => total + parseInt(obj.quantity, 10) * obj.product.price,
-        0,
-      );
+    const newTotalPrice = bag.reduce(
+      (total, obj) => total + parseInt(obj.quantity, 10) * obj.product.price,
+      0,
+    );
 
-    setTotalQuantity(getTotalQuantity(bag));
-    setTotalPrice(getTotalPrice(bag));
+    setTotalQuantity(newTotalQuantity);
+    setTotalPrice(newTotalPrice);
   }, [bag]);
 
-  const recommendedProducts = productsStore.filter((item) => item.recommended);
+  const filteredRecommendedProducts = productsStore.filter(
+    (item) =>
+      item.recommended && !bag.some((obj) => obj.product._id === item._id),
+  );
 
   return (
     <div className={styles.container}>
@@ -70,7 +73,7 @@ const Bag = ({ bag, productsStore }) => {
       <div className={styles.recommendationsContainer}>
         <BestSellers
           title="A few recommended flowers"
-          collection={recommendedProducts}
+          collection={filteredRecommendedProducts}
         />
       </div>
     </div>
