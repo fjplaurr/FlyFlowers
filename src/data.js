@@ -6,8 +6,8 @@ const loremIpsum = new LoremIpsum({
     min: 4,
   },
   sentencesPerParagraph: {
-    max: 15,
-    min: 10,
+    max: 8,
+    min: 4,
   },
 });
 
@@ -454,7 +454,7 @@ export const products = [
     url: 'https://res.cloudinary.com/fjplaurr/image/upload/v1590711757/Fly-flowers/22_bbnvh4.jpg',
     collection: 'colorful',
     trending: true,
-    recommended: true,
+    recommended: false,
   },
   {
     _id: '5ed3f619c7dedd4948252ea0',
