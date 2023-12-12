@@ -26,8 +26,6 @@ const Bag = ({ bag, products }) => {
     setTotalPrice(getTotalPrice(bag));
   }, [bag]);
 
-  const productsBag = bag.map((item) => <ProductBag product={item.product} />);
-
   const recommendedProducts = products.filter((item) => item.recommended);
 
   return (
@@ -53,7 +51,11 @@ const Bag = ({ bag, products }) => {
           </h2>
         </div>
       )}
-      {productsBag}
+      {bag.map((item) => (
+        <div key={item._id}>
+          <ProductBag product={item.product} />
+        </div>
+      ))}
       {bag.length > 0 ? (
         <p className={styles.priceBottom}>{`Total: ${totalPrice.toFixed(
           2,
