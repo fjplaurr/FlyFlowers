@@ -3,11 +3,10 @@
 .card {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
   transition: all 0.3s;
   cursor: pointer;
   border: 1px solid $gray;
+  max-width: 300px;
 }
 .modifyBag {
   display: flex;
@@ -23,12 +22,11 @@
   }
 }
 .infoProduct {
-  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 .price {
   margin: 1rem 0;

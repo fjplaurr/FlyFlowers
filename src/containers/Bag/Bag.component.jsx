@@ -52,9 +52,7 @@ const Bag = ({ bag, products }) => {
         </div>
       )}
       {bag.map((item) => (
-        <div key={item.product._id}>
-          <ProductBag product={item.product} />
-        </div>
+        <ProductBag product={item.product} key={item.product._id} />
       ))}
       {bag.length > 0 ? (
         <p className={styles.priceBottom}>{`Total: ${totalPrice.toFixed(

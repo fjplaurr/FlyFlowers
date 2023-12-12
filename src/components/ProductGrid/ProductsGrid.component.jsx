@@ -9,14 +9,13 @@ const ProductsGrid = ({ items = [] }) => (
     <h1 className={styles.pageTitle}>Search your flowers</h1>
     <div className={styles.gridWrapper}>
       {items.map((item) => (
-        <div key={item._id}>
-          <ProductCard
-            url={item.url}
-            title={item.title}
-            price={item.price}
-            _id={item._id}
-          />
-        </div>
+        <ProductCard
+          url={item.url}
+          title={item.title}
+          price={item.price}
+          _id={item._id}
+          key={item._id}
+        />
       ))}
     </div>
   </div>

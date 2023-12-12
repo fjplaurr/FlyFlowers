@@ -23,7 +23,6 @@
   color: $black;
 }
 .subtitleHeaderWithoutProducts {
-  margin-top: 1.5rem;
   font-size: 2rem;
   color: $black;
   font-weight: 400;
@@ -40,9 +39,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 2rem 0;
-  margin-bottom: 0.5rem;
-  padding-bottom: 1rem;
+  margin-top: 2rem;
   border-bottom: 1px solid $gray;
 }
 .totalProducts {

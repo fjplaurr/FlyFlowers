@@ -28,11 +28,13 @@
       color: $black;
       font-size: clamp(1rem, 5vw, 2rem);
       font-weight: 700;
+      text-align: left;
     }
     .price {
       color: $black;
       font-size: clamp(1rem, 5vw, 1.5rem);
       font-weight: 600;
+      text-align: left;
     }
     .description {
       color: $black;
