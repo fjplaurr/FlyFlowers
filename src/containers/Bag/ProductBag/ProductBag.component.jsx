@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import styles from './ProductBag.module.scss';
 import { addToBag, deleteFromBag } from '../../../redux/actions/bagActions';
 import DeliveryAd from '../../../components/DeliveryAd';
+import { productPropType, bagPropType } from '../../../utils/proptypes';
 
 const ProductBag = ({
   product,
@@ -102,20 +103,10 @@ const mapDispatchToProps = {
 };
 
 ProductBag.propTypes = {
-  product: PropTypes.shape({
-    price: PropTypes.number.isRequired,
-    url: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    _id: PropTypes.string.isRequired,
-  }),
+  product: productPropType,
   deleteProductFromBag: PropTypes.func.isRequired,
   addProductToBag: PropTypes.func.isRequired,
-  bag: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      quantity: PropTypes.number,
-    }).isRequired,
-  ).isRequired,
+  bag: bagPropType,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductBag);

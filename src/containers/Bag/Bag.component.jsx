@@ -52,7 +52,7 @@ const Bag = ({ bag, products }) => {
         </div>
       )}
       {bag.map((item) => (
-        <div key={item._id}>
+        <div key={item.product._id}>
           <ProductBag product={item.product} />
         </div>
       ))}
@@ -81,13 +81,8 @@ function mapStateToProps(state) {
 Bag.propTypes = {
   bag: PropTypes.arrayOf(
     PropTypes.shape({
-      product: PropTypes.shape({
-        price: PropTypes.number.isRequired,
-        url: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        _id: PropTypes.string.isRequired,
-      }),
-      quantity: PropTypes.number,
+      product: productPropType,
+      quantity: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
   products: PropTypes.arrayOf(productPropType).isRequired,

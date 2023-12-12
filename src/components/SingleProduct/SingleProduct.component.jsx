@@ -53,6 +53,12 @@ SingleProduct.propTypes = {
   }).isRequired,
 };
 
+function mapStateToProps(state) {
+  return {
+    productsStore: state.products.products,
+  };
+}
+
 const mapDispatchToProps = {
   addProductToBag: addToBag,
 };
@@ -60,11 +66,5 @@ const mapDispatchToProps = {
 SingleProduct.propTypes = {
   productsStore: PropTypes.arrayOf(productPropType).isRequired,
 };
-
-function mapStateToProps(state) {
-  return {
-    productsStore: state.products.products,
-  };
-}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);

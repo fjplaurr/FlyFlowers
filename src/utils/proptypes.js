@@ -11,6 +11,13 @@ const productPropType = PropTypes.shape({
   collection: PropTypes.string.isRequired,
   trending: PropTypes.bool.isRequired,
   recommended: PropTypes.bool.isRequired,
-});
+}).isRequired;
 
-export { productPropType };
+const bagPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    product: productPropType.isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
+).isRequired;
+
+export { productPropType, bagPropType };
