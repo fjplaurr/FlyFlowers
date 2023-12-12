@@ -15,7 +15,7 @@ const productPropType = PropTypes.shape({
 
 const bagPropType = PropTypes.arrayOf(
   PropTypes.shape({
-    product: productPropType.isRequired,
+    product: productPropType,
     quantity: PropTypes.number.isRequired,
   }).isRequired,
 ).isRequired;

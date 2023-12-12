@@ -11,9 +11,9 @@ import { productPropType } from '../../utils/proptypes';
 const Shop = ({ location, history, productsStore }) => {
   const [filteredArr, setFilteredArr] = useState([]);
 
-  // fetch flowers
+  // fetch products first time it renders if they are not in the store
   useEffect(() => {
-    if (!productsStore.length) {
+    if (productsStore.length === 0) {
       fetchProducts();
     }
   }, []);

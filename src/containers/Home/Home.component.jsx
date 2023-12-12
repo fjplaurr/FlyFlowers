@@ -13,8 +13,10 @@ import { productPropType } from '../../utils/proptypes';
 const Home = ({ productsStore, history }) => {
   // fetch products first time it renders if they are not in the store
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    if (productsStore.length === 0) {
+      fetchProducts();
+    }
+  }, [productsStore]);
 
   return (
     <div className={styles.home}>

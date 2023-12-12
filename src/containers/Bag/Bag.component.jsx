@@ -5,10 +5,18 @@ import ProductBag from './ProductBag';
 import styles from './Bag.module.scss';
 import BestSellers from '../../components/BestSellers';
 import { productPropType } from '../../utils/proptypes';
+import fetchProducts from '../../redux/actions/productsActions';
 
-const Bag = ({ bag, products }) => {
+const Bag = ({ bag, productsStore }) => {
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  // fetch products first time it renders if they are not in the store
+  useEffect(() => {
+    if (productsStore.length === 0) {
+      fetchProducts();
+    }
+  }, [productsStore]);
 
   // set total quantity and price when bag is updated
   useEffect(() => {
@@ -26,7 +34,7 @@ const Bag = ({ bag, products }) => {
     setTotalPrice(getTotalPrice(bag));
   }, [bag]);
 
-  const recommendedProducts = products.filter((item) => item.recommended);
+  const recommendedProducts = productsStore.filter((item) => item.recommended);
 
   return (
     <div className={styles.container}>
@@ -72,7 +80,7 @@ const Bag = ({ bag, products }) => {
 function mapStateToProps(state) {
   return {
     bag: state.bag,
-    products: state.products.products,
+    productsStore: state.products.products,
   };
 }
 
@@ -83,7 +91,7 @@ Bag.propTypes = {
       quantity: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
-  products: PropTypes.arrayOf(productPropType).isRequired,
+  productsStore: PropTypes.arrayOf(productPropType).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);
