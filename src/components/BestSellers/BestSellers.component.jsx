@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './BestSellers.module.scss';
-import ProductCard from '../../../components/ProductCard';
+import ProductCard from '../ProductCard';
 
 const BestSellers = ({ title, collection }) => (
-  <section className={styles.featureWrapper}>
-    <h2 className={styles.collectionHeader}>{title}</h2>
-    <div className={styles.gridWrapper}>
+  <section className={styles.container}>
+    <h2 className={styles.title}>{title}</h2>
+    <div className={styles.gridContainer}>
       {collection.map((product) => (
         <ProductCard
           url={product.url}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './Home.module.scss';
 import Advertisement from './Advertisement';
-import BestSellers from './BestSellers';
+import BestSellers from '../../components/BestSellers';
 import Services from './Services';
 import Header from './Header';
 import fetchProducts from '../../redux/actions/productsActions';
