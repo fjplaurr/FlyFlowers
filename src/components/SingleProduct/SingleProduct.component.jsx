@@ -6,6 +6,7 @@ import { addToBag } from '../../redux/actions/bagActions';
 import styles from './SingleProduct.module.scss';
 import DeliveryAd from '../DeliveryAd';
 import Button from '../Button';
+import { productPropType } from '../../utils/proptypes';
 
 const SingleProduct = ({ history, addProductToBag, productsStore }) => {
   const [product, setProduct] = useState();
@@ -30,7 +31,7 @@ const SingleProduct = ({ history, addProductToBag, productsStore }) => {
         <h1 className={styles.title}>{product.title}</h1>
         <p className={styles.price}>{`${product.price.toFixed(2)} €`}</p>
         <DeliveryAd />
-        <p className={styles.description}>{product.longDescription}</p>
+        <p className={styles.description}>{product.description}</p>
       </div>
       <div className={styles.imageAndButtonContainer}>
         <div
@@ -57,21 +58,7 @@ const mapDispatchToProps = {
 };
 
 SingleProduct.propTypes = {
-  productsStore: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      longDescription: PropTypes.string.isRequired,
-      shortDescription: PropTypes.string.isRequired,
-      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-      price: PropTypes.number.isRequired,
-      occasions: PropTypes.arrayOf(PropTypes.string).isRequired,
-      url: PropTypes.string.isRequired,
-      collection: PropTypes.string.isRequired,
-      trending: PropTypes.bool.isRequired,
-      recommended: PropTypes.bool.isRequired,
-    }),
-  ).isRequired,
+  productsStore: PropTypes.arrayOf(productPropType).isRequired,
 };
 
 function mapStateToProps(state) {

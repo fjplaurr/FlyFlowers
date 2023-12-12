@@ -13,7 +13,7 @@ const ProductBag = ({
 }) => {
   const [totalQuantity, setTotalQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
-  const { _id, price, url, shortDescription } = product;
+  const { _id, price, url, description } = product;
 
   useEffect(() => {
     // change total price every time the bag is updated
@@ -55,7 +55,7 @@ const ProductBag = ({
       />
       <div className={styles.infoWrapper}>
         <div className={styles.topInfoWrapper}>
-          <p className={styles.descriptionProduct}>{shortDescription}</p>
+          <p className={styles.descriptionProduct}>{description}</p>
           <div className={styles.quantityWrapper}>
             <span>{totalQuantity}</span>
             <div className={styles.quantityIncreaserDecreaserWrapper}>
@@ -105,7 +105,7 @@ ProductBag.propTypes = {
   product: PropTypes.shape({
     price: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
-    shortDescription: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired,
   }),
   deleteProductFromBag: PropTypes.func.isRequired,

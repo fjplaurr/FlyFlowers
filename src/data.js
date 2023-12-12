@@ -2,10 +2,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ebe',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['yellow', 'orange'],
     price: 35.95,
     occasions: ['decoration', 'birthday'],
@@ -17,10 +15,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e99',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 45,
     occasions: ['love'],
@@ -32,10 +28,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea7',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'pink'],
     price: 18.95,
     occasions: ['decoration', 'love'],
@@ -47,10 +41,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ebc',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 55,
     occasions: ['love'],
@@ -62,10 +54,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e8c',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 20.95,
     occasions: ['decoration', 'birthday'],
@@ -77,10 +67,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e92',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange', 'white'],
     price: 12.95,
     occasions: ['decoration', 'birthday'],
@@ -92,10 +80,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e8f',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange'],
     price: 20.95,
     occasions: ['decoration', 'birthday'],
@@ -107,10 +93,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e8d',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange'],
     price: 30,
     occasions: ['decoration'],
@@ -122,10 +106,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e8e',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'pink'],
     price: 40,
     occasions: ['love', 'birthday'],
@@ -137,10 +119,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb3',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 40,
     occasions: ['love'],
@@ -152,10 +132,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb2',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 20.95,
     occasions: ['decoration', 'love'],
@@ -167,10 +145,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ead',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 55,
     occasions: ['love'],
@@ -182,10 +158,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb4',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 45,
     occasions: ['love'],
@@ -197,10 +171,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb9',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white'],
     price: 55,
     occasions: ['decoration', 'birthday', 'love'],
@@ -212,10 +184,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e98',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange', 'yellow'],
     price: 25.95,
     occasions: ['love', 'decoration', 'birthday'],
@@ -227,10 +197,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea9',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 35,
     occasions: ['decoration', 'love'],
@@ -242,10 +210,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb0',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'orange'],
     price: 45.95,
     occasions: ['decoration'],
@@ -257,10 +223,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e8a',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['yellow'],
     price: 22,
     occasions: ['birthday', 'decoration'],
@@ -272,10 +236,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e90',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white'],
     price: 50.95,
     occasions: ['love'],
@@ -287,10 +249,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e95',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white', 'yellow'],
     price: 38,
     occasions: ['decoration'],
@@ -302,10 +262,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e9b',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white', 'yellow'],
     price: 60,
     occasions: ['decoration', 'love'],
@@ -317,10 +275,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eae',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 45.95,
     occasions: ['love'],
@@ -332,10 +288,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e9a',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 45.95,
     occasions: ['love'],
@@ -347,10 +301,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea5',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['yellow', 'red'],
     price: 45,
     occasions: ['decoration', 'love'],
@@ -362,10 +314,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb8',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 25,
     occasions: ['decoration'],
@@ -377,10 +327,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e9c',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 35.95,
     occasions: ['decoration', 'birthday'],
@@ -392,10 +340,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e8b',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white'],
     price: 30,
     occasions: [],
@@ -407,10 +353,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eac',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white'],
     price: 10.95,
     occasions: ['decoration', 'love'],
@@ -422,10 +366,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e9d',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'yellow', 'red'],
     price: 50.95,
     occasions: ['birthday', 'love'],
@@ -437,10 +379,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea6',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['red'],
     price: 35.95,
     occasions: ['decoration', 'love'],
@@ -452,10 +392,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eaf',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'pink'],
     price: 40,
     occasions: ['love'],
@@ -467,10 +405,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ec1',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 20,
     occasions: ['love'],
@@ -482,10 +418,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eaa',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white'],
     price: 35.95,
     occasions: ['decoration', 'love'],
@@ -497,10 +431,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea1',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['red', 'yellow'],
     price: 32,
     occasions: ['decoration', 'birthday'],
@@ -512,10 +444,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea3',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 22,
     occasions: ['love', 'decoration'],
@@ -527,10 +457,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ebd',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['yellow'],
     price: 20.95,
     occasions: ['decoration'],
@@ -542,10 +470,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e93',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange', 'yellow'],
     price: 65,
     occasions: ['birthday', 'love', 'decoration'],
@@ -557,10 +483,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea0',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white'],
     price: 25.95,
     occasions: ['decoration', 'love'],
@@ -572,10 +496,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb5',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange'],
     price: 30,
     occasions: ['decoration', 'birthday', 'love'],
@@ -587,10 +509,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea2',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'red', 'yellow'],
     price: 25,
     occasions: ['decoration', 'love'],
@@ -602,10 +522,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb1',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 20.95,
     occasions: ['decoration', 'love'],
@@ -617,10 +535,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb7',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'pink'],
     price: 40.95,
     occasions: ['decoration'],
@@ -632,10 +548,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e91',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'pink'],
     price: 30,
     occasions: ['decoration', 'love'],
@@ -647,10 +561,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ebb',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 35,
     occasions: ['decoration', 'birthday', 'love'],
@@ -662,10 +574,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ec0',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink'],
     price: 55,
     occasions: ['love'],
@@ -677,10 +587,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e94',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange', 'pink'],
     price: 55,
     occasions: ['birthday', 'love', 'decoration'],
@@ -692,10 +600,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e97',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['red', 'white'],
     price: 12.5,
     occasions: ['decoration', 'love'],
@@ -707,10 +613,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ebf',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['red', 'pink'],
     price: 55,
     occasions: ['love'],
@@ -722,10 +626,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea4',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'pink'],
     price: 40.95,
     occasions: ['love'],
@@ -737,10 +639,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e9e',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 30,
     occasions: ['decoration'],
@@ -752,10 +652,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eab',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['orange'],
     price: 35.95,
     occasions: ['decoration'],
@@ -767,10 +665,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eba',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['white', 'pink'],
     price: 40,
     occasions: ['decoration', 'love'],
@@ -782,10 +678,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252eb6',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['red'],
     price: 55,
     occasions: ['love'],
@@ -797,10 +691,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e96',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['pink', 'white'],
     price: 20,
     occasions: ['decoration'],
@@ -812,10 +704,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252e9f',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['red', 'yellow'],
     price: 35.95,
     occasions: ['decoration', 'love'],
@@ -827,10 +717,8 @@ export const products = [
   {
     _id: '5ed3f619c7dedd4948252ea8',
     title: 'Lorem ipsum dolor sit amet.',
-    longDescription:
+    description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    shortDescription:
-      'Loren ipsum dolor sit amet, consectetur adipiscing elit.',
     colors: ['yellow', 'orange'],
     price: 22,
     occasions: ['decoration', 'birthday'],

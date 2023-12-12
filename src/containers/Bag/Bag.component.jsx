@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ProductBag from './ProductBag';
 import styles from './Bag.module.scss';
 import BestSellers from '../../components/BestSellers';
+import { productPropType } from '../../utils/proptypes';
 
 const Bag = ({ bag, products }) => {
   const [totalQuantity, setTotalQuantity] = useState(0);
@@ -81,27 +82,13 @@ Bag.propTypes = {
       product: PropTypes.shape({
         price: PropTypes.number.isRequired,
         url: PropTypes.string.isRequired,
-        shortDescription: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
         _id: PropTypes.string.isRequired,
       }),
       quantity: PropTypes.number,
     }).isRequired,
   ).isRequired,
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      longDescription: PropTypes.string.isRequired,
-      shortDescription: PropTypes.string.isRequired,
-      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-      price: PropTypes.number.isRequired,
-      occasions: PropTypes.arrayOf(PropTypes.string).isRequired,
-      url: PropTypes.string.isRequired,
-      collection: PropTypes.string.isRequired,
-      trending: PropTypes.bool.isRequired,
-      recommended: PropTypes.bool.isRequired,
-    }),
-  ).isRequired,
+  products: PropTypes.arrayOf(productPropType).isRequired,
 };
 
 export default connect(mapStateToProps, null)(Bag);

@@ -24,8 +24,7 @@ ProductsGrid.propTypes = {
     PropTypes.shape({
       url: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      longDescription: PropTypes.string.isRequired,
-      shortDescription: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
       colors: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
       price: PropTypes.number.isRequired,
       trending: PropTypes.bool.isRequired,

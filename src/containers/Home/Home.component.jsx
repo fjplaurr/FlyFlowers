@@ -8,6 +8,7 @@ import Services from './Services';
 import Header from './Header';
 import fetchProducts from '../../redux/actions/productsActions';
 import { filterByBestSellersAndCollection } from './helpers';
+import { productPropType } from '../../utils/proptypes';
 
 const Home = ({ productsStore, history }) => {
   // fetch products first time it renders if they are not in the store
@@ -44,21 +45,7 @@ const Home = ({ productsStore, history }) => {
 };
 
 Home.propTypes = {
-  productsStore: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      longDescription: PropTypes.string.isRequired,
-      shortDescription: PropTypes.string.isRequired,
-      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-      price: PropTypes.number.isRequired,
-      occasions: PropTypes.arrayOf(PropTypes.string).isRequired,
-      url: PropTypes.string.isRequired,
-      collection: PropTypes.string.isRequired,
-      trending: PropTypes.bool.isRequired,
-      recommended: PropTypes.bool.isRequired,
-    }),
-  ).isRequired,
+  productsStore: PropTypes.arrayOf(productPropType).isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,

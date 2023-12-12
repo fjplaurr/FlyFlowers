@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './BestSellers.module.scss';
 import ProductCard from '../ProductCard';
+import { productPropType } from '../../utils/proptypes';
 
 const BestSellers = ({ title, collection }) => (
   <section className={styles.container}>
@@ -21,21 +22,7 @@ const BestSellers = ({ title, collection }) => (
 
 BestSellers.propTypes = {
   title: PropTypes.string.isRequired,
-  collection: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      longDescription: PropTypes.string.isRequired,
-      shortDescription: PropTypes.string.isRequired,
-      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-      price: PropTypes.number.isRequired,
-      occasions: PropTypes.arrayOf(PropTypes.string).isRequired,
-      url: PropTypes.string.isRequired,
-      collection: PropTypes.string.isRequired,
-      trending: PropTypes.bool.isRequired,
-      recommended: PropTypes.bool.isRequired,
-    }),
-  ).isRequired,
+  collection: PropTypes.arrayOf(productPropType).isRequired,
 };
 
 export default BestSellers;
