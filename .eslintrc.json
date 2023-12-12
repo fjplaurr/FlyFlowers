@@ -1,44 +1,29 @@
 {
-  "ignorePatterns": ["serviceWorker.ts", "node_modules/", "build/"],
+  "ignorePatterns": ["node_modules/", "build/"],
   "env": {
     "browser": true,
-    "es6": true,
-    "jest/globals": true
+    "es6": true
   },
   "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react"],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx"]
       }
     }
   },
-  "overrides": [
-    {
-      "plugins": ["jest"],
-      "rules": {
-        "jest/no-disabled-tests": "warn",
-        "jest/no-focused-tests": "error",
-        "jest/no-identical-title": "error",
-        "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error"
-      },
-      "files": ["**/*.test.tsx", "**/*.test.ts"]
-    }
-  ],
   "rules": {
     "react/require-default-props": "off",
     "no-use-before-define": "off",
@@ -49,7 +34,7 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "linebreak-style": 0,
@@ -80,8 +65,6 @@
       "error",
       "always",
       {
-        "ts": "never",
-        "tsx": "never",
         "js": "never",
         "jsx": "never"
       }
@@ -89,7 +72,6 @@
     "import/no-extraneous-dependencies": "off",
     "no-undef": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
     "react/function-component-definition": [
       "error",
       { "namedComponents": "arrow-function" }

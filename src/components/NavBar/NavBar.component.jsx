@@ -15,10 +15,10 @@ class NavBar extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle = () => {
+  toggle() {
     const { open } = this.state;
     this.setState({ open: !open });
-  };
+  }
 
   render() {
     const { open } = this.state;

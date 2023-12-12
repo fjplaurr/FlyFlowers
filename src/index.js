@@ -18,7 +18,6 @@ const Shop = lazy(() => import('./containers/Shop'));
 
 const history = createBrowserHistory();
 const routing = (
-  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
     <Router history={history}>
       <Suspense fallback={<div>Loading...</div>}>
